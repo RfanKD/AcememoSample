@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600);
 
 /*
 	Minimaxing 1.0 by nodethirtythree design
@@ -30,7 +30,7 @@
 	}
 
 	h2 {
-		font-size: 1.6em;
+		font-size: 2em;
 		letter-spacing: -1px;
 		margin-bottom: 1em;
 		text-transform: uppercase;
@@ -42,12 +42,14 @@
 	}
 
 	h3 {
-		font-size: 1.2em;
+		font-size: 1.6em;
 		margin-bottom: 0.8em;
+		border-bottom: solid 1px #eee;
+
 	}
 
 	h4 {
-		font-size: 1em;
+		font-size: 1.2em;
 	}
 
 	p, ul {
@@ -55,11 +57,33 @@
 	}
 
 	p {
-		line-height: 1.8em;
+		line-height: 1.4em;
+	}
+	
+	table tr:nth-child(even){
+		background-color: #eee;
+	}
+	table tr:nth-child(odd){
+		background-color: #333;
+	}
+	
+	table td {
+		border: 1px solid #666;
+	}
+	
+	table tbody tr td p {
+		padding: 5px;
+	}
+	
+	.task {
+		background-color: #333;
+		color: white;
+		border-top: 2px solid #fff;
 	}
 
 	strong {
 		color: #474e43;
+		font-weight: 600;
 	}
 
 	img.left {

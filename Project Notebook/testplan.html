@@ -6,13 +6,25 @@
 -->
 <html>
 	<head>
-		<title>Group 5 Project</title>
+		<title>Group 5 Project: Acememo</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--5grid--><script src="css/5grid/viewport.js"></script><!--[if lt IE 9]><script src="css/5grid/ie.js"></script><![endif]--><link rel="stylesheet" href="css/5grid/core.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		<!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css" /><![endif]-->
+        <script type="text/javascript">
+// Function modified from http://stackoverflow.com/questions/17268006/expand-and-collapse-using-javascript-with-and
+		function toggle_visibility(id) {
+   var e =document.getElementById(id);
+   var label = document.getElementById("toggle");
+
+   if(e.style.display == 'none')
+      e.style.display = 'block';
+   else
+      e.style.display = 'none';
+}
+		</script>
 	</head>
 	<body>
 	<!-- ********************************************************* -->
@@ -20,7 +32,7 @@
 			<div class="5grid">
 				<div class="12u-first">
 					<header id="pageTitle">
-						<h1><a href="#">Group 5's Project [TBD]</a></h1>
+						<h1><a href="#">Group 5: Acememo</a></h1>
 					</header>
 					<header id="header">
 						<nav>
@@ -47,7 +59,520 @@
 						
 						<section>
 							<h2>Test Plan & Evaluation</h2>
-							<p>Under Construction.
+                            
+                            <h3>Usability Goals</h3>
+                            <p>1. The user interface is intuitive<br />
+								a) Buttons are clear<br />
+								b) Drag action can be understood</p>
+							<p>2. User can play the game without giving too much “How-to” information</p>
+							<p>3. User wastes less time interacting with the UI and more time playing the game</p>
+							<p>4. User feels encouraged by the system to improve her short term memory</p>
+
+                            <h3>Benchmark Tasks</h3>
+							<p>1. Set up the game</p>
+							<p>2. Learn how to play</p>
+							<p>3. Start the game at level 1</p>
+							<p>4. Play at least 2 levels</p>
+							<p>5. Continue to next level</p>
+							<p>6. Replay same level</p>
+							<p>7. Restart the game</p>
+                            <p>8. Start the game at a different level than 1</p>
+                            
+                            <p><strong>NOTE:</strong> One aspect we cannot test with this prototype is with the actual people the evaluator knows. The impact of the  'social' aspect of the game can be only tested once Facebook login is implemented. Thus, this test just includes 3 characters the evaluator does not know and their likes: Emir likes Titanic. Raphael likes photography. Alison likes biking.</p>
+                            <h3>Evaluation of Tasks</h3>
+                            <p>For each task, if the user asks a question or is frustrated and doesn’t know what to do, that counts as 1 point. Tasks with 0 points are successful tasks. Usability of all other tasks should be revised and improved after the testing.</p>
+                            <p>Individual feedback will be evaluated based on the answers on the debriefing session. Any improvements or suggestions will be considered.</p>
+                            
+                            <h3>Briefing</h3>
+                            <p>1. Welcome</p>
+							<p>2. Ask the participant sign the consent form, let them know this session will be recorded only to improve the project</p>
+							<p>3. Start filming the test session</p>
+							<p>4. Introduction to experimenters</p>
+							<p>5. Introduction to the project<br />
+								a) McGill University study<br />
+								b) Short term memory game<br />
+								c) Includes people that you know, but the people in the content of the prototype are testers.</p>
+							<p>6. Explain what they will do<br />
+								a) “We are not testing you, we are testing the prototype!”<br />
+								b) Ask if they have used a mobile device before and if they have a Facebook account or know what Facebook is<br />
+								c) If the user is inexperienced, introduce certain UI elements, like buttons and drag action<br />
+								d) Otherwise, continue with the session asking them to act as if the prototype is their smartphone screen<br />
+								e) Let them know they will complete 8 tasks without any help, if the user is inexperienced in terms of mobile device usage, a little help in gestures might be provided as a briefing<br />
+								f) Tell the user “If you are not sure what to do, do what feels right”<br />
+								g) “Verbalize your thoughts while going through each task”<br />
+								h) “You can take breaks whenever you want, no need to rush”</p>
+							<p>7. Give information for the next task on the list</p>
+							<p>8. Start the task (If the game is over, note user’s score and let them know)</p>
+							<p>9. Start writing observations about the evaluator’s interaction with the prototype<br />
+								a) Record when user hesitates to press on some button or feels frustrated with the interface<br />
+								b) Record when user asks a question about how to use the prototype<br />
+								c) Record how long each task takes the user to complete</p>
+                                
+                            <h3>Debriefing</h3>
+                            <h4>1. Frustration</h4>
+								<p>a) Did you ever feel frustrated when using the prototype? If so, when?</p>
+								<p>b) Did you understand where to press? Or what to drag? If not, which task was that button in?</p>
+								<p>c) Did you feel a particular task was hard to accomplish? Which task was it?</p>
+							<h4>2. Encouragement</h4>
+								<p>a) Did you feel encouraged to improve further in the game or did you just want to complete the level and finish playing?</p>
+								<p>b) Did you care about your score?</p>
+							<h4>3. Suggestions</h4>
+								<p>a) Did you ever think a certain action during gameplay was unnecessary, what was it?</p>
+								<p>b) Do you have any further suggestions to help us improve the game?</p>
+
+							<h3>Transcript of the Testing Session</h3>
+                            <p id="toggle"><a href="files/complete_transcript_02122014.pdf">The complete transcript of the testing session can be found here.</a></p>
+                            <p><a href="javascript:toggle_visibility('transcript')">Click here to expand the important points from the transcript.</a></p>
+                            <div id="transcript" style="display:none;">
+                            <p>
+    1. Evaluator: what else. But ok, but then, ok.
+    <strong>
+        But this is all information they would check but you would assume some of them would have ~ like if its their families, you would know who likes what.
+        So you~
+    </strong>
+</p>
+<p>
+    Experimenter: sure
+</p>
+<p>
+    Evaluator: <strong>So it’s not like a new fact that you are giving them</strong>. Unless it’s new people. Like it’s not a new fact that you are giving them
+</p>
+<p>
+    Experimenter: It’s true. It could be something that they already know about
+</p>
+<p>
+    <strong></strong>
+</p>
+<p>
+    2. Evaluator: <em>I can't go back and ~ let’s say I realized I made a mistake, can I erase it? </em>
+</p>
+<p>
+    Experimenter: Um that’s not something we have ~ had done
+</p>
+<p>
+    Evaluator: Ok. So let’s say I can't connect it to titanic, And I was I can't ~ O my god ~ O No!~ that’s not it. Do i automatically have to say ok put
+    anything in and go to game over?
+</p>
+<p>
+    Experimenter: Well technically what it would do is if you put Raphael to Titanic, it would automatically before even if you have the chance to do the other
+    ones and would automatically go to this
+</p>
+<p>
+    Evaluator: Ok~ so I know at least I have one mistake
+</p>
+<p>
+    Experimenter: Yeap
+</p>
+<p>
+Evaluator: So you won't say ~ let’s say if you have a sheet of six and it won't say I got two out of the six right. It gives me ~ it gives me an idea.    <strong>Like I think you should </strong>
+</p>
+<p>
+    Experimenter: We should
+</p>
+<p>
+    Evaluator: You should let it calmly ~
+</p>
+<p>
+    Experimenter: <strong>We should let them know ones they make a mistake on</strong> ?
+</p>
+<p>
+    Evaluator: Yeah yeah
+</p>
+<p>
+    Experimenter: Ok! Ok and do you think it's ok we end the game right when they get something wrong ? Or what do you think about that ?
+</p>
+<p>
+    Evaluator:
+    <strong>
+        Um, I trying to think because if it's a learning thing and also for a therapist if you [want to] know how ~ first of all you have to let them finish
+        because you want them ~ to give them ~ they only got one wrong. Maybe they would have got the other five right or the other four because its already.
+        They would already have the other four right, which is ok as oppose to if they got them all wrong. But if ~ if
+    </strong>
+</p>
+<p>
+    <strong>it goes </strong>
+</p>
+<p>
+    Experimenter: ok
+</p>
+<p>
+    Evaluator: game over right away then you don't know
+</p>
+<p>
+    Experimenter: ok so that
+</p>
+<p>
+Evaluator: and that <strong>as a learning thing</strong> would you want ~ <em>would you tell them they got it wrong? Would you go back</em>.    <strong>I would go back and show them what they got wrong!</strong>
+</p>
+<p>
+    Experimenter: Ok
+</p>
+<p>
+    Evaluator: Yeah! Because it is a learning thing as eh ~ <strong>but usually you get feedback in this games </strong>
+</p>
+<p>
+    Experimenter: ok! So so some kind of thing you would that would indicate them what they got wrong
+</p>
+<p>
+    3. Evaluator: <strong>Mind you I don't know older people with an ipad because they are not use to it </strong>
+</p>
+<p>
+    Experimenter: Ok
+</p>
+<p>
+    Evaluator: we have a lot. <strong>We have young patients [so] thats not a problem</strong>
+</p>
+<p>
+    Experimenter: Ok
+</p>
+<p>
+    Evaluator: But i don't know if older people how much it would have to ~ <u>O this seem to [be able to] catch on quite quickly </u>
+</p>
+<p>
+    Experimenter: Ok
+</p>
+<p>
+    Evaluator: because of if you don't there is not a lot of instructions or~
+</p>
+<p>
+    4. Experimenter: So do you think something like eh~ maybe like two arrows would like two arrows on either side might be a better ~ ?
+</p>
+<p>
+    Evaluator: Yeah yeah! <strong>Once they understand that its a practice run then it would get </strong>
+</p>
+<p>
+    Experimenter: ok perfect
+</p>
+<p>
+Evaluator: but if normally you have to ~ people would have to work with ipads a lot ~ normally you would have three little square or circles.    <strong>Then I would leave it </strong>
+</p>
+<p>
+    Experimenter: Ok
+</p>
+<p>
+    Evaluator: <strong>I would do what’s standard </strong>
+</p>
+<p>
+    <strong></strong>
+</p>
+<p>
+    5. Evaluator: <strong>People will care about their score</strong>
+</p>
+<p>
+    Experimenter: You didn't invite in general. They will care about. Do you think the score should be more um based on what they just got in that level or
+    over time or should there maybe both. Like a score as in you got three out three ~
+</p>
+<p>
+    Evaluator: <strong>you should track the score</strong>. Because even in therapies lke<strong> usually we try to have objective things</strong>. We have
+    this test thats on thirtyth. Like you know when you first came in you scored twenty-nine, now you are scoring twenty-five. So It shows them that they are
+    improving
+</p>
+<p>
+    6. Evaluator: No, my only suggestions is that I<strong> would definitely make it more difficult </strong>
+</p>
+<p>
+    7. Experimenter: do you think it should start difficult? Like do you think ~
+</p>
+<p>
+Evaluator: No ~ well no because its e~ good to start ehh~    <strong>a little bit lower because depending then you can use it with different level of patients</strong>
+</p>
+<p>
+    <strong></strong>
+</p>
+<p>
+    8. Evaluator: then would use their memory to go back to them
+</p>
+<p>
+    Experimenter: to go back on them even if they don't know who they are
+</p>
+<p>
+    Evaluator: And thats almost~ thats also a good option to have <strong>because it's like as I was saying it's people you know</strong>.
+</p>
+<p>
+    Experimenter: Yeah
+</p>
+<p>
+    Evaluator: So ~ so its new information thats given to you
+</p>
+<p>
+    Experimenter: Ok
+</p>
+<p>
+Evaluator: like this guys likes this ~ this not your cousin and you sort of remember because    <strong>sometimes they are short-term memory is not eh~ is not well but something that happened ten years ago they will remember</strong>
+</p>
+<p>
+    Experimenter: Ok
+</p>
+<p>
+    Evaluator: So it might be facts they already know where as a new with new faces and new objects they have to match up
+</p>
+<p>
+    Experimenter: Yeap
+</p>
+<p>
+    Evaluator: That’s even more challenging
+</p>
+<p>
+    9. Evaluator: <strong>So i think you should have both options as a game and then as a game of people they don't know </strong>
+</p>
+</div>
+
+<iframe width="480" height="360" src="//www.youtube.com/embed/O4jSQJ-WUC8" frameborder="0" allowfullscreen></iframe>
+
+<p></p>
+                                                  
+                            <h3>Test Results</h3>
+
+							<p>
+    <strong>Table commenting on results for each of the benchmark tasks</strong>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+        	<td><strong style="color:white;">Task Number</strong></td>
+            
+            <td valign="top">
+                <p>
+                    <strong style="color:white;">Experimenter</strong>
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    <strong style="color:white;">Evaluator</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+        	<td rowspan="2" class="task">Task #1</td>
+        
+            <td valign="top">
+                <p>
+                    1. In order to setup the game you are [going to] have to connect to Facebook. So how would you do that from this starting screen?
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    Like this? &lt;click connect to Facebook&gt;. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <p>
+                    2. Let’s say you had a Facebook account, what would you do?
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    I would allow it to access the Facebook system. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+        	<td class="task">Task #2</td>
+            <td valign="top">
+                <p>
+                    3. So now you [want to] learn how to play. Before playing the game, you [want to] learn how to play. What do you think you would do in this
+                    case?
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    I would, press how to play (Error – Evaluator never seen three buttons slider UI element). Result: 1 points [failure]
+                </p>
+            </td>
+        </tr>
+        <tr>
+       		<td class="task">Task #3</td>
+            <td valign="top">
+                <p>
+                    4. So now if you are [going to] start the game, what would you do?
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    [press] play game. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+        	<td class="task" rowspan="3">Task #4</td>
+            <td valign="top">
+                <p>
+                    5. So now you can pull and you [want to] start the game at level one
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    I would […] press start. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <p>
+                    6. if you are ready to play level 1, what do you think you would do?
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    [press] I’m ready. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <p>
+                    7. So now what would you do in this case? [actual gameplay]
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    I put this into the image of the thing they like. So I would drag this into that. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+             <td class="task" rowspan="4">Task #5</td>
+            <td valign="top">
+                <p>
+                    8. so now let’s say you [want to] play the next level, what would you do
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    [press] Continue to next level. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <p>
+                    9. So we don't have to do anything. And now once you have memorized this stuff
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    click I'm ready. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <p>
+                    10. So now you are at this level [level 2]
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    So then I would drag [Raphael] one [to photography]. And I would drag Allison to biking
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <p>
+                    11. So then if you were correct, it would
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    [slide strip] to next level. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="task" rowspan="2">Task #6</td>
+            <td valign="top">
+                <p>
+                    12. So you go over [end of level]. So this times you [want to] replay the level, what would you do?
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    [press] replay level. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <p>
+                    13. So let’s say you played again [level 2] what exactly would you do
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    [puts] Raphael likes photography
+                </p>
+                <p>
+                    And [puts] Allison likes biking. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+                <tr>
+            <td class="task">Task #7</td>
+            <td valign="top">
+                <p>
+                    14. Everything and you know how to play. So let’s say you wanted to play the game a second time
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    So I would just go play game, [then] go press start. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+                        <tr>
+            <td class="task">Task #8</td>
+            <td valign="top">
+                <p>
+                    15. So let's say you want to start again at a level different than 2. What would you do?
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                   I would change the level with the arrows, [then] go press start. Result: 0 points [success]
+                </p>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
+                            
+                            <h3>Learnings</h3>
+                            <p>The feedback that we received from our evaluator was mixed. There are some great points. For example, she thought our project is intuitive, simple and fast to pick up. As well she thought that game can get addictive. In addition, at the Jewish Rehabilitation Hospital, they have already begun to use iPad with patients. Therefore, the evaluator thought our project is a good idea; 1. because people already know how to use the technology and 2.they are looking for rehabilitation games. However, there are also some changes that can be made.</p>
+
+							<p>First of all, our evaluator thought that our game was currently too simple. To accommodate patients of various levels, we should increase the difficulties in our game. Two the suggestions that was made include: to increase the amount of items that one person can be linked to and to increase the amount people that the user will have to remember. When asked whether or not the game should just start with difficult levels, the evaluator explained that it was good to start at a lower level because this will allow for the accommodation of patients of various levels. </p>
+
+							<p>Secondly, our evaluator pointed out that our concepts should be changed. The game should not just end because the patient made a mistake. Our project should lean more towards being a learning thing. The patient should be able to drag everyone to their “appropriate” items. Only when the patient is finished with correlating everyone, should screen pop up to show to patient what their score is and what they have connected wrong. To quote our evaluator “they would […] have the other four [correct], which is ok as opposed to if they got them all wrong. The game should be more of a learning experience.</p>
+
+							<p>Thirdly, when asked if a score tracker should be included, our evaluator explained that it should be. In therapies, everything should be kept as objectively as possible. Therefore, it would give patients a sense of goal and also show them if they made an improvement or deterioration.</p>
+
+							<p>On the subject of whether or the patient would have a Facebook Account, our evaluator noted that it would be best if we can have two approaches to solve the problem. This is because while we assumed that many people would have a Facebook account, there are many people (especially the elderly) who don’t. Therefore, our evaluator explained it would be better if we can have a Facebook login and a simple login, much alike the popular game Candy Crusher. This would allow patients to correlate people that they know with things and also people that they don’t know. In addition, this method would also increase the difficulties in the levels.</p>
+
+							<p>Lastly, on the technical side one of our pages was difficult to interpret. Instead of using cliché symbols, we should use more standard and easier to understand symbols when designing pages.  Therefore, one of our pages where we used three circles to indicate page number, our evaluator thought that was not easily understood. Instead we should use arrows to indicate that there more pages to read.</p>
+                            
+                 <h3>Outcomes</h3>
+                 <p>What will we change in our prototype?</p>
+                 
+                 <h4>1. Let the Player Finish</h4>
+                 <p>We have decided to let the player finish until the last matching and then display the game over screen. This way the user will have the chance to answer all of the matchings and see their mistakes later on.</p>
+
+                 <h4>2. Teach</h4>
+                 <p>Based on the evaluator's feedback, we've decided to show the user how they have failed, what were the correct matchings after the end of the game. This way we will teach the user and turn the facts about their social contacts into an enjoyable experience by doing so.</p>
+                 
+                 <h4>3. Score vs. Level</h4>
+                 <p>We've decided that scoring should be independent from level, as in the current prototype, the latest level the user has approached before failing is their score. We should let the user continue until they finish all the matchings - even if 1 matching fails - and calculate each correct matching as a +1 point.</p>
+                 
+                 <h4>4. Gameplay without Facebook</h4>
+                 <p>Based on the evaluator feedback, we've decided to allow the users to play the game without Facebook account since some of the old people using the system might not have a Facebook account and it might be a good idea to let people play the game with random characters and their likes as it might be more challenging since they are not related. We will do this by having random datasets of imaginary characters and their likes.</p>
+
+                <h3>Summary of Individual Contributions</h3>
+                <p><strong>Emir:</strong> Testing Plan + Outcomes + Webmaster</p>
+                <p><strong>Alison:</strong> Testing Coordination</p>
+                <p><strong>Raphael:</strong> Testing Observation + Evaluation</p>
+
 						</section>
 					
 					</div>
