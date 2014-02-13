@@ -45,7 +45,11 @@
 		font-size: 1.6em;
 		margin-bottom: 0.8em;
 		border-bottom: solid 1px #eee;
-
+	}
+	
+	h3 a {
+		text-decoration: none;
+		color: #283121;
 	}
 
 	h4 {
@@ -58,6 +62,14 @@
 
 	p {
 		line-height: 1.4em;
+	}
+	
+	#gototop {
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		padding:10px;
+		font-weight: bold;
 	}
 	
 	table tr:nth-child(even){
