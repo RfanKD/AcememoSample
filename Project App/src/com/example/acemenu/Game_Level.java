@@ -16,6 +16,7 @@ public class Game_Level extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.game_level_menu);
+		addListenerOnButton();
 	}
 	
 	public void addListenerOnButton(){

@@ -16,6 +16,7 @@ public class HomeMenu extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home_menu);
+		addListenerOnButton();
 	}
 	
 	public void addListenerOnButton(){
@@ -26,8 +27,8 @@ public class HomeMenu extends Activity{
 			
 			@Override
 			public void onClick(View arg0){
-				Intent intent1 = new Intent(context,Game_Level.class);
-				startActivity(intent1);
+				Intent intent2 = new Intent(context,Game_Level.class);
+				startActivity(intent2);
 			}
 		});
 		
