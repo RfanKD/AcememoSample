@@ -22,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main"></activity>
-        <activity android:name=".HomeMenu"></activity>
-        <activity android:name=".GameLevelMenu"></activity>
+        <activity android:name="HomeMenu"></activity>
+        <activity android:name="Game_Level"></activity>
+        <activity android:name="Level_One"></activity>
     </application>
 
 </manifest>

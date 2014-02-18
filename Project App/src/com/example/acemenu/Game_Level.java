@@ -8,25 +8,25 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class HomeMenu extends Activity{
+
+public class Game_Level extends Activity{
 	
-	Button buttonToGameMenu;
-	
+	Button buttonToLevelOne;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.home_menu);
+		setContentView(R.layout.game_level_menu);
 	}
 	
 	public void addListenerOnButton(){
 		final Context context = this ;
 		
-		buttonToGameMenu = (Button) findViewById(R.id.button1);
-		buttonToGameMenu.setOnClickListener (new OnClickListener() {
+		buttonToLevelOne = (Button) findViewById(R.id.button1);
+		buttonToLevelOne.setOnClickListener (new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0){
-				Intent intent1 = new Intent(context,Game_Level.class);
+				Intent intent1 = new Intent(context,Level_One.class);
 				startActivity(intent1);
 			}
 		});
