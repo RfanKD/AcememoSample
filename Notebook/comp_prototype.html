@@ -44,10 +44,732 @@
 			<div class="5grid">
 				<div class="main-row">
 					<div class="12u-first">
-						
+                    
+                    <h2>COMPUTER PROTOTYPE</h2>
+                    <p><img src="img/comp_prototype.jpg"><br />A screenshot from computer prototype of Acememo</p>
+                            <p><a href="#usermanual">1. User Manual</a></p>
+                            <p><a href="#prototype">2. Prototype Development</a></p>
+                            <p><a href="#usability-testing-">3. Usability Testing Procedures</a></p>
+                            <p><a href="#usability-test">4. Usability Test</a></p>
+                            <p><a href="#heuristic-evaluation">5. Heuristic Evaluation</a></p>
+                            <p><a href="#contributions">6. Summary of Individual Contributions</a></p>
+
 						<section>
-							<h2>Computer Prototype</h2>
-							<p>Under Construction.
+							<h2>
+    <a name="usermanual">User Manual</a>
+</h2>
+<p>NOTE: Although a user manual for Acememo most likely won't be necessary for an experienced mobile device user, all the rudimentary actions are explained within this manual for reference. Besides, "how-to instructions" are already embedded within the application.</p>
+<h3>
+    Installation
+</h3>
+<p>
+    1. Download Acememo.apk file
+</p>
+<p>
+    2. Run Acememo.apk file to initiate installation
+</p>
+<p>
+    3. Prompt ask “Complete action using” choose Package installer
+</p>
+<p>
+    4. Start Installation
+</p>
+<h3>
+    Running App
+</h3>
+<p>
+    1. In main menu, find Acememo
+</p>
+<p>
+    2. Press on Acememo icon
+</p>
+<p>
+    3. Acememo app will start running
+</p>
+<h3>
+    Using App
+</h3>
+<p>
+    1. If Facebook account exists press “Login to Facebook” else press “Continue without Facebook” to log into app
+</p>
+<p>
+    2. Review “How to play game” in the horizontal scroll view
+</p>
+<p>
+    3. After logged in to Facebook, press “Start Game” to play app
+</p>
+<h3>
+    Gameplay
+</h3>
+<p>
+    1. Select number of pairs to remember
+</p>
+<p>
+    2. Memorize the pairs (a person and an item they like) as they show up on the screen
+</p>
+<p>
+    3. Press “I am ready” when memorized all pairs of data
+</p>
+<p>
+    4. Drag a person to the item they like
+</p>
+<p>
+    5. Repeat step 4 until every person has been linked to an item
+</p>
+<p>
+    6. Press “I am done” to check if completed level
+</p>
+<p>
+    7. If level complete, press “Move on to next level” or “Review Level”
+</p>
+<p>
+    8. If level is incomplete, press “Restart Game” or “Review Level”
+</p>
+<p>
+    *Note: further instructions available in app
+</p>
+<h2>
+    <a name="prototype">Prototype Development</a>
+</h2>
+<h3>
+    How has your vision of the project changed from the time of conception?
+</h3>
+<p>
+    So far everything that we have wanted to implement in our application has worked as planned; therefore our vision has 
+
+solely changed based on the feedback
+    we received from our tester last week. After demonstrating our paper prototype we received feedback that we should 
+
+first of all allow players to play our
+    game even if they do not have a Facebook account. Secondly, we should allow users to complete the level before 
+
+letting them know that they made a mistake.
+    It was also suggested that we should keep track of the user’s score in each level and present it to them immediate 
+
+after they complete the level. Lastly,
+    our experimenter made the suggestion that we should allow the users to return and view the mistakes that they made 
+
+once the level is finished.
+</p>
+<h3>
+    Design Decisions
+</h3>
+<h4>
+    Play without a Facebook account
+</h4>
+<p>
+    By adding the option of playing without a Facebook account, in addition to having the “Play with Facebook” option, we 
+
+are increasing our user base by
+    allowing anyone to play our game. Also, as was explained to us by our tester, it will be harder for a patient to 
+
+remember something about a randomly
+    generated person from the Facebook graph api that they don’t know as opposed to remembering a characteristic about a 
+
+family member or friend who they have
+    known for a very long time. For this reason, not only does playing without Facebook increase the user base, but it 
+
+also increases the difficulty of the
+    game to some extent.
+</p>
+<p>
+    In terms of feasibility, the algorithms for both the with Facebook and without Facebook versions of the game are 
+
+identical, the only thing that changes are
+    the data sets from which you are pulling the information to memorize. For this reason, it is extremely feasible to 
+
+provide the option of playing without
+    Facebook.
+</p>
+<h4>
+    Allow Level Completion
+</h4>
+<p>
+    By allowing a user to complete a level, you are allowing them to rethink their decision and change their mind. This 
+
+is much better for the usability of the
+    game seeing as it allows the user to connect the people that they think are correct, in order for them to determine 
+
+the rest of the connections which they
+    might not be too certain about. If they do happen to make a mistake in the first few connections and pick up on their 
+
+mistake before completing the level,
+    they may move their answers around which proves that their memory is improving and although they might not have 
+
+remembered the connection right away, they
+    just needed a little bit of time to figure it out correctly. Also, allowing a user to complete a level instead of 
+
+cutting it off as soon as they make a
+    mistake, makes a user feel much better than telling them they failed and not letting them try to figure out their 
+
+mistake.
+</p>
+<p>
+    In terms of feasibility, it is very simple to make thing change, seeing as the correct connections must be kept in 
+
+memory anyways. Whether we check for
+    correctness as the player is playing the level, or we once all the connections have been made, the checking code is 
+
+still extremely similar; the main
+    difference is basically just the number of checks that are being done at the same time. This change is worth 
+
+implementing seeing as it will definitely help
+    the user improve and keep their moral high.
+</p>
+<h4>
+    Keep Track of User’s Score
+</h4>
+<p>
+    This goes hand in hand with the previous design decision, because by letting the player complete the level, there 
+
+must be some way of notifying them how
+    many answers they got right and how many they misconnected. It is definitely something that will motivate the users 
+
+to improve themselves for next time, so
+    that they can not only go further in the levels, but also increase their scores even on the levels in which they did 
+
+poorly.
+</p>
+<p>
+    Feasibility-wise, this design is extremely easy to implement seeing as we will be checking the correctness of each of 
+
+the connections anyways. We will just
+    have to keep track of how many connections were made correctly, and how many were made incorrectly; this number will 
+
+then be displayed on the results
+    screen following the level.
+</p>
+<h4>
+    Allow Users to View Mistakes
+</h4>
+<p>
+    Once again, this decision goes along with the two previous ones; seeing as you are letting the user play until the 
+
+end of the level and you are providing
+    them with the score that they received on the level, there must be some way for them to check to see the mistakes 
+
+that they made. Enabling users to view
+    their mistakes will allow them to see exactly which connections were wrong, as well as how far off they were from the 
+
+correct answer. This could help the
+    user determine why they made the mistake. For example, did they make the mistake because the accidently chose the 
+
+wrong image when making the connection
+    (ie. one image looked like another), or did they simply do not remember which person belonged with which item.
+</p>
+<p>
+    Out of the four new design decisions, this is definitely the most complicated to implement; however, all the 
+
+information will already be stored. Before
+    starting the level, the correct connections will be stored in a data structure, and the connections being made by the 
+
+user during the game will be stored
+    in a separate data structure. So, even though viewing the users results is not something that was already being done, 
+
+all the information that is needed is
+    stored, and the only thing that needs to be done is analyse it and display it in a format that is easy for the user 
+
+to comprehend. Although this is not the
+    simplest of tasks, the tester was extremely certain that this would help the user and their therapist with their 
+
+learning and improvements, therefore we
+    believe that it is a key implementation to have.
+</p>
+<p>
+    <em></em>
+</p>
+<h3>
+    Critical Functionality
+</h3>
+<p>
+    The functionalities that we believe are critical for this stage of the design are as follows:
+</p>
+<ul>
+    <li>
+        <strong>How to Play</strong>
+    </li>
+</ul>
+<p>
+    o The how to play instructions on the main page will allow the user to figure out how exactly to use our application 
+
+without us having to tell them
+    anything.
+</p>
+<ul>
+    <li>
+        <strong>Facebook Login UI (no background functionality)</strong>
+    </li>
+</ul>
+<p>
+    o The Facebook UI is more of a formality than a functionality. We want the testers to go through the motions of 
+
+registering their Facebook account to
+    ensure that it flows well and is intuitive, but for the purpose of this prototype, it is not important that the data 
+
+comes from Facebook.
+</p>
+<ul>
+    <li>
+        <strong>Select Level</strong>
+    </li>
+</ul>
+<p>
+    o We want the user to be able to play the game from level 1 as if they have never played it before, but we also want 
+
+to see if it is intuitive enough to
+    change levels but varying the number of pairs.
+</p>
+<ul>
+    <li>
+        <strong>Minimum 2 working levels</strong>
+    </li>
+</ul>
+<p>
+    o Seeing as all the levels are fairly similar, 2 levels will give us a good idea of how the UI flows between the 
+
+levels. There is no need to overload the
+    tester with several more levels which are similar to the first 2.
+</p>
+<ul>
+    <li>
+        <strong>Drag &amp; Drop</strong>
+    </li>
+</ul>
+<p>
+    o We want to ensure that the drag and drop motion is the best, most intuitive and simplest way to play our game. 
+
+Ensuring that this functionality is
+    implemented for this prototype is essential.
+</p>
+<ul>
+    <li>
+        <strong>Restart Game / Replay Level</strong>
+    </li>
+</ul>
+<p>
+    o Allows the tester to play around in the application and do what they want rather than follow a linear path through 
+
+the levels. This will hopefully bring
+    on more feedback about each of the levels, rather than only letting them play each level once.
+</p>
+<ul>
+    <li>
+        <strong>View Errors</strong>
+    </li>
+</ul>
+<p>
+    o This screen does not have to be extremely refined, it just has to be enough to show the testers the mistakes that 
+
+they made and which are the correct
+    connections. The basic goal here is to test our ideas seeing as we did not get to test this section during the paper 
+
+prototype testing.
+</p>
+<h2>
+    <a name="usability-testing">Usability Testing Procedures</a>
+</h2>
+<h3>
+    Usability Goals to be Tested
+</h3>
+<p>
+    1. User interface requires minimal learning
+</p>
+<p>
+    a) Buttons are clear
+</p>
+<p>
+    b) Drag and drop action can be understood
+</p>
+<p>
+    2. User interface interactions take minimal time to complete
+</p>
+<p>
+    3. User feels encouraged by the system to improve her short term memory
+</p>
+<p>
+    4. User can learn from his/her mistakes
+</p>
+<h3>
+    Types of Users Required
+</h3>
+<p>
+    Ideally, since the game targets users with short term memory problems that may stem from different health conditions, 
+
+testers should have some sort of
+    short term memory problems. Although some usability goals – i.e. related to the user interface – can be tested with 
+
+people who do not fit in this
+    description.
+</p>
+<h3>
+    Number of Examiners
+</h3>
+<p>
+    We need 3 examiners in total:
+</p>
+<p>
+    · One examiner will coordinate the testing session – i.e. briefing, walking through each test, etc.
+</p>
+<p>
+    · One examiner will measure all the quantitative and behavioral data
+</p>
+<p>
+    · One examiner will record the testing session for later reviewing
+</p>
+<h3>
+    Testing Equipment
+</h3>
+<p>
+    · An Android smartphone (ideally running Android 4.0+) to run the application
+</p>
+<ul>
+    <li>
+        A video camera to record the testing session
+    </li>
+</ul>
+<p>
+    · A device with stopwatch ability to measure timing on certain tasks
+</p>
+<p>
+    · Pen/pencil or computer to record observations and results
+</p>
+<h3>
+    Handling the Prototype
+</h3>
+<p>
+    Although the instructions on “how to play the game” are included within the application, we have included all the 
+
+steps to install and run the application
+    and play the game in the user manual. If the Android smartphone used for testing comes with the application 
+
+installed, the user can skip the instructions.
+    Reading the manual is completely optional and is not necessary for a mobile device user as the instructions on how to 
+
+play the game are already illustrated
+    within the prototype of the game.
+</p>
+<h3>
+    Instructions for the Examiner
+</h3>
+<p>
+    1. First, introduce the project
+</p>
+<p>
+    2. Let the user know that the session is being recorded and ask them to sign the consent form to have their full 
+
+consent on using all the data acquired
+    from the testing
+</p>
+<p>
+    3. Go through the briefing session
+</p>
+<p>
+    4. Go through the pre-test questionnaire
+</p>
+<p>
+    5. Conduct the usability evaluation
+</p>
+<p>
+    6. Conduct the heuristic evaluation
+</p>
+<p>
+    7. Go through the debriefing session
+</p>
+<p>
+    8. Conduct the post-test questionnaire
+</p>
+<h3>
+    Effects of the Feedback on Design Decisions
+</h3>
+<p>
+    The test is designed to improve usability goals, so we take into account all the results in testing of our prototype, 
+
+and after TA feedback if the
+    improvements are seen as necessary, we go forward with them.
+</p>
+<h2>
+    <a name="usability-test">Usability Test</a>
+</h2>
+<p>
+    Examiners should not say anything or reveal other information to test subjects other than the stated instructions for 
+
+each task during this usability test.
+    Examiners should also not show any gestures during the game play.
+</p>
+<p>
+    Here is the evaluation template for each task being conducted during the test:
+</p>
+<p>
+    Optimal Action: For each task, if the user fully completes the optimal action, the task is considered successful. No 
+
+need to consider revisions in design.
+</p>
+<p>
+    Failing Action: If the user does any one of the failing actions, then the task is considered as failed and design 
+
+decisions needs to be revised.
+</p>
+<p>
+    Observations to be Recorded: These are the observations to be recorded for each task by one of the evaluators. 
+
+Whether the task resulted with optimal or
+    failing action should always be recorded.
+</p>
+<h4>
+    Task 1: Set up the Game
+</h4>
+<p>
+    <strong>Instructions:</strong>
+    The application is now opened. Please proceed to set up the game, but don’t start playing.
+</p>
+<p>
+    <strong>Optimal Action:</strong>
+    The user presses on “Connect to Facebook” and allows the application to access her information or presses on 
+
+“Continue without Facebook” button.
+</p>
+<p>
+    <strong>Failing Action:</strong>
+    The user doesn’t know where to click on the screen and/or it takes more than 20 seconds for the user to set up
+</p>
+<p>
+    <strong>Observations to be Recorded:</strong>
+    How many seconds the set up takes
+</p>
+<h4>
+    Task 2: Learn how to Play
+</h4>
+<p>
+    <strong>Instructions:</strong>
+    Please take a look at instructions on how to play the game.
+</p>
+<p>
+    <strong>Optimal Action:</strong>
+    The user swipes on the screen to see the next how to play instructions.
+</p>
+<p>
+    <strong>Failing Action:</strong>
+    The user does not know how to go through the instructions or does not realize she has to swipe to see the further 
+
+instructions.
+</p>
+<p>
+    <strong>Observations to be Recorded:</strong>
+    How many times does the user interact with the screen before she understands the swipe action?
+</p>
+<h4>
+    Task 3: Start the Game and Play
+</h4>
+<p>
+    <strong>Instructions:</strong>
+    You can now start playing.
+</p>
+<p>
+    <strong>Optimal Action: </strong>
+    The user clicks on “Play Game”, then presses on “Start” after choosing number of pairs. Then proceeds to Level 1: 
+
+Clicks “I’m ready” after seeing the first
+    pair of cards.
+</p>
+<p>
+    <strong>Failing Action:</strong>
+    The user spends more than 20 seconds trying to interact with pair selection screen, or she does not recognize the 
+
+“I’m Ready” button.
+</p>
+<p>
+    <strong>Observations to be Recorded:</strong>
+    Time spent with interacting with the pair selection screen and time spent recognizing “I’m Ready” button
+</p>
+<h4>
+    Task 4: Start Playing at Level 1
+</h4>
+<p>
+    <strong>Instructions:</strong>
+    No instructions necessary. Let the user continue from previous task and record observations.
+</p>
+<p>
+    <strong>Optimal Action:</strong>
+    The user drags and drops the person onto the object they like.
+</p>
+<p>
+    <strong>Failing Action:</strong>
+    The user spends more than 20 seconds understanding the drag &amp; drop action.
+</p>
+<p>
+    <strong>Observations to be Recorded:</strong>
+    Time spent to successfully drag and drop the person onto the object they like.
+</p>
+<h4>
+    Task 5: Continue to Next Level and Restart Level
+</h4>
+<p>
+    <strong>Instructions:</strong>
+    Please replay this level after completing.
+</p>
+<p>
+    <strong>Optimal Action:</strong>
+    The user presses “Continue to Next Level”, and successfully matches 2 people with the things they like and presses 
+
+Replay Level then completes the level
+    again.
+</p>
+<p>
+    <strong>Failing Action:</strong>
+    The user fails to press Continue to Next Level or Replay Level within 20 seconds.
+</p>
+<p>
+    <strong>Observations to be Recorded:</strong>
+    Time spent on recognizing “Continue to Next Level” button or “Replay Level” button.
+</p>
+<h4>
+    Task 6: Learn From Failure
+</h4>
+<p>
+    <strong>Instructions:</strong>
+    Now, we want you to fail at this level and learn what you did wrong – and share your learnings with us.
+</p>
+<p>
+    <strong>Optimal Action:</strong>
+    After failing, the user presses “See Previous Answers” and observes her mistakes and successfully shares her correct 
+
+and wrong answers with the examiners.
+</p>
+<p>
+    <strong>Failing Action:</strong>
+    The user fails to recognize “See Previous Answers” button within 10 seconds or the user does not successfully 
+
+identify her correct and wrong answers.
+</p>
+<p>
+    <strong>Observations to be Recorded:</strong>
+    Time spent on recognizing “Continue to Next Level” button, time spent identifying the correct and wrong answers.
+</p>
+<h4>
+    Task 7: Start at a Different Level
+</h4>
+<p>
+    <strong>Instructions:</strong>
+    Now, please start the game at 3 pairs of cards.
+</p>
+<p>
+    <strong>Optimal Action:</strong>
+    The user presses on “Restart Game” and presses the up arrow to increase the game level, then presses “Start”.
+</p>
+<p>
+    <strong>Failing Action:</strong>
+    The user spends more than 15 seconds for this task.
+</p>
+<p>
+    <strong>Observations to be Recorded:</strong>
+    How many seconds spent on this task?
+</p>
+<h2>
+    <a name="heuristic-evaluation">Heuristic Evaluation</a>
+</h2>
+<p>
+    We use heuristic evaluation to test our usability goals and get some expert advice on how to improve our design.
+</p>
+<h3>
+    1. Encourage the User to Learn by Failure
+</h3>
+<p>
+    <strong>Description:</strong>
+    The end goal of Acememo is to improve the short term memory of the user, so we want the user to learn by her failures 
+
+to improve her short term memory.
+</p>
+<p>
+    <strong>Question:</strong>
+    Is the user encouraged to learn from his/her failures? If not, can you think of any improvements to make this 
+
+possible?
+</p>
+<h3>
+    2. Tailoring for Users of Different Experience Levels
+</h3>
+<p>
+    <strong>Description:</strong>
+    Personas of people with short term memory can vary a lot. It can be a young drug user or an old person suffering from 
+
+dementia. They might have used a
+    smartphone or not. They might have a Facebook account or not.
+</p>
+<p>
+    <strong>Question:</strong>
+    Do you think the current design is tailored to users of different experience levels? If not, how could this be 
+
+improved?
+</p>
+<h3>
+    3. User Interface Requires Minimal Learning
+</h3>
+<p>
+    <strong>Description:</strong>
+    Since the game already requires some usage of memory, the user should not be further confused by being forced to 
+
+memorize user interface actions. All the
+    UI elements should be easy to understand and require minimal learning.
+</p>
+<p>
+    <strong>Question:</strong>
+    Are all the UI gestures such as drag &amp; drop obvious? Is there a learning curve for these actions? If so, how can 
+
+this be improved?
+</p>
+<h3>
+    4. Simplicity of the User Interface
+</h3>
+<p>
+    <strong>Description:</strong>
+    In order to cater to all users with different experience level, it is important to make sure that user interface is 
+
+free from clutter. All the buttons and
+    workflows of the game should be minimal. Information displayed on the screen should not distract the user.
+</p>
+<p>
+    <strong>Question:</strong>
+    Is there any UI element, activity or information that is excessive? If so, how can a simpler workflow can be achieved 
+
+by removing it?
+</p>
+<h3>
+    5. Gameplay “How-to” is Accessible
+</h3>
+<p>
+    <strong>Description:</strong>
+    Although the game is simple and most likely won’t require the user to read a manual, it should provide accessible 
+
+how-to information for users with lower
+    experience level in mobile device usage.
+</p>
+<p>
+    <strong>Question:</strong>
+    Do you think our “how to play the game” instructions are accessible and clear? If not, how can it be improved?
+</p>
+<h3>
+    6. Mobile Gameplay Experience
+</h3>
+<p>
+    <strong>Description:</strong>
+    Acememo is tailored for mobile gameplay experience. Users should be able to play it while waiting for a bus or 
+
+waiting on a line. They can play it
+    on-the-go or on leisure.
+</p>
+<p>
+    <strong>Question:</strong>
+    Do you think Acememo completely suits the mobile experience? What features does it lack for mobile gameplay, if there 
+
+is any?
+</p>
+
+<h2><a name="contributions">Summary of Individual Contributions</a></h2>
+<p><strong>Emir Aydin: </strong> Usability Testing + Heuristic Evaluation</p>
+<p><strong>Alison Van Der Wee: </strong> Prototype Development</p>
+<p><strong>Ruofan Wu: </strong> User Manual</p>
+
+
 						</section>
 					
 					</div>
