@@ -9,12 +9,13 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/howToPlayTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/app_name" />
+        android:textSize="35sp"
+        android:text="@string/howToPlay" />
 
     <HorizontalScrollView
         android:id="@+id/howToPlay"
