@@ -215,5 +215,5 @@ pip-log.txt
 .mr.developer.cfg
 
 # Android / Eclipse
-BuildConfig.java
-project.properties
+App/gen/com/example/acemenu/BuildConfig.java
+App/project.properties
