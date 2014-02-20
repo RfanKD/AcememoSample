@@ -213,3 +213,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+# Android / Eclipse
+App/gen/com/example/acemenu/BuildConfig.java
+App/project.properties
