@@ -1,4 +1,6 @@
-package com.example.acemenu;
+package com.example.acememo;
+
+import com.example.acemenu.R;
 
 import android.app.Activity;
 import android.content.Context;
