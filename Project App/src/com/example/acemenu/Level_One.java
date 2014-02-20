@@ -41,7 +41,7 @@ public class Level_One extends Activity {
 		      ClipData data = ClipData.newPlainText("", "");
 		      DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
 		      view.startDrag(data, shadowBuilder, view, 0);
-		      view.setVisibility(View.VISIBLE);
+		      view.setVisibility(View.INVISIBLE);
 		      return true;
 		    } else {
 		    	return false;

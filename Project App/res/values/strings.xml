@@ -7,5 +7,6 @@
     <string name="Login">Login to Facebook</string>
     <string name="instr1">Match the people you know with the things they like!</string>
 	<string name="instr2">Drag the people to the images of the things they like.</string>
+	<string name="level">0</string>
     
 </resources>

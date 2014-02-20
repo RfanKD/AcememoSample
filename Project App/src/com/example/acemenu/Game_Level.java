@@ -11,11 +11,16 @@ import android.widget.Button;
 
 public class Game_Level extends Activity{
 	
+	private int levelNumber;
+	
 	Button buttonToLevelOne;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.game_level_menu);
+		
+		//findViewById(R.id.editText1).set
+		
 		addListenerOnButton();
 	}
 	
