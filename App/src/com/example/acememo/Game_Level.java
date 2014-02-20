@@ -1,6 +1,6 @@
 package com.example.acememo;
 
-import com.example.acemenu.R;
+import com.example.acememo.R;
 
 import android.app.Activity;
 import android.content.Context;
