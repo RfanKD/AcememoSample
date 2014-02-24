@@ -22,13 +22,16 @@
         android:layout_width="match_parent"
         android:layout_marginTop="25dp"
         android:layout_height="300dp"
-        android:layout_alignParentLeft="true" >
+        android:layout_alignParentLeft="true" 
+        android:scrollbarAlwaysDrawHorizontalTrack="true">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clipChildren="true"
             android:orientation="horizontal" >
+            
+            
             
             <TextView
                 android:id="@+id/instruction1"
@@ -38,7 +41,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="20dp"
-                android:text="@string/instr1" />
+                android:text="@string/instr1"/>
 
             <TextView
 		        android:id="@+id/instruction2"
@@ -48,22 +51,52 @@
 		        android:layout_marginBottom="20dp"
 		        android:layout_alignParentBottom="true"
 		        android:layout_toRightOf="@+id/instruction1"
-		        android:text="@string/instr2" />
+		        android:text="@string/instr2"/>
+
+            <ImageView
+                android:id="@+id/instr1image"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_above="@+id/instruction1"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/instructions1" />
             
-            
+           <ImageView
+                android:id="@+id/instr2image"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_above="@+id/instruction2"
+                android:layout_toRightOf="@+id/instr1image"
+                android:src="@drawable/instruction2" />
             
         </RelativeLayout>
     </HorizontalScrollView>
 
     
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/facebookLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
         android:text="@string/Login" />
-    
+
+    <ProgressBar
+        android:id="@+id/facebookSync"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/facebookLoginButton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/startGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/facebookLoginButton"
+        android:layout_alignBottom="@+id/facebookLoginButton"
+        android:layout_centerHorizontal="true"
+        android:text="@string/startGame" />
 
 </RelativeLayout>

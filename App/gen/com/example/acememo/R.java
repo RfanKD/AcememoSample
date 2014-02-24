@@ -38,24 +38,36 @@ public final class R {
         public static final int arrowupblue=0x7f020001;
         public static final int emir=0x7f020002;
         public static final int ic_launcher=0x7f020003;
+        public static final int instruction2=0x7f020004;
+        public static final int instructions1=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000a;
-        public static final int button1=0x7f090004;
-        public static final int button2=0x7f090005;
-        public static final int button3=0x7f090007;
-        public static final int button4=0x7f090008;
-        public static final int editText1=0x7f090006;
+        public static final int action_settings=0x7f090014;
+        public static final int allow=0x7f09000e;
+        public static final int bottomblue=0x7f09000c;
+        public static final int button1=0x7f090010;
+        public static final int button2=0x7f090011;
+        public static final int disallow=0x7f09000f;
+        public static final int editText1=0x7f090012;
+        public static final int facebookInstructions=0x7f09000d;
+        public static final int facebookLoginButton=0x7f090006;
+        public static final int facebookSync=0x7f090007;
+        public static final int facebookTitle=0x7f090009;
         public static final int howToPlay=0x7f090001;
         public static final int howToPlayTitle=0x7f090000;
-        public static final int imageView1=0x7f090009;
+        public static final int imageView1=0x7f090013;
+        public static final int instr1image=0x7f090004;
+        public static final int instr2image=0x7f090005;
         public static final int instruction1=0x7f090002;
         public static final int instruction2=0x7f090003;
+        public static final int leftblue=0x7f09000a;
+        public static final int rightblue=0x7f09000b;
+        public static final int startGame=0x7f090008;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int game_level_menu=0x7f030001;
-        public static final int home_menu=0x7f030002;
+        public static final int facebook_login=0x7f030001;
+        public static final int game_level_menu=0x7f030002;
         public static final int level_one=0x7f030003;
     }
     public static final class menu {
@@ -64,12 +76,17 @@ public final class R {
     public static final class string {
         public static final int Login=0x7f060003;
         public static final int action_settings=0x7f060001;
+        public static final int allow=0x7f060009;
         public static final int app_name=0x7f060000;
+        public static final int disallow=0x7f06000a;
+        public static final int facebook=0x7f06000c;
+        public static final int facebookinstr=0x7f06000b;
         public static final int hello_world=0x7f060002;
         public static final int howToPlay=0x7f060004;
         public static final int instr1=0x7f060005;
         public static final int instr2=0x7f060006;
         public static final int level=0x7f060007;
+        public static final int startGame=0x7f060008;
     }
     public static final class style {
         /** 
