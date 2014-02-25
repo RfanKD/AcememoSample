@@ -73,7 +73,7 @@ public class Level_One extends Activity {
 			public void onClick(View arg0){
 				Intent continueTO = new Intent(context,Continue_TO.class);
 				startActivity(continueTO);
-				//finish();
+				finish();
 			}
 		});
 		

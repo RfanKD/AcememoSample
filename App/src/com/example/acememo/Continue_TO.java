@@ -32,7 +32,7 @@ public class Continue_TO extends Activity{
 			public void onClick(View arg0){
 				Intent intent1 = new Intent(context,Level_Two.class);
 				startActivity(intent1);
-				//finish();
+				finish();
 			}
 		});
 	}
