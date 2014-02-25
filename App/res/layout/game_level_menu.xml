@@ -23,6 +23,17 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="76dp"
         android:background="@drawable/arrowupblue" />
+    
+      <TextView
+          android:id="@+id/startWithText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_above="@+id/gameLevelText"
+          android:ems="10"
+          android:gravity="center"
+          android:textColor="#000000"
+          android:textSize="32sp" 
+          android:text="@string/startWith"/>
 
       <TextView
           android:id="@+id/gameLevelText"
@@ -39,6 +50,17 @@
           android:textSize="32sp" 
           android:text="@string/level"/>
 
+      <TextView
+          android:id="@+id/pairsText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/gameLevelText"
+          android:ems="10"
+          android:gravity="center"
+          android:textColor="#000000"
+          android:textSize="32sp" 
+          android:text="@string/pairs"/>      
+ 
       <Button
           android:id="@+id/button3"
           android:layout_width="wrap_content"
