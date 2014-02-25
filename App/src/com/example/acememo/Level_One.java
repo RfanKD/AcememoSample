@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class Level_One extends Activity {
 	
@@ -28,7 +29,9 @@ public class Level_One extends Activity {
 	String msg;
 	int windowwidth;
 	int windowheight;   
-	ImageView image1;
+	ImageView image1, heart, likesImage;
+	TextView statement;
+	Button ready;
 	
 	
 	@Override
@@ -37,10 +40,28 @@ public class Level_One extends Activity {
 		setContentView(R.layout.level_one);
 			
         image1 = (ImageView) findViewById(R.id.imageView1);
-        image1.setOnTouchListener(new  MyTouchListener());
-        //findViewById(R.id.levelOneRelative)
-        findViewById(R.id.levelOneRelative).setOnDragListener(new MyDragListener());
-        //System.out.println("im here0");
+        heart = (ImageView) findViewById(R.id.likes);
+        likesImage = (ImageView) findViewById(R.id.whatTheyLike1);
+        statement = (TextView) findViewById(R.id.statement1);
+		addListenerOnButton();
+	}
+	
+	public void addListenerOnButton(){
+		final Context context = this ;
+		
+		ready = (Button) findViewById(R.id.imReady);
+		ready.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				 image1.setOnTouchListener(new  MyTouchListener());
+			        findViewById(R.id.levelOneRelative).setOnDragListener(new MyDragListener());
+				heart.setVisibility(View.INVISIBLE);
+				statement.setVisibility(View.INVISIBLE);
+				ready.setVisibility(View.INVISIBLE);
+			}
+		});
+		
 	}
 	
 	private final class MyTouchListener implements OnTouchListener {

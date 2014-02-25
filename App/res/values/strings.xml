@@ -15,5 +15,8 @@
 	<string name="facebookinstr">Would you like this game to access your Facebook information?</string>
 	<string name="facebook">Facebook</string>
 	<string name="play">Play Game</string>
+	<string name="level1">Level 1</string>
+	<string name="level1Statement">Emir Likes Pizza</string>
+	<string name="ready">I\'m Ready!</string>
     
 </resources>

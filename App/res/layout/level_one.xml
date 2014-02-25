@@ -3,15 +3,66 @@
     android:id="@+id/levelOneRelative"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+    
+    <TextView
+        android:id="@+id/levelNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="35sp"
+        android:text="@string/level1" />
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="31dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="90dp"
         android:src="@drawable/emir" />
-
+    
+    <ImageView
+        android:id="@+id/likes"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/heart"/>
+    
+        <ImageView
+        android:id="@+id/whatTheyLike1"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/likes"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="90dp"
+        android:src="@drawable/pizza"/>
+        
+    <TextView
+        android:id="@+id/statement1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="28sp"
+        android:text="@string/level1Statement" />
+    
+    
+  <Button
+        android:id="@+id/imReady"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:text="@string/ready" />
 </RelativeLayout>

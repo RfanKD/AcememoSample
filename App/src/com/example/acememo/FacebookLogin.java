@@ -33,6 +33,7 @@ public class FacebookLogin extends Activity{
 				MainActivity.screenStatus = 2; 
 				Intent mainActivitySyncFacebook = new Intent(context,MainActivity.class);
 				startActivity(mainActivitySyncFacebook);
+				finish();
 			}
 		});
 		
@@ -45,6 +46,7 @@ public class FacebookLogin extends Activity{
 				MainActivity.screenStatus = 3; 
 				Intent mainActivityStartGame = new Intent(context,MainActivity.class);
 				startActivity(mainActivityStartGame);
+				finish();
 			}
 		});
 		

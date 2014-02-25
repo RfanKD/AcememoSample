@@ -58,8 +58,8 @@ public class Game_Level extends Activity{
 			}
 		});
 			
-		buttonToDecreaseLevel = (Button) findViewById(R.id.button2);
-		buttonToDecreaseLevel.setOnClickListener (new OnClickListener() {
+		buttonToIncreaseLevel = (Button) findViewById(R.id.button2);
+		buttonToIncreaseLevel.setOnClickListener (new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0){
@@ -83,6 +83,7 @@ public class Game_Level extends Activity{
 						default: intent = new Intent(context,MainActivity.class);
 					}
 					startActivity(intent);
+					finish();
 				}
 		});
 	}
