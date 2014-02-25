@@ -20,5 +20,6 @@
 	<string name="level1">Level 1</string>
 	<string name="level1Statement">Emir Likes Pizza</string>
 	<string name="ready">I\'m Ready!</string>
+	<string name="playWithout">Play Without Facebook</string>
     
 </resources>
