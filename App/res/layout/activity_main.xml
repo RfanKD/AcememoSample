@@ -77,10 +77,18 @@
         android:id="@+id/facebookLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/playWithoutFacebook"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:text="@string/Login" />
+    
+   <Button
+        android:id="@+id/playWithoutFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="35dp"
-        android:text="@string/Login" />
+        android:text="@string/playWithout" />
 
     <ProgressBar
         android:id="@+id/facebookSync"
@@ -88,15 +96,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/facebookLoginButton"
+        android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/startGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/facebookLoginButton"
-        android:layout_alignBottom="@+id/facebookLoginButton"
+        android:layout_alignTop="@+id/facebookLoginButton"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
         android:text="@string/startGame" />
 
 </RelativeLayout>

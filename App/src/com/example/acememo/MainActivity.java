@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 	final static int LOADING = 2;
 	final static int START = 3; 
 	
-	Button buttonToHome;
+	Button facebookLogin, playWithoutFacebook;
 	Button startGame;
 	ProgressBar loadingAccount;
 	static int screenStatus = NEW;
@@ -33,19 +33,22 @@ public class MainActivity extends Activity {
 	}
 	
 	public void setView(){
-		buttonToHome = (Button) findViewById(R.id.facebookLoginButton);
+		facebookLogin = (Button) findViewById(R.id.facebookLoginButton);
 		startGame = (Button) findViewById(R.id.startGame);
 		loadingAccount = (ProgressBar) findViewById(R.id.facebookSync);
+		playWithoutFacebook = (Button) findViewById(R.id.playWithoutFacebook);
 		
-		buttonToHome.setVisibility(View.INVISIBLE);
+		playWithoutFacebook.setVisibility(View.INVISIBLE);
+		facebookLogin.setVisibility(View.INVISIBLE);
 		startGame.setVisibility(View.INVISIBLE);
 		loadingAccount.setVisibility(View.INVISIBLE);
 		
 		if(screenStatus == NEW){
-			buttonToHome.setVisibility(View.VISIBLE);
+			facebookLogin.setVisibility(View.VISIBLE);
+			playWithoutFacebook.setVisibility(View.VISIBLE);
 		}else if(screenStatus == LOADING){
 			loadingAccount.setVisibility(View.VISIBLE);
-			timerDelayRemoveProgressBar(3600, loadingAccount);
+			timerDelayRemoveProgressBar(2400, loadingAccount);
 			screenStatus = START;
 		}else if(screenStatus == START){
 			startGame.setVisibility(View.VISIBLE);
@@ -65,8 +68,7 @@ public class MainActivity extends Activity {
 	public void addListenerOnButton(){
 		final Context context = this ;
 		
-		buttonToHome = (Button) findViewById(R.id.facebookLoginButton);
-		buttonToHome.setOnClickListener (new OnClickListener() {
+		facebookLogin.setOnClickListener (new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0){
@@ -76,7 +78,19 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-	startGame.setOnClickListener (new OnClickListener() {
+		
+		playWithoutFacebook.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				playWithoutFacebook.setVisibility(View.INVISIBLE);
+				facebookLogin.setVisibility(View.INVISIBLE);
+				startGame.setVisibility(View.VISIBLE);
+				screenStatus = START;
+			}
+		});	
+		
+		startGame.setOnClickListener (new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0){
