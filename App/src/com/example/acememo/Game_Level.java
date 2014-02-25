@@ -49,8 +49,8 @@ public class Game_Level extends Activity{
 				
 				levelNumber -- ;
 				
-				if (levelNumber <= 0){
-					levelNumber = 0;
+				if (levelNumber <= 1){
+					levelNumber = 1;
 				}
 				
 				String newLevel = Integer.toString(levelNumber); 
@@ -64,6 +64,10 @@ public class Game_Level extends Activity{
 			@Override
 			public void onClick(View arg0){
 				  levelNumber ++ ;
+				  
+				  if (levelNumber >= 2){
+						levelNumber = 2;
+					}
 				 
 				  String newLevel = Integer.toString(levelNumber);
 				  levelString.setText(newLevel);
@@ -79,6 +83,8 @@ public class Game_Level extends Activity{
 					
 					switch(levelNumber){
 						case 1: intent= new Intent(context,Level_One.class);
+								break;
+						case 2: intent= new Intent(context,Level_Two.class);
 								break;
 						default: intent = new Intent(context,MainActivity.class);
 					}

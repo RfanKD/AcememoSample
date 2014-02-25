@@ -8,7 +8,7 @@
     <string name="howToPlay">How to Play:</string>
     <string name="instr1">Match the people you know with the things they like!</string>
 	<string name="instr2">Drag the people to the images of the things they like.</string>
-	<string name="level">0</string>
+	<string name="level">1</string>
 	<string name="startGame">Start Playing!</string>
 	<string name="allow">Allow</string>
 	<string name="disallow">Do Not Allow</string>
@@ -19,7 +19,13 @@
 	<string name="pairs">pair(s)</string>
 	<string name="level1">Level 1</string>
 	<string name="level1Statement">Emir Likes Pizza</string>
+	<string name="level2StatementA">Raph Likes Photography</string>
+	<string name="level2StatementB">Alison Likes biking</string>
 	<string name="ready">I\'m Ready!</string>
+	<string name="continueTo">Continue to Next Level</string>
+	<string name="gameover">Game Over</string>
+	<string name="restart">Restart Game</string>
 	<string name="playWithout">Play Without Facebook</string>
+	<string name="Done">Done</string>
     
 </resources>

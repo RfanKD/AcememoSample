@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView3"
+        android:layout_alignLeft="@+id/imageView2"
+        android:src="@drawable/biking" />
+
+      <ImageView
+          android:id="@+id/imageView5"
+          android:layout_width="50dp"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="70dp"
+          android:src="@drawable/heart" />
+
+      <ImageView
+          android:id="@+id/imageView1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignTop="@+id/imageView5"
+          android:layout_marginTop="30dp"
+          android:layout_toLeftOf="@+id/imReady"
+          android:src="@drawable/raph" />
+         
+      <ImageView
+          android:id="@+id/imageView3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/imageView1"
+          android:layout_below="@+id/imageView5"
+          android:layout_marginTop="45dp"
+          android:src="@drawable/alison" />
+
+      <ImageView
+          android:id="@+id/imageView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/imageView1"
+          android:layout_toRightOf="@+id/imReady"
+          android:src="@drawable/photography" />
+
+      <ImageView
+          android:id="@+id/imageView6"
+          android:layout_width="50dp"
+          android:layout_height="wrap_content"
+          android:layout_alignLeft="@+id/imageView5"
+          android:layout_below="@+id/imageView5"
+          android:layout_marginTop="15dp"
+          android:src="@drawable/heart" />
+
+       <TextView
+           android:id="@+id/statement1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_above="@+id/imageView3"
+           android:layout_centerHorizontal="true"
+           android:text="@string/level2StatementA"
+           android:textSize="28sp" />
+
+       <TextView
+           android:id="@+id/statement2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/imageView6"
+           android:layout_alignLeft="@+id/imageView3"
+           android:text="@string/level2StatementB"
+           android:textSize="28sp" />
+
+       <Button
+           android:id="@+id/imReady"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+           android:layout_centerHorizontal="true"
+           android:layout_marginBottom="24dp"
+           android:text="@string/ready" />
+
+       <Button
+           android:id="@+id/button1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/imReady"
+           android:layout_centerHorizontal="true"
+           android:text="@string/Done" />
+
+</RelativeLayout>

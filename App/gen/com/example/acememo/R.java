@@ -34,65 +34,81 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int arrowdownblue=0x7f020000;
-        public static final int arrowupblue=0x7f020001;
-        public static final int emir=0x7f020002;
-        public static final int heart=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int instruction2=0x7f020005;
-        public static final int instructions1=0x7f020006;
-        public static final int pizza=0x7f020007;
+        public static final int alison=0x7f020000;
+        public static final int arrowdownblue=0x7f020001;
+        public static final int arrowupblue=0x7f020002;
+        public static final int biking=0x7f020003;
+        public static final int emir=0x7f020004;
+        public static final int heart=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int instruction2=0x7f020007;
+        public static final int instructions1=0x7f020008;
+        public static final int photography=0x7f020009;
+        public static final int pizza=0x7f02000a;
+        public static final int raph=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001e;
-        public static final int allow=0x7f09000f;
-        public static final int bottomblue=0x7f09000d;
-        public static final int button1=0x7f090011;
+        public static final int action_settings=0x7f090024;
+        public static final int allow=0x7f090010;
+        public static final int bottomblue=0x7f09000e;
+        public static final int button1=0x7f09000a;
         public static final int button2=0x7f090012;
         public static final int button3=0x7f090016;
-        public static final int disallow=0x7f090010;
-        public static final int facebookInstructions=0x7f09000e;
+        public static final int disallow=0x7f090011;
+        public static final int facebookInstructions=0x7f09000f;
         public static final int facebookLoginButton=0x7f090006;
         public static final int facebookSync=0x7f090008;
-        public static final int facebookTitle=0x7f09000a;
+        public static final int facebookTitle=0x7f09000b;
         public static final int gameLevelText=0x7f090014;
         public static final int howToPlay=0x7f090001;
         public static final int howToPlayTitle=0x7f090000;
         public static final int imReady=0x7f09001d;
         public static final int imageView1=0x7f090019;
+        public static final int imageView2=0x7f090020;
+        public static final int imageView3=0x7f09001f;
+        public static final int imageView4=0x7f09001e;
+        public static final int imageView5=0x7f090021;
+        public static final int imageView6=0x7f090022;
         public static final int instr1image=0x7f090004;
         public static final int instr2image=0x7f090005;
         public static final int instruction1=0x7f090002;
         public static final int instruction2=0x7f090003;
-        public static final int leftblue=0x7f09000b;
+        public static final int leftblue=0x7f09000c;
         public static final int levelNum=0x7f090018;
         public static final int levelOneRelative=0x7f090017;
         public static final int likes=0x7f09001a;
         public static final int pairsText=0x7f090015;
         public static final int playWithoutFacebook=0x7f090007;
-        public static final int rightblue=0x7f09000c;
+        public static final int rightblue=0x7f09000d;
         public static final int startGame=0x7f090009;
         public static final int startWithText=0x7f090013;
         public static final int statement1=0x7f09001c;
+        public static final int statement2=0x7f090023;
         public static final int whatTheyLike1=0x7f09001b;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int facebook_login=0x7f030001;
-        public static final int game_level_menu=0x7f030002;
-        public static final int level_one=0x7f030003;
+        public static final int continue_next=0x7f030001;
+        public static final int facebook_login=0x7f030002;
+        public static final int game_level_menu=0x7f030003;
+        public static final int level_one=0x7f030004;
+        public static final int level_two=0x7f030005;
+        public static final int result=0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f080000;
     }
     public static final class string {
+        public static final int Done=0x7f060019;
         public static final int Login=0x7f060003;
         public static final int action_settings=0x7f060001;
         public static final int allow=0x7f060009;
         public static final int app_name=0x7f060000;
+        public static final int continueTo=0x7f060015;
         public static final int disallow=0x7f06000a;
         public static final int facebook=0x7f06000c;
         public static final int facebookinstr=0x7f06000b;
+        public static final int gameover=0x7f060016;
         public static final int hello_world=0x7f060002;
         public static final int howToPlay=0x7f060004;
         public static final int instr1=0x7f060005;
@@ -100,10 +116,13 @@ public final class R {
         public static final int level=0x7f060007;
         public static final int level1=0x7f060010;
         public static final int level1Statement=0x7f060011;
+        public static final int level2StatementA=0x7f060012;
+        public static final int level2StatementB=0x7f060013;
         public static final int pairs=0x7f06000f;
         public static final int play=0x7f06000d;
-        public static final int playWithout=0x7f060013;
-        public static final int ready=0x7f060012;
+        public static final int playWithout=0x7f060018;
+        public static final int ready=0x7f060014;
+        public static final int restart=0x7f060017;
         public static final int startGame=0x7f060008;
         public static final int startWith=0x7f06000e;
     }

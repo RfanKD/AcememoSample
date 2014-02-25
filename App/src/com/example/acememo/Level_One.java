@@ -31,7 +31,7 @@ public class Level_One extends Activity {
 	int windowheight;   
 	ImageView image1, heart, likesImage;
 	TextView statement;
-	Button ready;
+	Button ready,done;
 	
 	
 	@Override
@@ -43,6 +43,9 @@ public class Level_One extends Activity {
         heart = (ImageView) findViewById(R.id.likes);
         likesImage = (ImageView) findViewById(R.id.whatTheyLike1);
         statement = (TextView) findViewById(R.id.statement1);
+        done = (Button)findViewById(R.id.button1);
+        done.setVisibility(View.INVISIBLE);
+        
 		addListenerOnButton();
 	}
 	
@@ -59,6 +62,18 @@ public class Level_One extends Activity {
 				heart.setVisibility(View.INVISIBLE);
 				statement.setVisibility(View.INVISIBLE);
 				ready.setVisibility(View.INVISIBLE);
+				done.setVisibility(View.VISIBLE);
+			}
+		});
+		
+		
+		done.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				Intent continueTO = new Intent(context,Continue_TO.class);
+				startActivity(continueTO);
+				//finish();
 			}
 		});
 		
@@ -117,6 +132,8 @@ public class Level_One extends Activity {
 	private boolean dropEventNotHandled(DragEvent dragEvent) {
         return !dragEvent.getResult();
 	}
+	
+	
 	
 	
 	
