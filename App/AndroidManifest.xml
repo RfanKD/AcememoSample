@@ -23,11 +23,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="Continue_TO"
+            android:screenOrientation="portrait"></activity>
         <activity android:name="FacebookLogin"
             android:screenOrientation="portrait"></activity>
         <activity android:name="Game_Level"
             android:screenOrientation="portrait"></activity>
         <activity android:name="Level_One"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="Level_Two"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="Result"
             android:screenOrientation="portrait"></activity>
     </application>
 
