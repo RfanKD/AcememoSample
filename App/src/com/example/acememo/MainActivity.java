@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0){
 				Intent intent1 = new Intent(context,FacebookLogin.class);
 				startActivity(intent1);
-				finish();
+
 			}
 		});
 		
@@ -96,7 +96,6 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0){
 				Intent intent2 = new Intent(context,Game_Level.class);
 				startActivity(intent2);
-				finish();
 			}
 		});
 		

@@ -15,22 +15,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textSize="35sp"
-        android:text="@string/howToPlay" />
-
-    <HorizontalScrollView
-        android:id="@+id/howToPlay"
-        android:layout_width="match_parent"
-        android:layout_marginTop="25dp"
-        android:layout_height="300dp"
-        android:layout_alignParentLeft="true" 
-        android:scrollbarAlwaysDrawHorizontalTrack="true">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clipChildren="true"
-            android:orientation="horizontal" >
+        android:text="@string/howToPlay" />            
             
+            <ImageView
+                android:id="@+id/instr1image"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/howToPlayTitle"
+                android:layout_centerInParent="true"
+                android:src="@drawable/instructions1" />
             
             
             <TextView
@@ -39,40 +33,35 @@
                 android:textSize="25sp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="20dp"
+                android:layout_below="@+id/instr1image"
                 android:text="@string/instr1"/>
+            
+                        
+           <ImageView
+                android:id="@+id/instr2image"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/instruction1"
+                android:src="@drawable/instruction2" />
 
             <TextView
 		        android:id="@+id/instruction2"
 		        android:textSize="25sp"
 		        android:layout_width="330dp"
 		        android:layout_height="wrap_content"
-		        android:layout_marginBottom="20dp"
-		        android:layout_alignParentBottom="true"
-		        android:layout_toRightOf="@+id/instruction1"
+		        android:layout_below="@+id/instr2image"
 		        android:text="@string/instr2"/>
-
-            <ImageView
-                android:id="@+id/instr1image"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:layout_above="@+id/instruction1"
-                android:layout_alignParentLeft="true"
-                android:src="@drawable/instructions1" />
             
-           <ImageView
-                android:id="@+id/instr2image"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:layout_above="@+id/instruction2"
-                android:layout_toRightOf="@+id/instr1image"
-                android:src="@drawable/instruction2" />
-            
-        </RelativeLayout>
-    </HorizontalScrollView>
+      <TextView 
+    	    android:id="@+id/blackSeperation"
+			android:layout_below="@+id/instruction2"
+			android:layout_marginTop="40dp"
+			android:layout_alignParentLeft="true"
+    	    android:layout_height="2dp"
+    	    android:layout_width="fill_parent"
+    	    android:background="@color/black"/>
 
-    
     <Button
         android:id="@+id/facebookLoginButton"
         android:layout_width="wrap_content"

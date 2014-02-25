@@ -32,6 +32,7 @@ public class FacebookLogin extends Activity{
 			public void onClick(View arg0){
 				MainActivity.screenStatus = 2; 
 				Intent mainActivitySyncFacebook = new Intent(context,MainActivity.class);
+				mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(mainActivitySyncFacebook);
 				finish();
 			}
@@ -43,8 +44,9 @@ public class FacebookLogin extends Activity{
 			
 			@Override
 			public void onClick(View arg0){
-				MainActivity.screenStatus = 3; 
+				MainActivity.screenStatus = 1; 
 				Intent mainActivityStartGame = new Intent(context,MainActivity.class);
+				mainActivityStartGame.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(mainActivityStartGame);
 				finish();
 			}

@@ -89,7 +89,6 @@ public class Game_Level extends Activity{
 						default: intent = new Intent(context,MainActivity.class);
 					}
 					startActivity(intent);
-					finish();
 				}
 		});
 	}

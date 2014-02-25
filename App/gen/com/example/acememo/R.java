@@ -50,6 +50,7 @@ public final class R {
     public static final class id {
         public static final int action_settings=0x7f090024;
         public static final int allow=0x7f090010;
+        public static final int blackSeperation=0x7f090005;
         public static final int bottomblue=0x7f09000e;
         public static final int button1=0x7f09000a;
         public static final int button2=0x7f090012;
@@ -60,7 +61,6 @@ public final class R {
         public static final int facebookSync=0x7f090008;
         public static final int facebookTitle=0x7f09000b;
         public static final int gameLevelText=0x7f090014;
-        public static final int howToPlay=0x7f090001;
         public static final int howToPlayTitle=0x7f090000;
         public static final int imReady=0x7f09001d;
         public static final int imageView1=0x7f090019;
@@ -69,10 +69,10 @@ public final class R {
         public static final int imageView4=0x7f09001e;
         public static final int imageView5=0x7f090021;
         public static final int imageView6=0x7f090022;
-        public static final int instr1image=0x7f090004;
-        public static final int instr2image=0x7f090005;
+        public static final int instr1image=0x7f090001;
+        public static final int instr2image=0x7f090003;
         public static final int instruction1=0x7f090002;
-        public static final int instruction2=0x7f090003;
+        public static final int instruction2=0x7f090004;
         public static final int leftblue=0x7f09000c;
         public static final int levelNum=0x7f090018;
         public static final int levelOneRelative=0x7f090017;
