@@ -24,21 +24,29 @@
         android:layout_marginRight="76dp"
         android:background="@drawable/arrowupblue" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignTop="@+id/button1"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_toRightOf="@+id/button1"
-        android:gravity="center"
-        android:background="#3f48cc"
-        android:ems="10"
-        android:focusable="false"
-        android:inputType="number" 
-        android:textColor="#FFFFFF"
-        android:textSize="32sp" />
+      <TextView
+          android:id="@+id/gameLevelText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/button1"
+          android:layout_alignTop="@+id/button1"
+       	  android:layout_toLeftOf="@+id/button2"
+          android:layout_toRightOf="@+id/button1"
+          android:background="#3f48cc"
+          android:ems="10"
+          android:gravity="center"
+          android:textColor="#FFFFFF"
+          android:textSize="32sp" 
+          android:text="@string/level"/>
+
+      <Button
+          android:id="@+id/button3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_centerHorizontal="true"
+          android:layout_marginBottom="70dp"
+          android:text="@+string/play" />
 
    
 

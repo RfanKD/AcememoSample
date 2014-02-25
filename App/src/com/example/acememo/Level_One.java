@@ -19,23 +19,29 @@ import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 public class Level_One extends Activity {
 	
 	private android.widget.RelativeLayout.LayoutParams layoutParams;
 	String msg;
+	int windowwidth;
+	int windowheight;   
+	ImageView image1;
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.level_one);
-		
-		findViewById(R.id.imageView1).setOnTouchListener(new MyTouchListener());
-		findViewById(R.id.imageView1).setOnDragListener(new MyDragListener());
+			
+        image1 = (ImageView) findViewById(R.id.imageView1);
+        image1.setOnTouchListener(new  MyTouchListener());
+        //findViewById(R.id.levelOneRelative)
+        findViewById(R.id.levelOneRelative).setOnDragListener(new MyDragListener());
+        //System.out.println("im here0");
 	}
-	
-	
 	
 	private final class MyTouchListener implements OnTouchListener {
 		  public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -53,48 +59,42 @@ public class Level_One extends Activity {
 	}
 	private final class MyDragListener implements OnDragListener  {
 			 
-		  public boolean onDrag(View view,  DragEvent event){
-			     switch(event.getAction())                   
+		  public boolean onDrag(View view,  DragEvent event){		  		
+			  	 switch(event.getAction())                   
 		         {
-		            case DragEvent.ACTION_DRAG_STARTED:
-		               layoutParams = (RelativeLayout.LayoutParams) 
-		               view.getLayoutParams();
-		               Log.d(msg, "Action is DragEvent.ACTION_DRAG_STARTED");
-		               // Do nothing
-		               break;
-		            case DragEvent.ACTION_DRAG_ENTERED:
-		               Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENTERED");
-		               int x_cord = (int) event.getX();
-		               int y_cord = (int) event.getY();  
-		               break;
+		            case DragEvent.ACTION_DRAG_ENTERED:  
+		            	return false;
 		            case DragEvent.ACTION_DRAG_EXITED :
-		               Log.d(msg, "Action is DragEvent.ACTION_DRAG_EXITED");
-		               x_cord = (int) event.getX();
-		               y_cord = (int) event.getY();
-		               layoutParams.leftMargin = x_cord;
-		               layoutParams.topMargin = y_cord;
-		               view.setLayoutParams(layoutParams);
-		               break;
-		            case DragEvent.ACTION_DRAG_LOCATION  :
-		               Log.d(msg, "Action is DragEvent.ACTION_DRAG_LOCATION");
-		               x_cord = (int) event.getX();
-		               y_cord = (int) event.getY();
-		               break;
-		            case DragEvent.ACTION_DRAG_ENDED   :
-		               Log.d(msg, "Action is DragEvent.ACTION_DRAG_ENDED");
+		            	 return true;
+		            case DragEvent.ACTION_DRAG_STARTED:
+	                    return true;
+		            case DragEvent.ACTION_DRAG_LOCATION:
+	                    //v.setVisibility(View.VISIBLE);
+	                    return false;
+		            case DragEvent.ACTION_DROP:
+		            	 View dragView = (View) event.getLocalState();
+		               //RelativeLayout containView = (RelativeLayout) view;
+		               //containView.addView(dragView);
+		               System.out.println("im here4");
+		               dragView.setVisibility(View.VISIBLE);   
 		               
 		               break;
-		            case DragEvent.ACTION_DROP:
-		               Log.d(msg, "ACTION_DROP event");
-		               View dragView = (View) event.getLocalState();
-		               dragView.setVisibility(View.VISIBLE);
-		               // Do nothing
-		               break;
-		            default: break;
+		            case DragEvent.ACTION_DRAG_ENDED   :
+		            	View dragView1 = (View) event.getLocalState();
+			               System.out.println("im here5");
+			              
+			               view.setVisibility(View.VISIBLE);
+			               
+			           break;
+		            default: return true;
 		            }
 		            return true;
 		         }
 		  
+	}
+	
+	private boolean dropEventNotHandled(DragEvent dragEvent) {
+        return !dragEvent.getResult();
 	}
 	
 	

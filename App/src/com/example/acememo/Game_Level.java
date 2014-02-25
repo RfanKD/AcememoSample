@@ -9,13 +9,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class Game_Level extends Activity{
 	
 	private int levelNumber;
+
 	
-	Button buttonToLevelOne;
+	Button buttonToDecreaseLevel;
+	Button buttonToIncreaseLevel;
+	Button goToLevel;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,16 +34,57 @@ public class Game_Level extends Activity{
 	public void addListenerOnButton(){
 		final Context context = this ;
 		
-		buttonToLevelOne = (Button) findViewById(R.id.button1);
-		buttonToLevelOne.setOnClickListener (new OnClickListener() {
+		 final TextView levelString = (TextView) findViewById(R.id.gameLevelText);
+		 final String gameLevel = levelString.getText().toString();
+		
+		 levelNumber = Integer.parseInt((String)gameLevel);
+		
+		buttonToDecreaseLevel = (Button) findViewById(R.id.button1);
+		buttonToDecreaseLevel.setOnClickListener (new OnClickListener() {
+			
+			
 			
 			@Override
 			public void onClick(View arg0){
-				Intent intent1 = new Intent(context,Level_One.class);
-				startActivity(intent1);
+				
+				levelNumber -- ;
+				
+				if (levelNumber <= 0){
+					levelNumber = 0;
+				}
+				
+				String newLevel = Integer.toString(levelNumber); 
+				levelString.setText(newLevel);
+			}
+		});
+			
+		buttonToDecreaseLevel = (Button) findViewById(R.id.button2);
+		buttonToDecreaseLevel.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				  levelNumber ++ ;
+				 
+				  String newLevel = Integer.toString(levelNumber);
+				  levelString.setText(newLevel);
 			}
 		});
 		
+		goToLevel = (Button) findViewById(R.id.button3);
+		goToLevel.setOnClickListener (new OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0){
+					Intent intent = null ;
+					
+					switch(levelNumber){
+						case 1: intent= new Intent(context,Level_One.class);
+								break;
+						default: intent = new Intent(context,MainActivity.class);
+					}
+					startActivity(intent);
+				}
+		});
 	}
 	
 }
