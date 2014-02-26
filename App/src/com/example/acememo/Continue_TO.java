@@ -22,8 +22,8 @@ public class Continue_TO extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.continue_next);
-//		message = (TextView) findViewById(R.id.goodJob);
-//		senderClass = getIntent().getStringExtra("sender");
+		//message = (TextView) findViewById(R.id.goodJob);
+		senderClass = getIntent().getStringExtra("sender");
 //		if(senderClass.equals("three")){
 //			message.setText(R.string.oops);
 //		}
@@ -55,7 +55,7 @@ public class Continue_TO extends Activity{
 	
 	private Intent determineNextClass(Context c, String button){
 		
-		Intent intent;
+		Intent intent = null;
 		if(button.equals("continue")){
 			if(senderClass.equals("one")){
 				intent = new Intent(c,Level_Two.class);
