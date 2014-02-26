@@ -22,19 +22,19 @@ public class Continue_TO extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.continue_next);
-		message = (TextView) findViewById(R.id.goodJob);
-		senderClass = getIntent().getStringExtra("sender");
-		if(senderClass.equals("three")){
-			message.setText(R.string.oops);
-		}
+//		message = (TextView) findViewById(R.id.goodJob);
+//		senderClass = getIntent().getStringExtra("sender");
+//		if(senderClass.equals("three")){
+//			message.setText(R.string.oops);
+//		}
+		continueNext = (Button)findViewById(R.id.continueGame);
+		replay = (Button) findViewById(R.id.replay);
 		addListenerOnButton();
 	}
 
 	private void addListenerOnButton() {
 		// TODO Auto-generated method stub
 		final Context context = this;
-		continueNext = (Button)findViewById(R.id.button1);
-		replay = (Button) findViewById(R.id.replay);
 		
 		continueNext.setOnClickListener (new OnClickListener() {
 			@Override
@@ -61,10 +61,8 @@ public class Continue_TO extends Activity{
 				intent = new Intent(c,Level_Two.class);
 			}else if(senderClass.equals("two")){
 				intent = new Intent(c,Level_Three.class);
-			}else{
-				intent = new Intent(c,Result.class);
 			}
-		}else{
+		}else if (button.equals("replay")){
 			if(senderClass.equals("one")){
 				intent = new Intent(c,Level_One.class);
 			}else if(senderClass.equals("two")){

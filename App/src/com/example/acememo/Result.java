@@ -15,20 +15,36 @@ import android.widget.TextView;
 
 public class Result extends Activity{
 	
+	Button goHome;
+	Button reviewAnswer;
+	TextView oopsMessage;
+	TextView endGameMessage;
+	String senderClass;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.result);
-			
+		
+		goHome = (Button) findViewById(R.id.button1);
+		reviewAnswer = (Button) findViewById(R.id.button2);
+		
+		oopsMessage = (TextView) findViewById(R.id.oopsText);
+		endGameMessage = (TextView) findViewById(R.id.pairsText);
+		senderClass = getIntent().getStringExtra("sender");
+		if(senderClass.equals("reviewed")){
+			oopsMessage.setText("");
+			endGameMessage.setX(oopsMessage.getX());
+			endGameMessage.setY(oopsMessage.getY());
+		}
+		
 		addListenerOnButton();
 	}
 
 	private void addListenerOnButton() {
 		// TODO Auto-generated method stub
 		final Context context = this ;
-		Button goHome;
-		
-		goHome = (Button) findViewById(R.id.button1);
+				
 		goHome.setOnClickListener (new OnClickListener() {
 			
 			@Override
@@ -37,6 +53,17 @@ public class Result extends Activity{
 				Intent mainActivitySyncFacebook = new Intent(context,MainActivity.class);
 				mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(mainActivitySyncFacebook);
+				finish();
+			}
+		});
+		
+		reviewAnswer.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				Intent reviewAnswer = new Intent(context,reviewAnswer.class);
+				//mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(reviewAnswer);
 				finish();
 			}
 		});
