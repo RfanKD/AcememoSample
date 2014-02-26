@@ -61,7 +61,8 @@ public class Level_One extends Activity {
 			@Override
 			public void onClick(View arg0){
 				 image1.setOnTouchListener(new  MyTouchListener());
-			        findViewById(R.id.levelOneRelative).setOnDragListener(new MyDragListener());
+			       // findViewById(R.id.levelOneRelative)
+				 likesImage.setOnDragListener(new MyDragListener());
 				heart.setVisibility(View.INVISIBLE);
 				statement.setVisibility(View.INVISIBLE);
 				ready.setVisibility(View.INVISIBLE);
@@ -104,8 +105,9 @@ public class Level_One extends Activity {
 		  public boolean onDrag(View view,  DragEvent event){		  		
 			  	 switch(event.getAction())                   
 		         {
-		            case DragEvent.ACTION_DRAG_ENTERED:  
-		            	return false;
+		            case DragEvent.ACTION_DRAG_ENTERED:
+		            	System.out.println("im here3");
+		            	return true;
 		            case DragEvent.ACTION_DRAG_EXITED :
 		            	 return true;
 		            case DragEvent.ACTION_DRAG_STARTED:
@@ -118,8 +120,14 @@ public class Level_One extends Activity {
 		               //RelativeLayout containView = (RelativeLayout) view;
 		               //containView.addView(dragView);
 		               System.out.println("im here4");
-		               dropX = event.getX();
-		               dropY = event.getY();
+		               
+		               int[] locations = new int[2];
+		               likesImage.getLocationOnScreen(locations);
+		               int x = locations[0];
+		               int y = locations[1];
+		               
+		               dropX = x;
+		               dropY = y ;
 		               
 		               dragView.setX(dropX - dragView.getWidth() / 2 );
 		               dragView.setY(dropY - dragView.getHeight() / 2);
