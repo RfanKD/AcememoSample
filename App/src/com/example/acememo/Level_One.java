@@ -32,6 +32,7 @@ public class Level_One extends Activity {
 	ImageView image1, heart, likesImage;
 	TextView statement, buttonTutorial, actionTutorial;
 	Button ready,done;
+	float dropX, dropY;
 	
 	
 	@Override
@@ -117,6 +118,13 @@ public class Level_One extends Activity {
 		               //RelativeLayout containView = (RelativeLayout) view;
 		               //containView.addView(dragView);
 		               System.out.println("im here4");
+		               dropX = event.getX();
+		               dropY = event.getY();
+		               
+		               dragView.setX(dropX - dragView.getWidth() / 2 );
+		               dragView.setY(dropY - dragView.getHeight() / 2);
+		               
+		               dragView.bringToFront();
 		               dragView.setVisibility(View.VISIBLE);   
 		               
 		               break;
@@ -124,7 +132,7 @@ public class Level_One extends Activity {
 		            	View dragView1 = (View) event.getLocalState();
 			               System.out.println("im here5");
 			              
-			               view.setVisibility(View.VISIBLE);
+			               dragView1.setVisibility(View.VISIBLE);
 			               
 			           break;
 		            default: return true;
