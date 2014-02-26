@@ -33,8 +33,10 @@ public class Result extends Activity{
 			
 			@Override
 			public void onClick(View arg0){
-				Intent goBack = new Intent(context,Game_Level.class);
-				startActivity(goBack);
+				MainActivity.screenStatus = 3; 
+				Intent mainActivitySyncFacebook = new Intent(context,MainActivity.class);
+				mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(mainActivitySyncFacebook);
 				finish();
 			}
 		});

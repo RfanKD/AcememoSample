@@ -33,6 +33,8 @@
     <string name="clickButtonDone">Click the button below once you think you have correctly matched all the people!</string>
 	<string name="levelIsTut">Level 1 is a Tutorial</string>
 	<string name="level2">Level 2</string>
+	<string name="goodJob">Good Job!!</string>
+	<string name="replayLevel">Replay Level</string>
 	<string name="level3Statement1">Emir Likes Pizza</string>
 	<string name="level3Statement2">Raph Likes Photography</string>
 	<string name="level3Statement3">Alison Like Biking</string>

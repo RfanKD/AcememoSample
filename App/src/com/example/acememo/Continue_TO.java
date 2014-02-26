@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 public class Continue_TO extends Activity{
-	Button continueNext;
+	Button continueNext, replay;
 	String senderClass;
 	
 	@Override
@@ -28,24 +28,46 @@ public class Continue_TO extends Activity{
 		// TODO Auto-generated method stub
 		final Context context = this;
 		continueNext = (Button)findViewById(R.id.button1);
+		replay = (Button) findViewById(R.id.replay);
+		
 		continueNext.setOnClickListener (new OnClickListener() {
-			
 			@Override
 			public void onClick(View arg0){
-				Intent intent1;
-				
-				if(senderClass.equals("one")){
-					intent1 = new Intent(context,Level_Two.class);
-				}else if(senderClass.equals("two")){
-					intent1 = new Intent(context,Level_Three.class);
-				}else{
-					intent1 = new Intent(context,Result.class);
-				}
-				 
-				startActivity(intent1);
+				startActivity(determineNextClass(context, "continue"));
 				finish();
 			}
 		});
+		
+		replay.setOnClickListener (new OnClickListener() {
+			@Override
+			public void onClick(View arg0){
+				startActivity(determineNextClass(context, "replay"));
+				finish();
+			}
+		});
+	}
+	
+	private Intent determineNextClass(Context c, String button){
+		
+		Intent intent;
+		if(button.equals("continue")){
+			if(senderClass.equals("one")){
+				intent = new Intent(c,Level_Two.class);
+			}else if(senderClass.equals("two")){
+				intent = new Intent(c,Level_Three.class);
+			}else{
+				intent = new Intent(c,Result.class);
+			}
+		}else{
+			if(senderClass.equals("one")){
+				intent = new Intent(c,Level_One.class);
+			}else if(senderClass.equals("two")){
+				intent = new Intent(c,Level_Two.class);
+			}else{
+				intent = new Intent(c,Level_Three.class);
+			}
+		}
+		return intent;
 	}
 
 }
