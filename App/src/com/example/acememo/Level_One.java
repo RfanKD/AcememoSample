@@ -76,6 +76,7 @@ public class Level_One extends Activity {
 			@Override
 			public void onClick(View arg0){
 				Intent continueTO = new Intent(context,Continue_TO.class);
+				continueTO.putExtra("sender", "one");
 				startActivity(continueTO);
 				finish();
 			}

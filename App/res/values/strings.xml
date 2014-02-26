@@ -18,9 +18,10 @@
 	<string name="startWith">Start With</string>
 	<string name="pairs">pair(s)</string>
 	<string name="level1">Level 1</string>
+	<string name="level3">Level 3</string>
 	<string name="level1Statement">Emir Likes Pizza</string>
 	<string name="level2StatementA">Raph Likes Photography</string>
-	<string name="level2StatementB">Alison Likes biking</string>
+	<string name="level2StatementB">Alison Likes Biking</string>
 	<string name="ready">I\'m Ready!</string>
 	<string name="continueTo">Continue to Next Level</string>
 	<string name="gameover">Game Over</string>
@@ -31,4 +32,12 @@
 	<string name="clickButtonReady">Click the button below once you think you have memorized everything!</string>
     <string name="clickButtonDone">Click the button below once you think you have correctly matched all the people!</string>
 	<string name="levelIsTut">Level 1 is a Tutorial</string>
+	<string name="level2">Level 2</string>
+	<string name="level3Statement1">Emir Likes Pizza</string>
+	<string name="level3Statement2">Raph Likes Photography</string>
+	<string name="level3Statement3">Alison Like Biking</string>
+	<string name="level3Statement4">Emir Likes Music</string>
+	<string name="level3Statement5">Alison Likes Painting</string>
+	<string name="level3Statement6">Raph Likes Computers</string>
+	
 </resources>

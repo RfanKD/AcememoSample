@@ -71,8 +71,8 @@ public class Game_Level extends Activity{
 			public void onClick(View arg0){
 				  levelNumber ++ ;
 				  
-				  if (levelNumber >= 2){
-						levelNumber = 2;
+				  if (levelNumber >= 3){
+						levelNumber = 3;
 					}
 				  
 				  if(levelNumber==1){
@@ -98,6 +98,8 @@ public class Game_Level extends Activity{
 								break;
 						case 2: intent= new Intent(context,Level_Two.class);
 								break;
+						case 3: intent= new Intent(context,Level_Three.class);
+						break;
 						default: intent = new Intent(context,MainActivity.class);
 					}
 					startActivity(intent);
