@@ -16,7 +16,7 @@ public class Level_Two extends Activity{
 	
 	Button ready,done;
 	ImageView image1, image2, heart1, heart2, likesImage,likesImage2;
-	TextView statement;
+	TextView statement1,statement2;
 	
 	
 	
@@ -30,6 +30,8 @@ public class Level_Two extends Activity{
 	     image2 = (ImageView) findViewById(R.id.imageView3);
 	     heart1 = (ImageView) findViewById(R.id.imageView5);
 	     heart2 = (ImageView) findViewById(R.id.imageView6);
+	     statement1 = (TextView) findViewById(R.id.statement1);
+	     statement2 = (TextView) findViewById(R.id.statement2);
 	     likesImage = (ImageView) findViewById(R.id.imageView2);
 	     likesImage2 = (ImageView) findViewById(R.id.imageView4);
 	     done = (Button) findViewById(R.id.button1);
@@ -50,6 +52,8 @@ public class Level_Two extends Activity{
 				heart1.setVisibility(View.INVISIBLE);
 				heart2.setVisibility(View.INVISIBLE);
 				ready.setVisibility(View.INVISIBLE);
+				statement1.setVisibility(View.INVISIBLE);
+				statement2.setVisibility(View.INVISIBLE);
 				done.setVisibility(View.VISIBLE);
 			}
 		});
