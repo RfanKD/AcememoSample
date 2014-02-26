@@ -55,7 +55,7 @@ public class Continue_TO extends Activity{
 	
 	private Intent determineNextClass(Context c, String button){
 		
-		Intent intent;
+		Intent intent = null;
 		if(button.equals("continue")){
 			if(senderClass.equals("one")){
 				intent = new Intent(c,Level_Two.class);
