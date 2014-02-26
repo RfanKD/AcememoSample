@@ -36,9 +36,11 @@ public class Level_Three extends Activity{
 		ImageView item1, item2, item3, item4, item5, item6;
 		TextView statement1, statement2, statement3, statement4, statement5, statement6;
 		Button ready, done;
+		float dropX, dropY;
 		
 		ImageView[] personArray = new ImageView[6];
 		ImageView[] heartArray = new ImageView[6];
+		ImageView[] itemArray = new ImageView[6];
 		TextView[] statementArray = new TextView[6];
 		
 		
@@ -64,6 +66,7 @@ public class Level_Three extends Activity{
 				public void onClick(View arg0){
 					
 					setTouchListeners();
+					findViewById(R.id.level3Relative).setOnDragListener(new MyDragListener());
 					removeUnusedViews();
 					switchImagesAround();
 					ready.setVisibility(View.INVISIBLE);
@@ -104,8 +107,9 @@ public class Level_Three extends Activity{
 			  public boolean onDrag(View view,  DragEvent event){		  		
 				  	 switch(event.getAction())                   
 			         {
-			            case DragEvent.ACTION_DRAG_ENTERED:  
-			            	return false;
+			            case DragEvent.ACTION_DRAG_ENTERED: 
+			            	System.out.println("im here3");
+			            	return true;
 			            case DragEvent.ACTION_DRAG_EXITED :
 			            	 return true;
 			            case DragEvent.ACTION_DRAG_STARTED:
@@ -117,8 +121,17 @@ public class Level_Three extends Activity{
 			            	 View dragView = (View) event.getLocalState();
 			               //RelativeLayout containView = (RelativeLayout) view;
 			               //containView.addView(dragView);
+			              
 			               System.out.println("im here4");
-			               dragView.setVisibility(View.VISIBLE);   
+			           				               
+				               dropX = event.getX();
+				               dropY = event.getY() ;
+				               
+				               dragView.setX(dropX - dragView.getWidth() / 2 );
+				               dragView.setY(dropY - dragView.getHeight() / 2);
+				               
+				               dragView.bringToFront();
+				               dragView.setVisibility(View.VISIBLE);     
 			               
 			               break;
 			            case DragEvent.ACTION_DRAG_ENDED   :
@@ -158,6 +171,12 @@ public class Level_Three extends Activity{
 		private void setTouchListeners(){
 			for(int i=0; i<5; i++){
 				personArray[i].setOnTouchListener(new  MyTouchListener());
+			}
+		}
+		
+		private void setDragListeners(){
+			for(int i=0; i<5; i++){
+				itemArray[i].setOnTouchListener(new  MyTouchListener());
 			}
 		}
  
@@ -216,6 +235,13 @@ public class Level_Three extends Activity{
 			statementArray[2] = statement3;
 			statementArray[3] = statement4;
 			statementArray[4] = statement5;
+			
+			itemArray[0] = item1;
+			itemArray[1] = item2;
+			itemArray[2] = item3;
+			itemArray[3] = item4;
+			itemArray[4] = item5;
+			
 			//statementArray[5] = statement6;
 	}
 
