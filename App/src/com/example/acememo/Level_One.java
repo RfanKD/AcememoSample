@@ -61,8 +61,7 @@ public class Level_One extends Activity {
 			@Override
 			public void onClick(View arg0){
 				 image1.setOnTouchListener(new  MyTouchListener());
-			       // findViewById(R.id.levelOneRelative)
-				 likesImage.setOnDragListener(new MyDragListener());
+			       findViewById(R.id.levelOneRelative).setOnDragListener(new MyDragListener());
 				heart.setVisibility(View.INVISIBLE);
 				statement.setVisibility(View.INVISIBLE);
 				ready.setVisibility(View.INVISIBLE);
@@ -119,15 +118,10 @@ public class Level_One extends Activity {
 		            	 View dragView = (View) event.getLocalState();
 		               //RelativeLayout containView = (RelativeLayout) view;
 		               //containView.addView(dragView);
-		               System.out.println("im here4");
+		               System.out.println("im here4");        
 		               
-		               int[] locations = new int[2];
-		               likesImage.getLocationOnScreen(locations);
-		               int x = locations[0];
-		               int y = locations[1];
-		               
-		               dropX = x;
-		               dropY = y ;
+		               dropX = event.getX();
+		               dropY = event.getY();
 		               
 		               dragView.setX(dropX - dragView.getWidth() / 2 );
 		               dragView.setY(dropY - dragView.getHeight() / 2);

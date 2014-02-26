@@ -23,6 +23,7 @@ public class Level_Two extends Activity{
 	Button ready,done;
 	ImageView image1, image2, heart1, heart2, likesImage,likesImage2;
 	TextView statement1, statement2;
+	float dropX, dropY;
 
 	
 	
@@ -69,6 +70,8 @@ public class Level_Two extends Activity{
 				
 				image1.setOnTouchListener(new  MyTouchListener());
 				image2.setOnTouchListener(new  MyTouchListener());
+				
+				//findViewById(R.id.level2Relative).setOnDragListener(new MyDragListener());
 		        findViewById(R.id.level2Relative).setOnDragListener(new MyDragListener());
 			}
 		});
@@ -104,8 +107,9 @@ public class Level_Two extends Activity{
 		  public boolean onDrag(View view,  DragEvent event){		  		
 			  	 switch(event.getAction())                   
 		         {
-		            case DragEvent.ACTION_DRAG_ENTERED:  
-		            	return false;
+		            case DragEvent.ACTION_DRAG_ENTERED:
+		            	 System.out.println("im here3");
+		            	return true;
 		            case DragEvent.ACTION_DRAG_EXITED :
 		            	 return true;
 		            case DragEvent.ACTION_DRAG_STARTED:
@@ -117,15 +121,24 @@ public class Level_Two extends Activity{
 		            	 View dragView = (View) event.getLocalState();
 		               //RelativeLayout containView = (RelativeLayout) view;
 		               //containView.addView(dragView);
-		               System.out.println("im here4");
-		               dragView.setVisibility(View.VISIBLE);   
+		            	 System.out.println("im here4");	              
+			               
+			               dropX = event.getX();
+			               dropY = event.getY() ;
+			               
+			               dragView.setX(dropX - dragView.getWidth() / 2 );
+			               dragView.setY(dropY - dragView.getHeight() / 2);
+			               
+			               dragView.bringToFront();
+			               dragView.setVisibility(View.VISIBLE);   
+		            
 		               
 		               break;
 		            case DragEvent.ACTION_DRAG_ENDED   :
 		            	View dragView1 = (View) event.getLocalState();
 			               System.out.println("im here5");
 			              
-			               view.setVisibility(View.VISIBLE);
+			               dragView1.setVisibility(View.VISIBLE);
 			               
 			           break;
 		            default: return true;
