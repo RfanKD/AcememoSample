@@ -79,7 +79,7 @@ public class Level_Three extends Activity{
 				
 				@Override
 				public void onClick(View arg0){
-					Intent continueTO = new Intent(context,Continue_TO.class);
+					Intent continueTO = new Intent(context,Result.class);
 					continueTO.putExtra("sender", "three");
 					startActivity(continueTO);
 					finish();
