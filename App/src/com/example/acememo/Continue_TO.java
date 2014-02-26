@@ -11,16 +11,22 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class Continue_TO extends Activity{
 	Button continueNext, replay;
+	TextView message;
 	String senderClass;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		senderClass = getIntent().getStringExtra("sender");
 		setContentView(R.layout.continue_next);
+		message = (TextView) findViewById(R.id.goodJob);
+		senderClass = getIntent().getStringExtra("sender");
+		if(senderClass.equals("three")){
+			message.setText(R.string.oops);
+		}
 		addListenerOnButton();
 	}
 
