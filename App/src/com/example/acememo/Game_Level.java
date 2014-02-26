@@ -16,7 +16,7 @@ public class Game_Level extends Activity{
 	
 	private int levelNumber;
 
-	
+	TextView level1Message;
 	Button buttonToDecreaseLevel;
 	Button buttonToIncreaseLevel;
 	Button goToLevel;
@@ -27,7 +27,7 @@ public class Game_Level extends Activity{
 		setContentView(R.layout.game_level_menu);
 		
 		//findViewById(R.id.editText1).set
-		
+		level1Message = (TextView) findViewById(R.id.tutorialLevel);
 		addListenerOnButton();
 	}
 	
@@ -53,6 +53,12 @@ public class Game_Level extends Activity{
 					levelNumber = 1;
 				}
 				
+				if(levelNumber==1){
+					  level1Message.setVisibility(View.VISIBLE);
+				  }else{
+					  level1Message.setVisibility(View.INVISIBLE);
+				  }
+				
 				String newLevel = Integer.toString(levelNumber); 
 				levelString.setText(newLevel);
 			}
@@ -68,6 +74,12 @@ public class Game_Level extends Activity{
 				  if (levelNumber >= 2){
 						levelNumber = 2;
 					}
+				  
+				  if(levelNumber==1){
+					  level1Message.setVisibility(View.VISIBLE);
+				  }else{
+					  level1Message.setVisibility(View.INVISIBLE);
+				  }
 				 
 				  String newLevel = Integer.toString(levelNumber);
 				  levelString.setText(newLevel);

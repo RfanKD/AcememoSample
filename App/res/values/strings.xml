@@ -27,5 +27,8 @@
 	<string name="restart">Restart Game</string>
 	<string name="playWithout">Play Without Facebook</string>
 	<string name="Done">Done</string>
-    
+	<string name="memorize">Memorize the association below.</string>
+	<string name="clickButtonReady">Click the button below once you think you have memorized everything!</string>
+    <string name="clickButtonDone">Click the button below once you think you have correctly matched all the people!</string>
+	<string name="levelIsTut">Level 1 is a Tutorial</string>
 </resources>

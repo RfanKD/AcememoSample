@@ -30,7 +30,7 @@ public class Level_One extends Activity {
 	int windowwidth;
 	int windowheight;   
 	ImageView image1, heart, likesImage;
-	TextView statement;
+	TextView statement, buttonTutorial, actionTutorial;
 	Button ready,done;
 	
 	
@@ -44,6 +44,8 @@ public class Level_One extends Activity {
         likesImage = (ImageView) findViewById(R.id.whatTheyLike1);
         statement = (TextView) findViewById(R.id.statement1);
         done = (Button)findViewById(R.id.button1);
+        buttonTutorial = (TextView) findViewById(R.id.buttonTut);
+        actionTutorial = (TextView) findViewById(R.id.turotialInstructionAction);
         done.setVisibility(View.INVISIBLE);
         
 		addListenerOnButton();
@@ -63,6 +65,8 @@ public class Level_One extends Activity {
 				statement.setVisibility(View.INVISIBLE);
 				ready.setVisibility(View.INVISIBLE);
 				done.setVisibility(View.VISIBLE);
+				buttonTutorial.setText(R.string.clickButtonDone);
+				actionTutorial.setText(R.string.instr2);
 			}
 		});
 		

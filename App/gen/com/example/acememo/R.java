@@ -48,13 +48,14 @@ public final class R {
         public static final int raph=0x7f02000b;
     }
     public static final class id {
-        public static final int action_settings=0x7f090024;
+        public static final int action_settings=0x7f090027;
         public static final int allow=0x7f090010;
         public static final int blackSeperation=0x7f090005;
         public static final int bottomblue=0x7f09000e;
         public static final int button1=0x7f09000a;
         public static final int button2=0x7f090012;
-        public static final int button3=0x7f090016;
+        public static final int button3=0x7f090017;
+        public static final int buttonTut=0x7f09001f;
         public static final int disallow=0x7f090011;
         public static final int facebookInstructions=0x7f09000f;
         public static final int facebookLoginButton=0x7f090006;
@@ -62,29 +63,31 @@ public final class R {
         public static final int facebookTitle=0x7f09000b;
         public static final int gameLevelText=0x7f090014;
         public static final int howToPlayTitle=0x7f090000;
-        public static final int imReady=0x7f09001d;
-        public static final int imageView1=0x7f090019;
-        public static final int imageView2=0x7f090020;
-        public static final int imageView3=0x7f09001f;
-        public static final int imageView4=0x7f09001e;
-        public static final int imageView5=0x7f090021;
-        public static final int imageView6=0x7f090022;
+        public static final int imReady=0x7f090020;
+        public static final int imageView1=0x7f09001b;
+        public static final int imageView2=0x7f090023;
+        public static final int imageView3=0x7f090022;
+        public static final int imageView4=0x7f090021;
+        public static final int imageView5=0x7f090024;
+        public static final int imageView6=0x7f090025;
         public static final int instr1image=0x7f090001;
         public static final int instr2image=0x7f090003;
         public static final int instruction1=0x7f090002;
         public static final int instruction2=0x7f090004;
         public static final int leftblue=0x7f09000c;
-        public static final int levelNum=0x7f090018;
-        public static final int levelOneRelative=0x7f090017;
-        public static final int likes=0x7f09001a;
+        public static final int levelNum=0x7f090019;
+        public static final int levelOneRelative=0x7f090018;
+        public static final int likes=0x7f09001c;
         public static final int pairsText=0x7f090015;
         public static final int playWithoutFacebook=0x7f090007;
         public static final int rightblue=0x7f09000d;
         public static final int startGame=0x7f090009;
         public static final int startWithText=0x7f090013;
-        public static final int statement1=0x7f09001c;
-        public static final int statement2=0x7f090023;
-        public static final int whatTheyLike1=0x7f09001b;
+        public static final int statement1=0x7f09001e;
+        public static final int statement2=0x7f090026;
+        public static final int turotialInstructionAction=0x7f09001a;
+        public static final int tutorialLevel=0x7f090016;
+        public static final int whatTheyLike1=0x7f09001d;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -104,6 +107,8 @@ public final class R {
         public static final int action_settings=0x7f060001;
         public static final int allow=0x7f060009;
         public static final int app_name=0x7f060000;
+        public static final int clickButtonDone=0x7f06001c;
+        public static final int clickButtonReady=0x7f06001b;
         public static final int continueTo=0x7f060015;
         public static final int disallow=0x7f06000a;
         public static final int facebook=0x7f06000c;
@@ -118,6 +123,8 @@ public final class R {
         public static final int level1Statement=0x7f060011;
         public static final int level2StatementA=0x7f060012;
         public static final int level2StatementB=0x7f060013;
+        public static final int levelIsTut=0x7f06001d;
+        public static final int memorize=0x7f06001a;
         public static final int pairs=0x7f06000f;
         public static final int play=0x7f06000d;
         public static final int playWithout=0x7f060018;
