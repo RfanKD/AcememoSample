@@ -23,6 +23,7 @@ public class Level_Two extends Activity{
 	Button ready,done;
 	ImageView image1, image2, heart1, heart2, likesImage,likesImage2;
 	TextView statement1, statement2;
+
 	
 	
 	
@@ -62,6 +63,8 @@ public class Level_Two extends Activity{
 				likesImage.setImageResource(R.drawable.biking);
 				likesImage2.setImageResource(R.drawable.photography);
 				ready.setVisibility(View.INVISIBLE);
+				statement1.setVisibility(View.INVISIBLE);
+				statement2.setVisibility(View.INVISIBLE);
 				done.setVisibility(View.VISIBLE);
 				
 				image1.setOnTouchListener(new  MyTouchListener());
