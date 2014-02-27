@@ -5,6 +5,8 @@ import com.example.acememo.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.ClipData;
+import android.content.ClipData.Item;
+import android.content.ClipDescription;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -33,6 +35,8 @@ public class Level_One extends Activity {
 	TextView statement, buttonTutorial, actionTutorial;
 	Button ready,done;
 	float dropX, dropY;
+	private static final String IMAGEVIEW_TAG = "Emir likes pizza";
+			
 	
 	
 	@Override
@@ -48,6 +52,9 @@ public class Level_One extends Activity {
         buttonTutorial = (TextView) findViewById(R.id.buttonTut);
         actionTutorial = (TextView) findViewById(R.id.turotialInstructionAction);
         done.setVisibility(View.INVISIBLE);
+        
+        image1.setTag(IMAGEVIEW_TAG);
+        likesImage.setTag(IMAGEVIEW_TAG);
         
 		addListenerOnButton();
 	}
@@ -88,9 +95,17 @@ public class Level_One extends Activity {
 	private final class MyTouchListener implements OnTouchListener {
 		  public boolean onTouch(View view, MotionEvent motionEvent) {
 		    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-		      ClipData data = ClipData.newPlainText("", "");
+		      ClipData.Item item = new ClipData.Item((CharSequence) view.getTag());
+		      
+		      String[] mimeTypes = {ClipDescription.MIMETYPE_TEXT_PLAIN};
+		      
+		      ClipData dragData = new ClipData(view.getTag().toString(),mimeTypes,item);
+		      
 		      DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-		      view.startDrag(data, shadowBuilder, view, 0);
+		      view.startDrag(dragData, 
+		    		         shadowBuilder, 
+		    		         view, 
+		    		         0);
 		      view.setVisibility(View.INVISIBLE);
 		      return true;
 		    } else {
@@ -118,16 +133,36 @@ public class Level_One extends Activity {
 		            	 View dragView = (View) event.getLocalState();
 		               //RelativeLayout containView = (RelativeLayout) view;
 		               //containView.addView(dragView);
-		               System.out.println("im here4");        
-		               
+		            	 ClipData.Item item = event.getClipData().getItemAt(0); 
+		            	 
+		            	 String incomingText = item.getText().toString();
+		            	 String targetText = likesImage.getTag().toString();
+		            	 	            	 		               
 		               dropX = event.getX();
 		               dropY = event.getY();
-		               
+		                     		               
 		               dragView.setX(dropX - dragView.getWidth() / 2 );
 		               dragView.setY(dropY - dragView.getHeight() / 2);
 		               
 		               dragView.bringToFront();
-		               dragView.setVisibility(View.VISIBLE);   
+		               dragView.setVisibility(View.VISIBLE);  
+		               
+		               int[] location = new int[2];
+		               likesImage.getLocationOnScreen(location);
+		               
+		               int x = location[0];
+		               int y = location[1];
+		               
+		               int width = likesImage.getWidth();
+		               int height = likesImage.getHeight();
+		               
+		               if(x <= dropX && dropX <= (x + width) && (y - height) <= dropY && dropY <= y){
+			            	 if (targetText.equals(incomingText)){
+			            		 System.out.println("we have match");    
+			            	 }else{
+			            		 System.out.println("no match found");
+			            	 }
+		               }
 		               
 		               break;
 		            case DragEvent.ACTION_DRAG_ENDED   :
