@@ -35,6 +35,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name="Level_Three"
             android:screenOrientation="portrait"></activity>
+        <activity android:name="New_Level"
+            android:screenOrientation="portrait"></activity>
         <activity android:name="Result"
             android:screenOrientation="portrait"></activity>
                 <activity android:name="reviewAnswer"

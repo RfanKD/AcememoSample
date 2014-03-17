@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class Game_Level extends Activity{
 	
-	private int levelNumber;
+	static int levelNumber;
 
 	TextView level1Message;
 	Button buttonToDecreaseLevel;
@@ -71,8 +71,8 @@ public class Game_Level extends Activity{
 			public void onClick(View arg0){
 				  levelNumber ++ ;
 				  
-				  if (levelNumber >= 3){
-						levelNumber = 3;
+				  if (levelNumber >= 4){
+						levelNumber = 4;
 					}
 				  
 				  if(levelNumber==1){
@@ -92,16 +92,19 @@ public class Game_Level extends Activity{
 				@Override
 				public void onClick(View arg0){
 					Intent intent = null ;
-					
-					switch(levelNumber){
-						case 1: intent= new Intent(context,Level_One.class);
-								break;
-						case 2: intent= new Intent(context,Level_Two.class);
-								break;
-						case 3: intent= new Intent(context,Level_Three.class);
-						break;
-						default: intent = new Intent(context,MainActivity.class);
-					}
+					intent= new Intent(context,New_Level.class);
+//					
+//					switch(levelNumber){
+//						case 1: intent= new Intent(context,Level_One.class);
+//								break;
+//						case 2: intent= new Intent(context,Level_Two.class);
+//								break;
+//						case 3: intent= new Intent(context,Level_Three.class);
+//								break;
+//						case 4: intent= new Intent(context,New_Level.class);
+//								break;
+//						default: intent = new Intent(context,MainActivity.class);
+//					}
 					startActivity(intent);
 				}
 		});
