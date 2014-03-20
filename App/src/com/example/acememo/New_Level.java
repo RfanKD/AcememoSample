@@ -37,10 +37,10 @@ public class New_Level extends Activity {
 	TextView levelName, statement1, statement2, statement3, statement4, statement5, statement6;
 	Button ready, done, nextPage, prevPage;
 	
-	ImageView[] personArray = new ImageView[6];
-	ImageView[] heartArray = new ImageView[6];
-	ImageView[] itemArray = new ImageView[6];
-	TextView[] statementArray = new TextView[6];
+	ImageView[] personArray = new ImageView[5];
+	ImageView[] heartArray = new ImageView[5];
+	ImageView[] itemArray = new ImageView[5];
+	TextView[] statementArray = new TextView[5];
 
 	static int levelScore;
 	private float dropX, dropY;
@@ -69,7 +69,7 @@ public class New_Level extends Activity {
         //findViewById(R.id.level3Relative).setOnDragListener(new MyDragListener());
         done.setVisibility(View.INVISIBLE);
 		addListenerOnButton();
-/*		
+		
 		containerParams 
 		 = new LinearLayout.LayoutParams(
 				ViewGroup.LayoutParams.FILL_PARENT,
@@ -87,22 +87,23 @@ public class New_Level extends Activity {
 		root.setLayoutParams(containerParams);
 		
 		ll = new LinearLayout(this);
-<<<<<<< HEAD
 		ll.setOrientation(LinearLayout.VERTICAL);
 		ll.setLayoutParams(containerParams);
-		root.addView(ll);*/
+		root.addView(ll);
 		page = 1;
-		//level = Game_Level.levelNumber;
-		level=8;
+		
+		level = Game_Level.levelNumber;
 		levelName.setText("Level " + level);
 		// System.out.println(level);
 		//userId = FacebookLogin.user_id;
 		//System.out.println(userId);
 		
 		if(level<=5){
-			upadteInfoViews("onStartLessThan5", level-1);
+			upadteViews("onStartLessThan5", level);
+			addPictures(0, level);
 		}else{
-			upadteInfoViews("onStartMoreThan5", 0);
+			upadteViews("onStartMoreThan5", 0);
+			addPictures(0,4);
 		}
 		
 		root.setOnDragListener(new MyDragListener());
@@ -126,7 +127,7 @@ public class New_Level extends Activity {
 
 /*	
 	@SuppressWarnings("deprecation")
-=======
+
 //	private void addListenerOnButton() {
 //		// TODO Auto-generated method stub
 //	final Context context = this;
@@ -140,7 +141,7 @@ public class New_Level extends Activity {
 //		});
 //		
 //	}
-//	
+//	*/
 	public void createImageView (int totalLevel, int currentLevel){
 		
 		
@@ -165,61 +166,6 @@ public class New_Level extends Activity {
 				break;
 		default:  IMAGEVIEW_TAG = "Alex " + " likes " +  " reading ";;
 	   }
-		 
-		setContentView(root); 
-		
-		
-	}*/
-	
-	public void addListenerOnButton(){
-		final Context context = this ;
-		
-		prevPage.setOnClickListener (new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0){
-				upadteInfoViews("useAllSpots",5);
-				if(page==2){
-					prevPage.setVisibility(View.INVISIBLE);
-				}else{
-					prevPage.setVisibility(View.VISIBLE);
-				}
-				nextPage.setVisibility(View.VISIBLE);
-				page --;
-
-			}
-		});
-		
-		nextPage.setOnClickListener (new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0){
-				page++;
-				if(level <= page*5){
-					upadteInfoViews("nextLastPage", (level % 5));
-				}else{
-					//use all 5 spots
-				}
-				prevPage.setVisibility(View.VISIBLE);
-				
-		
-				switchImagesAround();
-			}
-		});
-		
-		ready.setOnClickListener (new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0){
-				
-				setTouchListeners();
-				findViewById(R.id.level3Relative).setOnDragListener(new MyDragListener());
-				upadteInfoViews("forGamePlay",0);
-				switchImagesAround();
-				ready.setVisibility(View.INVISIBLE);
-				done.setVisibility(View.VISIBLE);
-			}
-		});
 		
 		ProfilePictureView likePic = new ProfilePictureView(this);
 		likePic.setProfileId("457041557690681");
@@ -239,6 +185,57 @@ public class New_Level extends Activity {
 		 		
 		setContentView(root);
 		
+		
+	}
+	
+	public void addListenerOnButton(){
+		final Context context = this ;
+		
+		prevPage.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				upadteViews("useAllSpots",5);
+				if(page==2){
+					prevPage.setVisibility(View.INVISIBLE);
+				}else{
+					prevPage.setVisibility(View.VISIBLE);
+				}
+				nextPage.setVisibility(View.VISIBLE);
+				page --;
+
+			}
+		});
+		
+		nextPage.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				page++;
+				if(level <= page*5){
+					upadteViews("nextLastPage", (level % 5));
+				}else{
+					//use all 5 spots
+				}
+				prevPage.setVisibility(View.VISIBLE);
+	
+			}
+		});
+		
+		ready.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				
+				setTouchListeners();
+				findViewById(R.id.level3Relative).setOnDragListener(new MyDragListener());
+				upadteViews("forGamePlay",0);
+				ready.setVisibility(View.INVISIBLE);
+				done.setVisibility(View.VISIBLE);
+			}
+		});
+		
+
 		done.setOnClickListener (new OnClickListener() {
 			
 			@Override
@@ -252,79 +249,11 @@ public class New_Level extends Activity {
 		
 	}
 	
-	private final class MyTouchListener implements OnTouchListener {
-		  public boolean onTouch(View view, MotionEvent motionEvent) {
-		    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
-		      ClipData data = ClipData.newPlainText("", "");
-		      DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-		      view.startDrag(data, shadowBuilder, view, 0);
-		      view.setVisibility(View.INVISIBLE);
-		      return true;
-		    } else {
-		    	return false;
-		    }
-		  }
-
-	}
-	private final class MyDragListener implements OnDragListener  {
-			 
-		  public boolean onDrag(View view,  DragEvent event){		  		
-			  	 switch(event.getAction())                   
-		         {
-		            case DragEvent.ACTION_DRAG_ENTERED: 
-		            	System.out.println("im here3");
-		            	return true;
-		            case DragEvent.ACTION_DRAG_EXITED :
-		            	 return true;
-		            case DragEvent.ACTION_DRAG_STARTED:
-	                    return true;
-		            case DragEvent.ACTION_DRAG_LOCATION:
-	                    //v.setVisibility(View.VISIBLE);
-	                    return false;
-		            case DragEvent.ACTION_DROP:
-		            	 View dragView = (View) event.getLocalState();
-		               //RelativeLayout containView = (RelativeLayout) view;
-		               //containView.addView(dragView);
-		              
-		               System.out.println("im here4");
-		           				               
-			               dropX = event.getX();
-			               dropY = event.getY() ;
-			               
-			               dragView.setX(dropX - dragView.getWidth() / 2 );
-			               dragView.setY(dropY - dragView.getHeight() / 2);
-			               
-			               dragView.bringToFront();
-			               dragView.setVisibility(View.VISIBLE);     
-		               
-		               break;
-		            case DragEvent.ACTION_DRAG_ENDED   :
-		            	View dragView1 = (View) event.getLocalState();
-			               System.out.println("im here5");
-			              
-			               view.setVisibility(View.VISIBLE);
-			               
-			           break;
-		            default: return true;
-		            }
-		            return true;
-		         }
-		  
-	}
-	
 	private boolean dropEventNotHandled(DragEvent dragEvent) {
         return !dragEvent.getResult();
 	}
 	
-	private void switchImagesAround(){
-		item1.setImageResource(R.drawable.music);
-		item2.setImageResource(R.drawable.biking);
-		item3.setImageResource(R.drawable.pizza);
-		item4.setImageResource(R.drawable.painting);
-		item5.setImageResource(R.drawable.photography);
-	}
-	
-	private void upadteInfoViews(String callingLocation, int numBoxesNeeded){
+	private void upadteViews(String callingLocation, int numBoxesNeeded){
 		if(callingLocation.equals("onStartLessThan5")){
 			nextPage.setVisibility(View.INVISIBLE);
 			prevPage.setVisibility(View.INVISIBLE);
@@ -493,6 +422,17 @@ public class New_Level extends Activity {
 		            return true;
 		         }
 		  
+	}
+	
+	public void addPictures(int startNumber, int endNumber){
+/*
+		boolean stop = false;
+		for(int i=0; i<5 && !stop; i++){
+			if(startNumber != endNumber){
+				personArray[i].setImageResource(R.drawable.alison);
+				itemArray[i].setImageResource(R.)
+			}
+		}*/
 	}
 
 		private void assignVariables(){

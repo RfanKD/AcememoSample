@@ -1,0 +1,29 @@
+﻿Merge branch 'master' of https://github.com/emiraydin/acememo
+
+Conflicts:
+	App/gen/com/example/acememo/R.java
+	facebook-android-sdk-3.7/facebook/bin/facebooksdk.jar
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 2 and 2 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#   (use "git commit" to conclude merge)
+#
+# Changes to be committed:
+#
+#	deleted:    App/res/layout/facebook_login.xml
+#	new file:   App/src/com/example/acememo/FacebookData.java
+#	modified:   App/src/com/example/acememo/FacebookLogin.java
+#
+

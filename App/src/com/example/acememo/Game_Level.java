@@ -72,9 +72,9 @@ public class Game_Level extends Activity{
 			public void onClick(View arg0){
 				  levelNumber ++ ;
 				  
-				  if (levelNumber >= 5){
+				 /* if (levelNumber >= 5){
 						levelNumber = 5;
-					}
+					}*/
 				  
 				  if(levelNumber==1){
 					  level1Message.setVisibility(View.VISIBLE);
@@ -93,8 +93,8 @@ public class Game_Level extends Activity{
 				@Override
 				public void onClick(View arg0){
 					Intent intent = null ;
-				//	intent= new Intent(context,New_Level.class);
-					
+				intent= new Intent(context,New_Level.class);
+				/*	
 					switch(levelNumber){
 						case 1: intent= new Intent(context,New_Level.class);
 								break;
@@ -105,7 +105,7 @@ public class Game_Level extends Activity{
 						case 4: intent= new Intent(context,New_Level.class);
 								break;
 						default: intent = new Intent(context,MainActivity.class);
-					}
+					}*/
 					startActivity(intent);
 				}
 		});
