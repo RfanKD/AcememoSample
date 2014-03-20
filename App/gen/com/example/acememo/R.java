@@ -251,12 +251,12 @@ containing a value of this type.
         public static final int will=0x7f020035;
     }
     public static final class id {
-        public static final int action_settings=0x7f040053;
+        public static final int action_settings=0x7f04005d;
         public static final int blackSeperation=0x7f040008;
         public static final int button1=0x7f04003c;
         public static final int button2=0x7f04003f;
         public static final int button3=0x7f040044;
-        public static final int buttonTut=0x7f04004a;
+        public static final int buttonTut=0x7f040054;
         public static final int com_facebook_login_activity_progress_bar=0x7f04000f;
         public static final int com_facebook_picker_activity_circle=0x7f04000e;
         public static final int com_facebook_picker_checkbox=0x7f040011;
@@ -278,34 +278,39 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f04001f;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040020;
         public static final int continueGame=0x7f040023;
-        public static final int endGame=0x7f04004b;
+        public static final int endGame=0x7f040055;
         public static final int facebookLoginButton=0x7f040009;
         public static final int facebookSync=0x7f04000b;
         public static final int gameLevelText=0x7f040041;
         public static final int goodJob=0x7f040024;
         public static final int howToPlayTitle=0x7f040003;
         public static final int imReady=0x7f04003b;
-        public static final int imageView1=0x7f040047;
-        public static final int imageView2=0x7f04004f;
-        public static final int imageView3=0x7f04004e;
-        public static final int imageView4=0x7f04004d;
-        public static final int imageView5=0x7f040050;
-        public static final int imageView6=0x7f040051;
+        public static final int imageView1=0x7f040051;
+        public static final int imageView2=0x7f040059;
+        public static final int imageView3=0x7f040058;
+        public static final int imageView4=0x7f040057;
+        public static final int imageView5=0x7f04005a;
+        public static final int imageView6=0x7f04005b;
         public static final int instr1image=0x7f040004;
         public static final int instr2image=0x7f040006;
         public static final int instruction1=0x7f040005;
         public static final int instruction2=0x7f040007;
         public static final int item1=0x7f040029;
+        public static final int item10=0x7f04004e;
         public static final int item2=0x7f04002d;
         public static final int item3=0x7f040031;
         public static final int item4=0x7f040035;
         public static final int item5=0x7f040039;
+        public static final int item6=0x7f04004a;
+        public static final int item7=0x7f04004b;
+        public static final int item8=0x7f04004c;
+        public static final int item9=0x7f04004d;
         public static final int large=0x7f040002;
-        public static final int level2Relative=0x7f04004c;
+        public static final int level2Relative=0x7f040056;
         public static final int level3Relative=0x7f040025;
         public static final int levelNum=0x7f040026;
-        public static final int levelOneRelative=0x7f040045;
-        public static final int likes=0x7f040048;
+        public static final int levelOneRelative=0x7f04004f;
+        public static final int likes=0x7f040052;
         public static final int likes1=0x7f040028;
         public static final int likes2=0x7f04002c;
         public static final int likes3=0x7f040030;
@@ -313,13 +318,18 @@ containing a value of this type.
         public static final int likes5=0x7f040038;
         public static final int nextPage=0x7f04003d;
         public static final int normal=0x7f040001;
-        public static final int oopsText=0x7f040052;
+        public static final int oopsText=0x7f04005c;
         public static final int pairsText=0x7f040042;
         public static final int person1=0x7f040027;
+        public static final int person10=0x7f040049;
         public static final int person2=0x7f04002b;
         public static final int person3=0x7f04002f;
         public static final int person4=0x7f040033;
         public static final int person5=0x7f040037;
+        public static final int person6=0x7f040045;
+        public static final int person7=0x7f040046;
+        public static final int person8=0x7f040047;
+        public static final int person9=0x7f040048;
         public static final int picker_subtitle=0x7f04001c;
         public static final int playWithoutFacebook=0x7f04000a;
         public static final int prevPage=0x7f04003e;
@@ -332,9 +342,9 @@ containing a value of this type.
         public static final int statement3=0x7f040032;
         public static final int statement4=0x7f040036;
         public static final int statement5=0x7f04003a;
-        public static final int turotialInstructionAction=0x7f040046;
+        public static final int turotialInstructionAction=0x7f040050;
         public static final int tutorialLevel=0x7f040043;
-        public static final int whatTheyLike1=0x7f040049;
+        public static final int whatTheyLike1=0x7f040053;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -355,11 +365,12 @@ containing a value of this type.
         public static final int continue_next=0x7f03000f;
         public static final int game_level=0x7f030010;
         public static final int game_level_menu=0x7f030011;
-        public static final int level_one=0x7f030012;
-        public static final int level_three=0x7f030013;
-        public static final int level_three_correct=0x7f030014;
-        public static final int level_two=0x7f030015;
-        public static final int result=0x7f030016;
+        public static final int game_play=0x7f030012;
+        public static final int level_one=0x7f030013;
+        public static final int level_three=0x7f030014;
+        public static final int level_three_correct=0x7f030015;
+        public static final int level_two=0x7f030016;
+        public static final int result=0x7f030017;
     }
     public static final class menu {
         public static final int main=0x7f090000;
