@@ -10,9 +10,12 @@ import org.json.JSONObject;
 import com.example.acememo.R;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +29,8 @@ public class FacebookLogin extends Activity{
 
 	Button allow;
 	Button disallow;
+	
+	static String user_id;
 
 	private static final int MAX_FRIENDS = 10;
 	private String friendLikes = null;
@@ -34,6 +39,11 @@ public class FacebookLogin extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.facebook_login);
+		
+		allow = (Button)findViewById(R.id.allow);
+		disallow = (Button) findViewById(R.id.disallow);
+		
+		addListenerOnButton();
 		Log.d("LogByEmir", "FacebookLogin Activity Started");
 		// start Facebook Login
 		Session.openActiveSession(this, true, new Session.StatusCallback() {
@@ -53,6 +63,7 @@ public class FacebookLogin extends Activity{
 								TextView welcome = (TextView) findViewById(R.id.facebookInstructions);
 								welcome.setText("Hello " + user.getName() + "!");
 								getFriends();
+								user_id = user.getId();
 							}
 						}
 					}).executeAsync();
@@ -61,6 +72,28 @@ public class FacebookLogin extends Activity{
 			}
 		});
 	}	
+
+	private void addListenerOnButton() {
+		// TODO Auto-generated method stub
+	final Context context = this;
+		
+		allow.setOnClickListener (new OnClickListener() {
+			@Override
+			public void onClick(View arg0){
+				Intent intent1 = new Intent(context,Game_Level.class);
+				startActivity(intent1);
+			}
+		});
+		
+		disallow.setOnClickListener (new OnClickListener() {
+			@Override
+			public void onClick(View arg0){
+				Intent intent = new Intent(context,MainActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+	}
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {

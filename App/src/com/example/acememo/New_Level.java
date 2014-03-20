@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 public class New_Level extends Activity {
 	private int level;
+	private String userId;
+	
 	private LinearLayout root;
 	private LinearLayout ll;
 	private LinearLayout.LayoutParams widgetParams;
@@ -51,6 +53,8 @@ public class New_Level extends Activity {
 		
 		level = Game_Level.levelNumber;
 		// System.out.println(level);
+		userId = FacebookLogin.user_id;
+		System.out.println(userId);
 		
 		for (int i = 1; i <= level; i ++){
 			createImageView (level, i);
