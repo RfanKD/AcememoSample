@@ -31,7 +31,7 @@ public class FacebookLogin extends Activity{
 	Button disallow;
 	
 	static String user_id;
-
+	
 	private static final int MAX_FRIENDS = 10;
 	private String friendLikes = null;
 
@@ -126,7 +126,7 @@ public class FacebookLogin extends Activity{
 			friendRequest.setParameters(params);
 			friendRequest.executeAsync();
 		}
-	}
+	} 
 
 	private void getLikesOfAFriend(JSONArray friends) throws JSONException {
 		Random random = new Random();
