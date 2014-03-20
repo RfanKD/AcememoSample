@@ -27,13 +27,16 @@ import java.util.ArrayList;
 
 public class New_Level extends Activity {
 	private int level;
+	static int levelScore;
 	private String userId;
-	float dropX, dropY;
+	private float dropX, dropY;
+	private boolean isSet;
 	
 	private LinearLayout root;
 	private LinearLayout ll;
 	private LinearLayout.LayoutParams widgetParams;
 	private LayoutParams containerParams;
+	//private Button goToReview;
 	
 	private ArrayList<ProfilePictureView> likeImage;
 	private ArrayList<ProfilePictureView> profileImage;
@@ -70,10 +73,15 @@ public class New_Level extends Activity {
 		root.addView(ll);
 		root.setOnDragListener(new MyDragListener());
 		
+		//goToReview = new Button (this);
+		//root.addView(goToReview);
+		
 		level = Game_Level.levelNumber;
 		// System.out.println(level);
 		userId = FacebookLogin.user_id;
 		System.out.println(userId);
+		isSet = false;
+		levelScore = 0;
 		
 		likeImage = new ArrayList<ProfilePictureView>();
 		profileImage = new ArrayList<ProfilePictureView>();
@@ -83,16 +91,23 @@ public class New_Level extends Activity {
 		}
 		 
 		
-		addListenerOnButton();
+		//addListenerOnButton();
 	}
 
-	private void addListenerOnButton() {
-		// TODO Auto-generated method stub
-		final Context context = this ;
-		
-	}
-	
-	@SuppressWarnings("deprecation")
+//	private void addListenerOnButton() {
+//		// TODO Auto-generated method stub
+//	final Context context = this;
+//			
+//	goToReview.setOnClickListener (new OnClickListener() {
+//			@Override
+//			public void onClick(View arg0){
+//				Intent intent = new Intent(context, Result.class);
+//				startActivity(intent);
+//			}
+//		});
+//		
+//	}
+//	
 	public void createImageView (int totalLevel, int currentLevel){
 		
 		
@@ -170,13 +185,22 @@ public class New_Level extends Activity {
 			  	 switch(event.getAction())                   
 		         {
 		            case DragEvent.ACTION_DRAG_ENTERED:
-		            	System.out.println("im here3");
+		            	System.out.println("im here1");
 		            	return true;
 		            case DragEvent.ACTION_DRAG_EXITED :
+		            	System.out.println("im here2");
 		            	 return true;
 		            case DragEvent.ACTION_DRAG_STARTED:
+		            	System.out.println("im here3");
+		            	if (isSet == true){
+		            		levelScore --;
+		            		 Game_Level.totalScore --;
+		            		isSet = false ;
+		            		System.out.println(levelScore);
+		            	}
 	                    return true;
 		            case DragEvent.ACTION_DRAG_LOCATION:
+		            	//System.out.println("im here4");
 	                    //v.setVisibility(View.VISIBLE);
 	                    return false;
 		            case DragEvent.ACTION_DROP:
@@ -209,7 +233,11 @@ public class New_Level extends Activity {
 				             if(a <= dropX && dropX <= (a + widthA) && (b - heightA) <= dropY && dropY <= b){
 				            	 String targetText = likeImage.get(i).getTag().toString();
 				            	 if (targetText.equals(incomingText)){
-				            		 System.out.println("we have match");    
+				            		 System.out.println("we have match"); 
+				            		 levelScore ++;
+				            		 Game_Level.totalScore ++;
+				            		 isSet = true;
+				            		 System.out.println(levelScore);
 				            	 }else{
 				            		 System.out.println("no match found");
 				            	 }
@@ -236,7 +264,8 @@ public class New_Level extends Activity {
 		            case DragEvent.ACTION_DRAG_ENDED   :
 		            	View dragView1 = (View) event.getLocalState();
 			               System.out.println("im here5");
-			              
+			               
+			               System.out.println(Game_Level.totalScore);
 			               dragView1.setVisibility(View.VISIBLE);
 			               
 			           break;
