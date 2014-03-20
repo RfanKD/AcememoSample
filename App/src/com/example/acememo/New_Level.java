@@ -2,7 +2,7 @@ package com.example.acememo;
 
 import com.example.acememo.R;
 import com.facebook.widget.ProfilePictureView;
-
+import com.example.acememo.HardcodedJSON;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipDescription;
@@ -27,6 +27,9 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import java.util.ArrayList;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class New_Level extends Activity {
 
 	private int level, page;
@@ -45,6 +48,7 @@ public class New_Level extends Activity {
 	static int levelScore;
 	private float dropX, dropY;
 	private boolean isSet;
+	JSONObject[] levelData;
 	
 	private LinearLayout root;
 	private LinearLayout ll;
@@ -94,6 +98,11 @@ public class New_Level extends Activity {
 		
 		level = Game_Level.levelNumber;
 		levelName.setText("Level " + level);
+		
+		HardcodedJSON hj = new HardcodedJSON(level);
+		levelData = hj.getGameArray();
+		
+		
 		// System.out.println(level);
 		//userId = FacebookLogin.user_id;
 		//System.out.println(userId);
@@ -201,8 +210,11 @@ public class New_Level extends Activity {
 				}else{
 					prevPage.setVisibility(View.VISIBLE);
 				}
-				nextPage.setVisibility(View.VISIBLE);
 				page --;
+				addPictures((page*5) - 5, page*5 -1);
+				
+				nextPage.setVisibility(View.VISIBLE);
+				
 
 			}
 		});
@@ -214,8 +226,9 @@ public class New_Level extends Activity {
 				page++;
 				if(level <= page*5){
 					upadteViews("nextLastPage", (level % 5));
+					addPictures(5*(page-1), level-1);
 				}else{
-					//use all 5 spots
+					addPictures(5*(page-1), (5*page)-1);
 				}
 				prevPage.setVisibility(View.VISIBLE);
 	
@@ -425,14 +438,28 @@ public class New_Level extends Activity {
 	}
 	
 	public void addPictures(int startNumber, int endNumber){
-/*
+
 		boolean stop = false;
 		for(int i=0; i<5 && !stop; i++){
-			if(startNumber != endNumber){
-				personArray[i].setImageResource(R.drawable.alison);
-				itemArray[i].setImageResource(R.)
+			if(startNumber <= endNumber){
+				try {
+					personArray[i].setImageResource(levelData[startNumber].getInt("personImage"));
+					itemArray[i].setImageResource(levelData[startNumber].getInt("likeImage"));
+					String newStatement = levelData[startNumber].getString("personName") +
+										   " likes "+
+										   levelData[startNumber].getString("likeName");
+					statementArray[i].setText(newStatement);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				startNumber++;
+			}else{
+				stop = true;
 			}
-		}*/
+			
+			
+		}
 	}
 
 		private void assignVariables(){

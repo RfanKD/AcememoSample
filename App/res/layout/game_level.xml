@@ -21,8 +21,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/levelNum"
         android:layout_marginLeft="45dp"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/emir" />
+        android:layout_marginTop="5dp"/>
     
     <ImageView
         android:id="@+id/likes1"
@@ -41,8 +40,7 @@
         android:layout_below="@+id/levelNum"
         android:layout_toRightOf="@+id/likes1"
         android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/pizza"/>
+		android:layout_marginTop="5dp"/>
         
     <TextView
         android:id="@+id/statement1"
@@ -51,8 +49,7 @@
         android:layout_below="@+id/person1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:textSize="17sp"
-        android:text="@string/level3Statement1" />
+        android:textSize="17sp"/>
     
     --------------------------------------------------------------
         <ImageView
@@ -62,8 +59,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/statement1"
         android:layout_marginLeft="45dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/raph" />
+		android:layout_marginTop="5dp"/>
     
     <ImageView
         android:id="@+id/likes2"
@@ -82,8 +78,7 @@
         android:layout_toRightOf="@+id/likes2"
         android:layout_below="@+id/statement1"
         android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/photography"/>
+		android:layout_marginTop="5dp"/>
         
     <TextView
         android:id="@+id/statement2"
@@ -92,8 +87,7 @@
         android:layout_below="@+id/person2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:textSize="17sp"
-        android:text="@string/level3Statement2" />
+        android:textSize="17sp" />
    
         --------------------------------------------------------------
         <ImageView
@@ -103,8 +97,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/statement2"
         android:layout_marginLeft="45dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/alison" />
+		android:layout_marginTop="5dp" />
     
     <ImageView
         android:id="@+id/likes3"
@@ -123,8 +116,7 @@
         android:layout_toRightOf="@+id/likes3"
         android:layout_below="@+id/statement2"
         android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/biking"/>
+		android:layout_marginTop="5dp"/>
         
     <TextView
         android:id="@+id/statement3"
@@ -133,8 +125,7 @@
         android:layout_below="@+id/person3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:textSize="17sp"
-        android:text="@string/level3Statement3" />
+        android:textSize="17sp" />
    
         --------------------------------------------------------------
         <ImageView
@@ -144,8 +135,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/statement3"
         android:layout_marginLeft="45dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/emir" />
+		android:layout_marginTop="5dp" />
     
     <ImageView
         android:id="@+id/likes4"
@@ -164,8 +154,7 @@
         android:layout_toRightOf="@+id/likes4"
         android:layout_below="@+id/statement3"
         android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/music"/>
+		android:layout_marginTop="5dp"/>
         
     <TextView
         android:id="@+id/statement4"
@@ -174,8 +163,7 @@
         android:layout_below="@+id/person4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:textSize="17sp"
-        android:text="@string/level3Statement4" />
+        android:textSize="17sp"/>
    
         --------------------------------------------------------------
         <ImageView
@@ -185,8 +173,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/statement4"
         android:layout_marginLeft="45dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/alison" />
+		android:layout_marginTop="5dp" />
     
     <ImageView
         android:id="@+id/likes5"
@@ -205,8 +192,7 @@
         android:layout_toRightOf="@+id/likes5"
         android:layout_below="@+id/statement4"
         android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/painting"/>
+		android:layout_marginTop="5dp"/>
         
     <TextView
         android:id="@+id/statement5"
@@ -215,8 +201,7 @@
         android:layout_below="@+id/person5"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:textSize="17sp"
-        android:text="@string/level3Statement5" />
+        android:textSize="17sp"/>
     
     
     <Button
