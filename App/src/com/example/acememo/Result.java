@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Result extends Activity{
+	private int userScore ;
 	
 	Button goHome;
 	Button reviewAnswer;
@@ -29,14 +30,17 @@ public class Result extends Activity{
 		goHome = (Button) findViewById(R.id.button1);
 		reviewAnswer = (Button) findViewById(R.id.button2);
 		
+		userScore = New_Level.levelScore;
+		
 		oopsMessage = (TextView) findViewById(R.id.oopsText);
+		oopsMessage.setText(userScore);
 		endGameMessage = (TextView) findViewById(R.id.pairsText);
 		senderClass = getIntent().getStringExtra("sender");
-		if(senderClass.equals("reviewed")){
-			oopsMessage.setText("");
-			endGameMessage.setX(oopsMessage.getX());
-			endGameMessage.setY(oopsMessage.getY());
-		}
+//		if(senderClass.equals("reviewed")){
+//			oopsMessage.setText("");
+//			endGameMessage.setX(oopsMessage.getX());
+//			endGameMessage.setY(oopsMessage.getY());
+//		}
 		
 		addListenerOnButton();
 	}
