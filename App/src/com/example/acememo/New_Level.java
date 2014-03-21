@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,7 +47,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class New_Level extends Activity {
-	private int level, page, mode;
+	private int page, mode;
+	static int level;
 	private String userId;
 	private final int INFO = 1;
 	private final int GAME = 2;
@@ -76,6 +78,7 @@ public class New_Level extends Activity {
 	private ArrayList<ImageView> profileImage;
 	private ArrayList<Boolean> dropCorrect;
 	
+		
 //	private ImageView likePic;
 //	private ImageView profilePic;
 	
@@ -113,8 +116,9 @@ public class New_Level extends Activity {
 		ll.setLayoutParams(containerParams);
 		root.addView(ll);
 		page = 1;
-		
-		level = Game_Level.levelNumber;
+				
+		level = LevelDataFromFacebook.level;
+				
 		levelName.setText("Level " + level);
         
 		if(level<=5){
@@ -250,6 +254,63 @@ public class New_Level extends Activity {
 				assignVariables(GAME);
 				populateArrays(GAME);
 				
+				done.setOnClickListener (new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0){
+						Intent continueTO = new Intent(context,Result.class);
+						//continueTO.putExtra("sender", "three");
+						startActivityForResult(continueTO, 0);
+						showCorrectAnswer();
+					}
+
+					private void showCorrectAnswer() {
+						setContentView(R.layout.game_play);
+						assignVariables(GAME);
+						populateArrays(GAME);
+						
+						 for (int i=0; i < likeImage.size(); i++){
+							// if(likeImage.size() <= 5){
+							 personArray[i].setImageDrawable(profileImage.get(i).getDrawable());
+							 personArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
+							 
+							 personArray[i+5].setImageDrawable(likeImage.get(i).getDrawable());
+							 personArray[i+5].setImageMatrix(likeImage.get(i).getImageMatrix());
+							 
+							 if (dropCorrect.get(i) == false){
+								 personArray[i].setPadding(5, 5, 5, 5);
+								 personArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
+								 
+								 personArray[i+5].setPadding(5, 5, 5, 5);
+								 personArray[i+5].setBackgroundColor(Color.rgb(255, 0, 0));
+								 
+							 }
+							 
+//							 }else{
+//								 itemArray[i+5].setImageDrawable(profileImage.get(i).getDrawable());
+//								 itemArray[i+5].setImageMatrix(profileImage.get(i).getImageMatrix());
+//								 
+//								 itemArray[i].setImageDrawable(likeImage.get(i).getDrawable());
+//								 itemArray[i].setImageMatrix(likeImage.get(i).getImageMatrix());
+								 
+							// }
+						 }
+						
+//						 private ArrayList<ImageView> likeImage;
+//							private ArrayList<ImageView> profileImage;
+//							private ArrayList<Boolean> dropCorrect;
+//							
+//							ImageView[] personArray;
+//							ImageView[] heartArray = new ImageView[5];
+//							ImageView[] itemArray;
+//						
+						//test.equals(likeImage.get(0)) ;
+						//test.setIm
+											
+						
+					}
+				});
+				
 				updateViews("forGamePlay", level);
 				addPictures(0, level-1, GAME);
 				
@@ -263,17 +324,7 @@ public class New_Level extends Activity {
 		});
 		
 
-		done.setOnClickListener (new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0){
-				Intent continueTO = new Intent(context,Result.class);
-				continueTO.putExtra("sender", "three");
-				startActivity(continueTO);
-				finish();
-			}
-		});
-		
+	
 	}
 	
 //	private boolean dropEventNotHandled(DragEvent dragEvent) {
@@ -373,6 +424,7 @@ public class New_Level extends Activity {
 		            	 ImageView dragViewA = (ImageView) event.getLocalState();
 		            	
 		            	int profilePicIndex = profileImage.indexOf(dragViewA);
+		            	
 		            	System.out.println ("this is my id" +profilePicIndex);
 		            	//ClipData.Item itemA = event.getClipData().getItemAt(0); 
 		            	//String incomingTextA = itemA.getText().toString();
@@ -389,7 +441,32 @@ public class New_Level extends Activity {
 				            		dropCorrect.set(profilePicIndex, false);
 				            		// dropCorrect.set(i, false);
 				            		System.out.println(levelScore);
+				            		
 				            	}
+		     	            	
+
+			            		//int[] locationB = new int[2];
+			            		//profileImage.get(profilePicIndex).getLocationOnScreen(locationB);
+			            		 dropX = dragViewA.getLeft();
+					             dropY = dragViewA.getTop();
+					        			             					           	          	 		            	 
+				            	 for (int i=0; i < likeImage.size(); i++) {
+				            		 int[] locationA = new int[2];
+				            		 likeImage.get(i).getLocationOnScreen(locationA);
+				            		 int a = locationA[0];
+						             int b = locationA[1];
+						             
+						             int widthA = likeImage.get(i).getWidth();
+						             int heightA = likeImage.get(i).getHeight();
+						             
+						             if(a <= dropX && dropX <= (a + widthA) && (b - heightA) <= dropY && dropY <= b){
+						            	 
+						            	// likeImage.get(i).setPadding(5, 5, 5, 5);
+						            	 likeImage.get(i).setBackgroundColor(Color.rgb(255, 255, 255));
+						            	 
+						             }
+				            		 //System.out.println(sFruit);
+				                  }
 		            		 //}
 		            	// }
 		            	System.out.println("im here3");
@@ -432,6 +509,8 @@ public class New_Level extends Activity {
 				             
 				             if(a <= dropX && dropX <= (a + widthA) && (b - heightA) <= dropY && dropY <= b){
 				            	 String targetText = likeImage.get(i).getTag().toString();
+				            	 likeImage.get(i).setPadding(5, 5, 5, 5);
+				            	 likeImage.get(i).setBackgroundColor(Color.rgb(50, 150, 200));
 				            	 if (targetText.equals(incomingText)){
 				            		 System.out.println("we have match"); 
 				            		 dropCorrect.set(i, true);
@@ -559,6 +638,7 @@ public class New_Level extends Activity {
 								   levelData.getJSONObject(startNumber).getString("likeName");
 						
 						personArray[startNumber].setTag(newStatement);
+						personArray[startNumber].setOnTouchListener(new  MyTouchListener());
 						itemArray[arr[startNumber]].setTag(newStatement);
 						
 						ImageView likeTest = itemArray[arr[startNumber]];
@@ -584,11 +664,11 @@ public class New_Level extends Activity {
 			person3 = (ImageView) findViewById(R.id.person3);
 			person4 = (ImageView) findViewById(R.id.person4);
 			person5 = (ImageView) findViewById(R.id.person5);
-			person1.setOnTouchListener(new  MyTouchListener());
-			person2.setOnTouchListener(new  MyTouchListener());
-			person3.setOnTouchListener(new  MyTouchListener());
-			person4.setOnTouchListener(new  MyTouchListener());
-			person5.setOnTouchListener(new  MyTouchListener());
+			//person1.setOnTouchListener(new  MyTouchListener());
+			//person2.setOnTouchListener(new  MyTouchListener());
+			//person3.setOnTouchListener(new  MyTouchListener());
+			//person4.setOnTouchListener(new  MyTouchListener());
+			//person5.setOnTouchListener(new  MyTouchListener());
 			
 			item1 = (ImageView) findViewById(R.id.item1);
 			item2 = (ImageView) findViewById(R.id.item2);
@@ -623,11 +703,11 @@ public class New_Level extends Activity {
 			person8 = (ImageView) findViewById(R.id.person8);
 			person9 = (ImageView) findViewById(R.id.person9);
 			person10 = (ImageView) findViewById(R.id.person10);
-			person6.setOnTouchListener(new  MyTouchListener());
-			person7.setOnTouchListener(new  MyTouchListener());
-			person8.setOnTouchListener(new  MyTouchListener());
-			person9.setOnTouchListener(new  MyTouchListener());
-			person10.setOnTouchListener(new  MyTouchListener());
+			//person6.setOnTouchListener(new  MyTouchListener());
+			//person7.setOnTouchListener(new  MyTouchListener());
+			//person8.setOnTouchListener(new  MyTouchListener());
+			//person9.setOnTouchListener(new  MyTouchListener());
+			//person10.setOnTouchListener(new  MyTouchListener());
 			
 			item6 = (ImageView) findViewById(R.id.item6);
 			item7 = (ImageView) findViewById(R.id.item7);

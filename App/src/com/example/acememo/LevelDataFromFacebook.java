@@ -15,19 +15,30 @@ import java.util.TimerTask;
 
 
 public class LevelDataFromFacebook extends Activity{
-	int level;
+	static int level;
+	String senderClass;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.loading);
 		final Context context = this ;
-		level = Game_Level.levelNumber;
+		
+	    senderClass = getIntent().getStringExtra("sender");
+		
+		if(senderClass.equals("fromChooser")){
+			level = Game_Level.levelNumber;
+			
+		}else if (senderClass.equals("fromResult"))  {
+			level = Result.levelNum + 1;
+		}
+		
 		
 	    if(!MainActivity.withFacebook){
 			HardcodedJSON hj = new HardcodedJSON(level);
 			New_Level.levelData = hj.getGameArray();
 			Intent intent = new Intent(context,New_Level.class);
+			
 			startActivity(intent);
 			finish();
 		}else{

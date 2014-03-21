@@ -4,46 +4,67 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/oopsText"
+        android:id="@+id/totalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:gravity="center"
-        android:text="@string/oops"
         android:textColor="#000000"
         android:textSize="32sp" />
 
     <TextView
-        android:id="@+id/pairsText"
+        android:id="@+id/currentText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/totalText"
+        android:layout_marginTop="22dp"
         android:ems="10"
         android:gravity="center"
-        android:text="@string/gameover"
+        android:textColor="#000000"
+        android:textSize="32sp" />
+    
+        <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/currentText"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:gravity="center"
         android:textColor="#000000"
         android:textSize="32sp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pairsText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/review" />
+        android:layout_above="@+id/button1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="38dp"
+        android:text="@string/nextLevel" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/button3"
+        android:layout_marginBottom="18dp"
         android:text="@string/restart" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="33dp"
+        android:text="@string/review" />
 
 </RelativeLayout>

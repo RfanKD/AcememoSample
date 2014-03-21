@@ -14,28 +14,42 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Result extends Activity{
-	private int userScore ;
+	private int currentUserScore ;
+	private int totalUserScore;
+	static int levelNum;
 	
-	Button goHome;
-	Button reviewAnswer;
-	TextView oopsMessage;
-	TextView endGameMessage;
-	String senderClass;
+	private Button goHome;
+	private Button reviewAnswer;
+	private Button nextLevel;
+	private TextView totalScore;
+	private TextView currentScore;
+	private TextView Result;
+	private String senderClass;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.result);
 		
-		goHome = (Button) findViewById(R.id.button1);
-		reviewAnswer = (Button) findViewById(R.id.button2);
+		goHome = (Button)findViewById(R.id.button1);
+		reviewAnswer = (Button)findViewById(R.id.button2);
+		nextLevel = (Button)findViewById(R.id.button3);
 		
-		userScore = New_Level.levelScore;
+	currentUserScore = New_Level.levelScore;
+	totalUserScore = Game_Level.totalScore;
+	levelNum = New_Level.level;
 		
-		oopsMessage = (TextView) findViewById(R.id.oopsText);
-		oopsMessage.setText(userScore);
-		endGameMessage = (TextView) findViewById(R.id.pairsText);
-		senderClass = getIntent().getStringExtra("sender");
+	totalScore = (TextView) findViewById(R.id.totalText);
+	totalScore.setText("The total cumulative score is: " + totalUserScore);
+	
+	currentScore = (TextView) findViewById(R.id.currentText);
+	currentScore.setText("The score for current level is: " + currentUserScore);
+	
+	Result = (TextView) findViewById(R.id.resultText);
+	Result.setText("You have just completed level "+ levelNum);
+//		oopsMessage.setText(userScore);
+//		endGameMessage = (TextView) findViewById(R.id.pairsText);
+//		senderClass = getIntent().getStringExtra("sender");
 //		if(senderClass.equals("reviewed")){
 //			oopsMessage.setText("");
 //			endGameMessage.setX(oopsMessage.getX());
@@ -53,10 +67,23 @@ public class Result extends Activity{
 			
 			@Override
 			public void onClick(View arg0){
-				MainActivity.screenStatus = 3; 
-				Intent mainActivitySyncFacebook = new Intent(context,MainActivity.class);
-				mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				//MainActivity.screenStatus = 3; 
+				Intent mainActivitySyncFacebook = new Intent(context,Game_Level.class);
+				//mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(mainActivitySyncFacebook);
+				finish();
+			}
+		});
+		
+		nextLevel.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				//MainActivity.screenStatus = 3; 
+				Intent nextLevel = new Intent(context,LevelDataFromFacebook.class);
+				//mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				nextLevel.putExtra("sender", "fromResult");
+				startActivity(nextLevel);
 				finish();
 			}
 		});
@@ -65,10 +92,11 @@ public class Result extends Activity{
 			
 			@Override
 			public void onClick(View arg0){
-				Intent reviewAnswer = new Intent(context,reviewAnswer.class);
+				Intent reviewAnswer = new Intent(); 
+				//context,New_Level.class
 				//mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(reviewAnswer);
-				finish();
+				setResult(RESULT_OK,reviewAnswer);
+				 finish();
 			}
 		});
 	}
