@@ -45,9 +45,9 @@ public class HardcodedJSON {
 			try {
 				jsonArray[i].put("personIdd", "00000000");
 				jsonArray[i].put("personName", personName[i % 6]);
-				jsonArray[i].put("personId",  peopleDraw[i % 6]);
+				jsonArray[i].put("personImage",  peopleDraw[i % 6]);
 				jsonArray[i].put("likeName", itemName[i % 8]);
-				jsonArray[i].put("likeId", itemDraw[i % 8]);
+				jsonArray[i].put("likeImage", itemDraw[i % 8]);
 				
 				gameArray.put(i, jsonArray[i]);
 			} catch (JSONException e) {

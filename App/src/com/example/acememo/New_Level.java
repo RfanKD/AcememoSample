@@ -1,7 +1,6 @@
 package com.example.acememo;
 
 import com.example.acememo.R;
-import com.facebook.widget.ProfilePictureView;
 import com.example.acememo.HardcodedJSON;
 import android.app.Activity;
 import android.content.ClipData;
@@ -9,6 +8,9 @@ import android.content.ClipDescription;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.DragEvent;
@@ -26,11 +28,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.ExecutionException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,7 +64,7 @@ public class New_Level extends Activity {
 	static int levelScore;
 	private float dropX, dropY;
 	private boolean isSet;
-	JSONArray levelData;
+	static JSONArray levelData;
 	
 	private LinearLayout root;
 	private LinearLayout ll;
@@ -67,10 +76,11 @@ public class New_Level extends Activity {
 	private ArrayList<ImageView> profileImage;
 	private ArrayList<Boolean> dropCorrect;
 	
-//	private ProfilePictureView likePic;
-//	private ProfilePictureView profilePic;
+//	private ImageView likePic;
+//	private ImageView profilePic;
 	
-	//private ProfilePictureView profilePic;
+	//private ImageView profilePic;
+
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -106,38 +116,7 @@ public class New_Level extends Activity {
 		
 		level = Game_Level.levelNumber;
 		levelName.setText("Level " + level);
-		
-   //     if(!MainActivity.withFacebook){
-			HardcodedJSON hj = new HardcodedJSON(level);
-			levelData = hj.getGameArray();
-//		}else{
-//			// 5 is how many pairs we want
-//			final FacebookData fb = new FacebookData(level);
-//			// You delay pulling the data 5 seconds to wait all the requests finish up
-//			new Timer().schedule( 
-//			        new TimerTask() {
-//			            @Override
-//			            public void run() {
-//			                // fb.getResult() here returns a JSONArray.
-//			            	// you should set up the layout with this, here.
-//			            	
-//			            	//[{"personId":"741328439","personName":"Oguzhan","likeName":"Komedi Dukkani","likeId":"319374521514245"},
-//			            	//{"personId":"617185092","personName":"Efe","likeName":"Haberim","likeId":"261153933987178"},
-//			            	//{"personId":"100001141212093","personName":"Eda","likeName":"Onedio.com","likeId":"171393949589921"}]
-//			            	
-//			            	levelData = fb.getResult();
-//			            	Log.d("LikeLog", "RESULT: " + fb.getResult().toString());
-//			            
-//			            }
-//			        }, 
-//			        5000
-//			);
-//		}
-		
-		// System.out.println(level);
-		//userId = FacebookLogin.user_id;
-		//System.out.println(userId);
-		
+        
 		if(level<=5){
 			updateViews("onStartLessThan5", level);
 			addPictures(0, level-1, INFO);
@@ -158,12 +137,8 @@ public class New_Level extends Activity {
 		profileImage = new ArrayList<ImageView>();
 		dropCorrect = new ArrayList<Boolean>();
 		
-	/*	for (int i = 1; i <= level; i ++){
-			//createImageView (level, i);
-		}*/
-		 
-		
 		addListenerOnButton();
+
 	}
 
 /*	
@@ -208,16 +183,16 @@ public class New_Level extends Activity {
 //		default:  IMAGEVIEW_TAG = "Alex " + " likes " +  " reading ";;
 //	   }
 //		
-//		ProfilePictureView likePic = new ProfilePictureView(this);
+//		ImageView likePic = new ImageView(this);
 //		likePic.setProfileId("457041557690681");
-//		likePic.setPresetSize(ProfilePictureView.NORMAL);
+//		likePic.setPresetSize(ImageView.NORMAL);
 //		likePic.setTag(IMAGEVIEW_TAG);
 //		likeImage.add(likePic);
 //		root.addView(likePic);
 //		
-//		ProfilePictureView profilePic = new ProfilePictureView(this);
+//		ImageView profilePic = new ImageView(this);
 //		profilePic.setProfileId("1651320295");
-//		profilePic.setPresetSize(ProfilePictureView.NORMAL);
+//		profilePic.setPresetSize(ImageView.NORMAL);
 //		profilePic.setOnTouchListener(new MyTouchListener());
 //		profilePic.setTag(IMAGEVIEW_TAG);
 //		profileImage.add(profilePic);
@@ -510,8 +485,31 @@ public class New_Level extends Activity {
 			for(int i=0; i<5 && !stop; i++){
 				if(startNumber <= endNumber){
 					try {
-						personArray[i].setImageResource(levelData.getJSONObject(startNumber).getInt("personId"));
-						itemArray[i].setImageResource(levelData.getJSONObject(startNumber).getInt("likeId"));
+						if(MainActivity.withFacebook){
+								AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(levelData.getJSONObject(startNumber).getString("personImage"));
+								AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(levelData.getJSONObject(startNumber).getString("likeImage"));
+
+								try {
+									Bitmap person = getPersonImage.get();
+									Bitmap item = getLikeImage.get();
+									
+									personArray[i].setImageBitmap(person);
+									itemArray[i].setImageBitmap(item);
+									
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (ExecutionException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								
+
+							
+						}else{
+							personArray[startNumber].setImageResource(levelData.getJSONObject(startNumber).getInt("personImage"));
+							itemArray[startNumber].setImageResource(levelData.getJSONObject(startNumber).getInt("likeImage"));
+						}
 						String newStatement = levelData.getJSONObject(startNumber).getString("personName") +
 											   " likes "+
 											   levelData.getJSONObject(startNumber).getString("likeName");
@@ -532,8 +530,29 @@ public class New_Level extends Activity {
 		    
 			while(startNumber<= endNumber){
 					try {
-						personArray[startNumber].setImageResource(levelData.getJSONObject(startNumber).getInt("personId"));
-						itemArray[arr[startNumber]].setImageResource(levelData.getJSONObject(startNumber).getInt("likeId"));
+						if(MainActivity.withFacebook){
+							AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(levelData.getJSONObject(startNumber).getString("personImage"));
+							AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(levelData.getJSONObject(startNumber).getString("likeImage"));
+							try {
+								Bitmap person = getPersonImage.get();
+								Bitmap item = getLikeImage.get();
+								personArray[startNumber].setImageBitmap(person);
+								itemArray[arr[startNumber]].setImageBitmap(item);
+								
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (ExecutionException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+
+							
+							
+						}else{
+							personArray[startNumber].setImageResource(levelData.getJSONObject(startNumber).getInt("personImage"));
+							itemArray[arr[startNumber]].setImageResource(levelData.getJSONObject(startNumber).getInt("likeImage"));
+						}
 						
 						String newStatement = levelData.getJSONObject(startNumber).getString("personName") +
 								   " likes "+
@@ -559,7 +578,7 @@ public class New_Level extends Activity {
 		}
 	}
 
-		private void assignVariables(int mode){
+	private void assignVariables(int mode){
 			person1 = (ImageView) findViewById(R.id.person1);
 			person2 = (ImageView) findViewById(R.id.person2);
 			person3 = (ImageView) findViewById(R.id.person3);
@@ -576,8 +595,9 @@ public class New_Level extends Activity {
 			item3 = (ImageView) findViewById(R.id.item3);
 			item4 = (ImageView) findViewById(R.id.item4);
 			item5 = (ImageView) findViewById(R.id.item5);
-		
-		 if(mode == INFO){
+			
+		 
+		if(mode == INFO){
 			done = (Button)findViewById(R.id.button1);
 			ready = (Button)findViewById(R.id.imReady);
 			nextPage = (Button) findViewById(R.id.nextPage);
@@ -597,6 +617,7 @@ public class New_Level extends Activity {
 			statement5 = (TextView) findViewById(R.id.statement5);
 				
 		}else{
+			done = (Button)findViewById(R.id.button1);
 			person6 = (ImageView) findViewById(R.id.person6);
 			person7 = (ImageView) findViewById(R.id.person7);
 			person8 = (ImageView) findViewById(R.id.person8);
@@ -664,9 +685,28 @@ public class New_Level extends Activity {
 		itemArray[2] = item3;
 		itemArray[3] = item4;
 		itemArray[4] = item5;
-}
+	}
+	
+	class RetreiveImage extends AsyncTask<String, Void, Bitmap> {
 
+	    protected Bitmap doInBackground(String... urls) {
+		    try {
+		        URL url = new URL(urls[0]);
+		        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		        connection.setDoInput(true);
+		        connection.connect();
+		        InputStream input = connection.getInputStream();
+		        Bitmap myBitmap = BitmapFactory.decodeStream(input);
+		        return myBitmap;
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		        return null;
+		    }
+	    }
 
-
-
+	    protected void onPostExecute(Bitmap bit) {
+	        // TODO: check this.exception 
+	        // TODO: do something with the feed
+	    }
+	}
 }

@@ -251,7 +251,7 @@ containing a value of this type.
         public static final int will=0x7f020035;
     }
     public static final class id {
-        public static final int action_settings=0x7f04005d;
+        public static final int action_settings=0x7f04005e;
         public static final int blackSeperation=0x7f040008;
         public static final int button1=0x7f04003c;
         public static final int button2=0x7f04003f;
@@ -318,7 +318,7 @@ containing a value of this type.
         public static final int likes5=0x7f040038;
         public static final int nextPage=0x7f04003d;
         public static final int normal=0x7f040001;
-        public static final int oopsText=0x7f04005c;
+        public static final int oopsText=0x7f04005d;
         public static final int pairsText=0x7f040042;
         public static final int person1=0x7f040027;
         public static final int person10=0x7f040049;
@@ -333,6 +333,7 @@ containing a value of this type.
         public static final int picker_subtitle=0x7f04001c;
         public static final int playWithoutFacebook=0x7f04000a;
         public static final int prevPage=0x7f04003e;
+        public static final int progressBar=0x7f04005c;
         public static final int replay=0x7f040022;
         public static final int small=0x7f040000;
         public static final int startGame=0x7f04000c;
@@ -370,7 +371,8 @@ containing a value of this type.
         public static final int level_three=0x7f030014;
         public static final int level_three_correct=0x7f030015;
         public static final int level_two=0x7f030016;
-        public static final int result=0x7f030017;
+        public static final int loading=0x7f030017;
+        public static final int result=0x7f030018;
     }
     public static final class menu {
         public static final int main=0x7f090000;

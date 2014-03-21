@@ -63,7 +63,7 @@ public class FacebookData {
 	}
 
 	private void addToResult(String uid, String fname) {
-		String fqlQuery = "SELECT page_id, name FROM page where page_id IN (SELECT page_id FROM page_fan WHERE uid=" + uid + ")";
+		String fqlQuery = "SELECT page_id, name, pic_small FROM page where page_id IN (SELECT page_id FROM page_fan WHERE uid=" + uid + ")";
 		Bundle params = new Bundle();
 		params.putString("q", fqlQuery);
 		final String userId = uid;
@@ -77,14 +77,18 @@ public class FacebookData {
 			public void onCompleted(Response response) {
 				try {
 					JSONArray dataArray = (JSONArray) response.getGraphObject().getInnerJSONObject().get("data");
-					JSONObject data = (JSONObject) dataArray.get(getRandom(dataArray.length()));
+					JSONObject data = (JSONObject) dataArray.get(1);
 					String pid = (String) data.get("page_id");
 					String name = (String) data.get("name");
+					String likePic = ((String) data.get("pic_small")).replace("https", "http");
+					String userPic = "http://graph.facebook.com/" + userId + "/picture";
 					JSONObject j = new JSONObject();
 					j.put("personId", userId);
 					j.put("personName", firstName);
+					j.put("personImage", userPic);
 					j.put("likeId", pid);
 					j.put("likeName", name);
+					j.put("likeImage", likePic);
 					result.put(j);
 					
 				} catch (JSONException e) {

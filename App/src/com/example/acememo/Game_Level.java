@@ -94,7 +94,7 @@ public class Game_Level extends Activity{
 				@Override
 				public void onClick(View arg0){
 					Intent intent = null ;
-				intent= new Intent(context,New_Level.class);
+				intent= new Intent(context,LevelDataFromFacebook.class);
 				/*	
 					switch(levelNumber){
 						case 1: intent= new Intent(context,New_Level.class);
