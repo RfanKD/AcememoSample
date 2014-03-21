@@ -63,8 +63,8 @@ public class New_Level extends Activity {
 	private LayoutParams containerParams;
 	//private Button goToReview;
 	
-	private ArrayList<ProfilePictureView> likeImage;
-	private ArrayList<ProfilePictureView> profileImage;
+	private ArrayList<ImageView> likeImage;
+	private ArrayList<ImageView> profileImage;
 	
 //	private ProfilePictureView likePic;
 //	private ProfilePictureView profilePic;
@@ -106,32 +106,32 @@ public class New_Level extends Activity {
 		level = Game_Level.levelNumber;
 		levelName.setText("Level " + level);
 		
-		if(!MainActivity.withFacebook){
+		//if(!MainActivity.withFacebook){
 			HardcodedJSON hj = new HardcodedJSON(level);
 			levelData = hj.getGameArray();
-		}else{
+	//	}else{
 			// 5 is how many pairs we want
-			final FacebookData fb = new FacebookData(level);
+		//	final FacebookData fb = new FacebookData(level);
 			// You delay pulling the data 5 seconds to wait all the requests finish up
-			new Timer().schedule( 
-			        new TimerTask() {
-			            @Override
-			            public void run() {
-			                // fb.getResult() here returns a JSONArray.
-			            	// you should set up the layout with this, here.
-			            	
-			            	//[{"personId":"741328439","personName":"Oguzhan","likeName":"Komedi Dukkani","likeId":"319374521514245"},
-			            	//{"personId":"617185092","personName":"Efe","likeName":"Haberim","likeId":"261153933987178"},
-			            	//{"personId":"100001141212093","personName":"Eda","likeName":"Onedio.com","likeId":"171393949589921"}]
-			            	
-			            	levelData = fb.getResult();
-			            	Log.d("LikeLog", "RESULT: " + fb.getResult().toString());
-			            
-			            }
-			        }, 
-			        5000
-			);
-		}
+//			new Timer().schedule( 
+//			        new TimerTask() {
+//			            @Override
+//			            public void run() {
+//			                // fb.getResult() here returns a JSONArray.
+//			            	// you should set up the layout with this, here.
+//			            	
+//			            	//[{"personId":"741328439","personName":"Oguzhan","likeName":"Komedi Dukkani","likeId":"319374521514245"},
+//			            	//{"personId":"617185092","personName":"Efe","likeName":"Haberim","likeId":"261153933987178"},
+//			            	//{"personId":"100001141212093","personName":"Eda","likeName":"Onedio.com","likeId":"171393949589921"}]
+//			            	
+//			            	levelData = fb.getResult();
+//			            	Log.d("LikeLog", "RESULT: " + fb.getResult().toString());
+//			            
+//			            }
+//			        }, 
+//			        5000
+			//);
+	//	}
 		
 		// System.out.println(level);
 		//userId = FacebookLogin.user_id;
@@ -153,8 +153,8 @@ public class New_Level extends Activity {
 		isSet = false;
 		levelScore = 0;
 		
-		likeImage = new ArrayList<ProfilePictureView>();
-		profileImage = new ArrayList<ProfilePictureView>();
+		likeImage = new ArrayList<ImageView>();
+		profileImage = new ArrayList<ImageView>();
 		
 	/*	for (int i = 1; i <= level; i ++){
 			//createImageView (level, i);
@@ -181,51 +181,51 @@ public class New_Level extends Activity {
 //		
 //	}
 //	*/
-	public void createImageView (int totalLevel, int currentLevel){
-		
-		
-		TextView tb = new TextView(this);
-		tb.setText("test");
-		tb.setLayoutParams(containerParams);
-
-		
-		root.addView(tb);
-		
-		String IMAGEVIEW_TAG;
-		
-		
-		switch(currentLevel){
-		case 1: IMAGEVIEW_TAG = "Raph " + " likes " +  " photo ";
-				break;
-		case 2:  IMAGEVIEW_TAG = "Joe " + " likes " +  " Fishing ";
-				break;
-		case 3:  IMAGEVIEW_TAG = "Mike " + " likes " +  " bowling ";;
-				break;
-		case 4:  IMAGEVIEW_TAG = "Craig " + " likes " +  " archery ";;
-				break;
-		default:  IMAGEVIEW_TAG = "Alex " + " likes " +  " reading ";;
-	   }
-		
-		ProfilePictureView likePic = new ProfilePictureView(this);
-		likePic.setProfileId("457041557690681");
-		likePic.setPresetSize(ProfilePictureView.NORMAL);
-		likePic.setTag(IMAGEVIEW_TAG);
-		likeImage.add(likePic);
-		root.addView(likePic);
-		
-		ProfilePictureView profilePic = new ProfilePictureView(this);
-		profilePic.setProfileId("1651320295");
-		profilePic.setPresetSize(ProfilePictureView.NORMAL);
-		profilePic.setOnTouchListener(new MyTouchListener());
-		profilePic.setTag(IMAGEVIEW_TAG);
-		profileImage.add(profilePic);
-		root.addView(profilePic);
-		
-		 		
-		setContentView(root);
-		
-		
-	}
+//	public void createImageView (int totalLevel, int currentLevel){
+//		
+//		
+//		TextView tb = new TextView(this);
+//		tb.setText("test");
+//		tb.setLayoutParams(containerParams);
+//
+//		
+//		root.addView(tb);
+//		
+//		String IMAGEVIEW_TAG;
+//		
+//		
+//		switch(currentLevel){
+//		case 1: IMAGEVIEW_TAG = "Raph " + " likes " +  " photo ";
+//				break;
+//		case 2:  IMAGEVIEW_TAG = "Joe " + " likes " +  " Fishing ";
+//				break;
+//		case 3:  IMAGEVIEW_TAG = "Mike " + " likes " +  " bowling ";;
+//				break;
+//		case 4:  IMAGEVIEW_TAG = "Craig " + " likes " +  " archery ";;
+//				break;
+//		default:  IMAGEVIEW_TAG = "Alex " + " likes " +  " reading ";;
+//	   }
+//		
+//		ProfilePictureView likePic = new ProfilePictureView(this);
+//		likePic.setProfileId("457041557690681");
+//		likePic.setPresetSize(ProfilePictureView.NORMAL);
+//		likePic.setTag(IMAGEVIEW_TAG);
+//		likeImage.add(likePic);
+//		root.addView(likePic);
+//		
+//		ProfilePictureView profilePic = new ProfilePictureView(this);
+//		profilePic.setProfileId("1651320295");
+//		profilePic.setPresetSize(ProfilePictureView.NORMAL);
+//		profilePic.setOnTouchListener(new MyTouchListener());
+//		profilePic.setTag(IMAGEVIEW_TAG);
+//		profileImage.add(profilePic);
+//		root.addView(profilePic);
+//		
+//		 		
+//		setContentView(root);
+//		
+//		
+//	}
 	
 	public void addListenerOnButton(){
 		final Context context = this ;
@@ -276,7 +276,7 @@ public class New_Level extends Activity {
 				updateViews("forGamePlay", level);
 				addPictures(0, level-1, GAME);
 				
-				setTouchListeners();
+			//	setTouchListeners();
 				
 				findViewById(R.id.level3Relative).setOnDragListener(new MyDragListener());
 				
@@ -299,9 +299,9 @@ public class New_Level extends Activity {
 		
 	}
 	
-	private boolean dropEventNotHandled(DragEvent dragEvent) {
-        return !dragEvent.getResult();
-	}
+//	private boolean dropEventNotHandled(DragEvent dragEvent) {
+//        return !dragEvent.getResult();
+//	}
 	
 	private void updateViews(String callingLocation, int numBoxesNeeded){
 		if(callingLocation.equals("onStartLessThan5")){
@@ -342,17 +342,17 @@ public class New_Level extends Activity {
 		}
 	}
 	
-	private void setTouchListeners(){
-		for(int i=0; i<5; i++){
-			personArray[i].setOnTouchListener(new  MyTouchListener());
-		}
-	}
-	
-	private void setDragListeners(){
-		for(int i=0; i<5; i++){
-			itemArray[i].setOnTouchListener(new  MyTouchListener());
-		}
-	}
+//	private void setTouchListeners(){
+//		for(int i=0; i<5; i++){
+//			personArray[i].setOnTouchListener(new  MyTouchListener());
+//		}
+//	}
+//	
+//	private void setDragListeners(){
+//		for(int i=0; i<5; i++){
+//			itemArray[i].setOnTouchListener(new  MyTouchListener());
+//		}
+//	}
 	
 	private final class MyTouchListener implements OnTouchListener {
 		  public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -505,6 +505,20 @@ public class New_Level extends Activity {
 					try {
 						personArray[startNumber].setImageResource(levelData.getJSONObject(startNumber).getInt("personId"));
 						itemArray[arr[startNumber]].setImageResource(levelData.getJSONObject(startNumber).getInt("likeId"));
+						
+						String newStatement = levelData.getJSONObject(startNumber).getString("personName") +
+								   " likes "+
+								   levelData.getJSONObject(startNumber).getString("likeName");
+						
+						personArray[startNumber].setTag(newStatement);
+						itemArray[arr[startNumber]].setTag(newStatement);
+						
+						ImageView likeTest = itemArray[arr[startNumber]];
+						ImageView profileTest = personArray[startNumber];
+						
+						likeImage.add(likeTest);
+						profileImage.add(profileTest);	
+					
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -520,6 +534,11 @@ public class New_Level extends Activity {
 			person3 = (ImageView) findViewById(R.id.person3);
 			person4 = (ImageView) findViewById(R.id.person4);
 			person5 = (ImageView) findViewById(R.id.person5);
+			person1.setOnTouchListener(new  MyTouchListener());
+			person2.setOnTouchListener(new  MyTouchListener());
+			person3.setOnTouchListener(new  MyTouchListener());
+			person4.setOnTouchListener(new  MyTouchListener());
+			person5.setOnTouchListener(new  MyTouchListener());
 			
 			item1 = (ImageView) findViewById(R.id.item1);
 			item2 = (ImageView) findViewById(R.id.item2);
@@ -552,6 +571,11 @@ public class New_Level extends Activity {
 			person8 = (ImageView) findViewById(R.id.person8);
 			person9 = (ImageView) findViewById(R.id.person9);
 			person10 = (ImageView) findViewById(R.id.person10);
+			person6.setOnTouchListener(new  MyTouchListener());
+			person7.setOnTouchListener(new  MyTouchListener());
+			person8.setOnTouchListener(new  MyTouchListener());
+			person9.setOnTouchListener(new  MyTouchListener());
+			person10.setOnTouchListener(new  MyTouchListener());
 			
 			item6 = (ImageView) findViewById(R.id.item6);
 			item7 = (ImageView) findViewById(R.id.item7);
