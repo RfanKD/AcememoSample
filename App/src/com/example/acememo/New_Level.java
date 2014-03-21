@@ -270,12 +270,22 @@ public class New_Level extends Activity {
 						populateArrays(GAME);
 						
 						 for (int i=0; i < likeImage.size(); i++){
-							// if(likeImage.size() <= 5){
+							 if(i < 5){
 							 personArray[i].setImageDrawable(profileImage.get(i).getDrawable());
 							 personArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
 							 
 							 personArray[i+5].setImageDrawable(likeImage.get(i).getDrawable());
 							 personArray[i+5].setImageMatrix(likeImage.get(i).getImageMatrix());
+							 
+												 
+							 }else{
+								 itemArray[i].setImageDrawable(profileImage.get(i).getDrawable());
+								 itemArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
+								 
+								 itemArray[i-5].setImageDrawable(likeImage.get(i).getDrawable());
+								 itemArray[i-5].setImageMatrix(likeImage.get(i).getImageMatrix());
+								 
+							 }
 							 
 							 if (dropCorrect.get(i) == false){
 								 personArray[i].setPadding(5, 5, 5, 5);
@@ -286,14 +296,6 @@ public class New_Level extends Activity {
 								 
 							 }
 							 
-//							 }else{
-//								 itemArray[i+5].setImageDrawable(profileImage.get(i).getDrawable());
-//								 itemArray[i+5].setImageMatrix(profileImage.get(i).getImageMatrix());
-//								 
-//								 itemArray[i].setImageDrawable(likeImage.get(i).getDrawable());
-//								 itemArray[i].setImageMatrix(likeImage.get(i).getImageMatrix());
-								 
-							// }
 						 }
 						
 //						 private ArrayList<ImageView> likeImage;
@@ -306,6 +308,15 @@ public class New_Level extends Activity {
 //						
 						//test.equals(likeImage.get(0)) ;
 						//test.setIm
+							done.setOnClickListener (new OnClickListener() {
+								
+								@Override
+								public void onClick(View arg0){
+									Intent continueTO = new Intent(context,Result.class);
+									//continueTO.putExtra("sender", "three");
+									startActivityForResult(continueTO, 0);
+								}
+							});
 											
 						
 					}

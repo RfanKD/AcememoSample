@@ -34,10 +34,12 @@ public class Result extends Activity{
 		goHome = (Button)findViewById(R.id.button1);
 		reviewAnswer = (Button)findViewById(R.id.button2);
 		nextLevel = (Button)findViewById(R.id.button3);
+		nextLevel.setVisibility(View.INVISIBLE);
 		
 	currentUserScore = New_Level.levelScore;
 	totalUserScore = Game_Level.totalScore;
 	levelNum = New_Level.level;
+	
 		
 	totalScore = (TextView) findViewById(R.id.totalText);
 	totalScore.setText("The total cumulative score is: " + totalUserScore);
@@ -46,7 +48,25 @@ public class Result extends Activity{
 	currentScore.setText("The score for current level is: " + currentUserScore);
 	
 	Result = (TextView) findViewById(R.id.resultText);
-	Result.setText("You have just completed level "+ levelNum);
+	
+	if (levelNum == 1){
+		if(currentUserScore == 0){
+			Result.setText("there are too many error!");
+		}else{
+			nextLevel.setVisibility(View.VISIBLE);
+			Result.setText("Congratulation! You passed level " + levelNum);
+		}
+	}else{
+		if(currentUserScore < (levelNum/2)){
+		Result.setText("there are too many error!");
+		}else{
+		nextLevel.setVisibility(View.VISIBLE);
+		Result.setText("Congratulation! You passed level " + levelNum);
+		}
+	}
+	
+	
+	
 //		oopsMessage.setText(userScore);
 //		endGameMessage = (TextView) findViewById(R.id.pairsText);
 //		senderClass = getIntent().getStringExtra("sender");
