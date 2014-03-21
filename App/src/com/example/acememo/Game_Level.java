@@ -28,6 +28,7 @@ public class Game_Level extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.game_level_menu);
 		
+		totalScore = 0;
 		//findViewById(R.id.editText1).set
 		level1Message = (TextView) findViewById(R.id.tutorialLevel);
 		addListenerOnButton();

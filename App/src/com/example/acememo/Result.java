@@ -88,7 +88,10 @@ public class Result extends Activity{
 			@Override
 			public void onClick(View arg0){
 				//MainActivity.screenStatus = 3; 
+				totalUserScore = 0 ;
+				
 				Intent mainActivitySyncFacebook = new Intent(context,Game_Level.class);
+				
 				//mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(mainActivitySyncFacebook);
 				finish();
