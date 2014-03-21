@@ -18,6 +18,8 @@ public class MainActivity extends Activity {
 	final static int LOADING = 2;
 	final static int START = 3; 
 	
+	public static boolean withFacebook;
+	
 	Button facebookLogin, playWithoutFacebook;
 	Button startGame;
 	ProgressBar loadingAccount;
@@ -72,6 +74,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View arg0){
+				withFacebook = true;
 				Intent intent1 = new Intent(context,FacebookLogin.class);
 				startActivity(intent1);
 
@@ -83,6 +86,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View arg0){
+				withFacebook = false;
 				playWithoutFacebook.setVisibility(View.INVISIBLE);
 				facebookLogin.setVisibility(View.INVISIBLE);
 				startGame.setVisibility(View.VISIBLE);

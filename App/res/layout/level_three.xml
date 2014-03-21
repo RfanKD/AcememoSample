@@ -14,7 +14,7 @@
         android:textSize="35sp"
         android:text="@string/level3" />
 
-    
+
     <ImageView
         android:id="@+id/person1"
         android:layout_width="75dp"
@@ -56,7 +56,7 @@
         android:text="@string/level3Statement1" />
     
     --------------------------------------------------------------
-        <ImageView
+   <ImageView
         android:id="@+id/person2"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -97,7 +97,7 @@
         android:text="@string/level3Statement2" />
    
         --------------------------------------------------------------
-        <ImageView
+    <ImageView
         android:id="@+id/person3"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -135,10 +135,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:textSize="17sp"
-        android:text="@string/level3Statement3" />
+        android:text="@string/level3Statement3"/>
    
         --------------------------------------------------------------
-        <ImageView
+    <ImageView
         android:id="@+id/person4"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -179,7 +179,7 @@
         android:text="@string/level3Statement4" />
    
         --------------------------------------------------------------
-        <ImageView
+   <ImageView
         android:id="@+id/person5"
         android:layout_width="75dp"
         android:layout_height="50dp"
@@ -218,48 +218,7 @@
         android:layout_marginTop="5dp"
         android:textSize="17sp"
         android:text="@string/level3Statement5" />
-<!-- 
-        <ImageView
-        android:id="@+id/person6"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/statement5"
-        android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/emir" />
-    
-    <ImageView
-        android:id="@+id/likes6"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
-        android:layout_toRightOf="@+id/person6"
-        android:layout_below="@+id/statement5"
-        android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/heart"/>
-    
-   <ImageView
-        android:id="@+id/item6"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
-        android:layout_toRightOf="@+id/likes6"
-        android:layout_below="@+id/statement5"
-        android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
-        android:src="@drawable/pizza"/>
-        
-    <TextView
-        android:id="@+id/statement6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/person6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:textSize="17sp"
-        android:text="@string/level3Statement6" />
-   
-     -->
+
   <Button
         android:id="@+id/imReady"
         android:layout_width="wrap_content"

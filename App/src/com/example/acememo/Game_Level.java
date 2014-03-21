@@ -2,6 +2,7 @@ package com.example.acememo;
 
 import com.example.acememo.R;
 
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -72,9 +73,9 @@ public class Game_Level extends Activity{
 			public void onClick(View arg0){
 				  levelNumber ++ ;
 				  
-				 /* if (levelNumber >= 5){
-						levelNumber = 5;
-					}*/
+				  if (levelNumber >= 10){
+						levelNumber = 10;
+					}
 				  
 				  if(levelNumber==1){
 					  level1Message.setVisibility(View.VISIBLE);
