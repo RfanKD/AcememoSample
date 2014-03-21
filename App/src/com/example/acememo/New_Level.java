@@ -10,6 +10,7 @@ import android.content.ClipDescription;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -28,7 +29,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Timer;
+import java.util.TimerTask;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -51,7 +55,7 @@ public class New_Level extends Activity {
 	static int levelScore;
 	private float dropX, dropY;
 	private boolean isSet;
-	JSONObject[] levelData;
+	JSONArray levelData;
 	
 	private LinearLayout root;
 	private LinearLayout ll;
@@ -102,9 +106,32 @@ public class New_Level extends Activity {
 		level = Game_Level.levelNumber;
 		levelName.setText("Level " + level);
 		
-		HardcodedJSON hj = new HardcodedJSON(level);
-		levelData = hj.getGameArray();
-		
+		if(!MainActivity.withFacebook){
+			HardcodedJSON hj = new HardcodedJSON(level);
+			levelData = hj.getGameArray();
+		}else{
+			// 5 is how many pairs we want
+			final FacebookData fb = new FacebookData(level);
+			// You delay pulling the data 5 seconds to wait all the requests finish up
+			new Timer().schedule( 
+			        new TimerTask() {
+			            @Override
+			            public void run() {
+			                // fb.getResult() here returns a JSONArray.
+			            	// you should set up the layout with this, here.
+			            	
+			            	//[{"personId":"741328439","personName":"Oguzhan","likeName":"Komedi Dukkani","likeId":"319374521514245"},
+			            	//{"personId":"617185092","personName":"Efe","likeName":"Haberim","likeId":"261153933987178"},
+			            	//{"personId":"100001141212093","personName":"Eda","likeName":"Onedio.com","likeId":"171393949589921"}]
+			            	
+			            	levelData = fb.getResult();
+			            	Log.d("LikeLog", "RESULT: " + fb.getResult().toString());
+			            
+			            }
+			        }, 
+			        5000
+			);
+		}
 		
 		// System.out.println(level);
 		//userId = FacebookLogin.user_id;
@@ -454,11 +481,11 @@ public class New_Level extends Activity {
 			for(int i=0; i<5 && !stop; i++){
 				if(startNumber <= endNumber){
 					try {
-						personArray[i].setImageResource(levelData[startNumber].getInt("personImage"));
-						itemArray[i].setImageResource(levelData[startNumber].getInt("likeImage"));
-						String newStatement = levelData[startNumber].getString("personName") +
+						personArray[i].setImageResource(levelData.getJSONObject(startNumber).getInt("personId"));
+						itemArray[i].setImageResource(levelData.getJSONObject(startNumber).getInt("likeId"));
+						String newStatement = levelData.getJSONObject(startNumber).getString("personName") +
 											   " likes "+
-											   levelData[startNumber].getString("likeName");
+											   levelData.getJSONObject(startNumber).getString("likeName");
 						statementArray[i].setText(newStatement);
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
@@ -476,17 +503,14 @@ public class New_Level extends Activity {
 		    
 			while(startNumber<= endNumber){
 					try {
-						personArray[startNumber].setImageResource(levelData[startNumber].getInt("personImage"));
-						itemArray[arr[startNumber]].setImageResource(levelData[startNumber].getInt("likeImage"));
+						personArray[startNumber].setImageResource(levelData.getJSONObject(startNumber).getInt("personId"));
+						itemArray[arr[startNumber]].setImageResource(levelData.getJSONObject(startNumber).getInt("likeId"));
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					startNumber++;
-			}	
-			
-			
-			
+			}		
 		}
 	}
 

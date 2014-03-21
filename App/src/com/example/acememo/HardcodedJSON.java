@@ -1,5 +1,6 @@
 package com.example.acememo;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -23,7 +24,7 @@ public class HardcodedJSON {
 	JSONObject json14 = new JSONObject();
 	JSONObject json15 = new JSONObject();
 	JSONObject json16 = new JSONObject();
-	JSONObject[] gameArray;
+	JSONArray gameArray;
 	
 	JSONObject[] jsonArray = new JSONObject[16];
 	
@@ -38,25 +39,27 @@ public class HardcodedJSON {
 
 	public void setUpJSONS(int level){
 		fillArray();
-		gameArray = new JSONObject[level];
+		gameArray = new JSONArray();
 
 		for(int i=0; i<level; i++){
 			try {
-				jsonArray[i].put("personId", "00000000");
+				jsonArray[i].put("personIdd", "00000000");
 				jsonArray[i].put("personName", personName[i % 6]);
-				jsonArray[i].put("personImage",  peopleDraw[i % 6]);
+				jsonArray[i].put("personId",  peopleDraw[i % 6]);
 				jsonArray[i].put("likeName", itemName[i % 8]);
-				jsonArray[i].put("likeImage", itemDraw[i % 8]);
+				jsonArray[i].put("likeId", itemDraw[i % 8]);
+				
+				gameArray.put(i, jsonArray[i]);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
-			gameArray[i] = jsonArray[i];
+			
 		}
 	}
 	
-	public JSONObject[] getGameArray(){
+	public JSONArray getGameArray(){
 		return gameArray;
 	}
 	
