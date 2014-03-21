@@ -1,5 +1,8 @@
 package com.example.acememo;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,7 +24,6 @@ public class FacebookLogin extends Activity {
 		final Context context = this;
 		// start Facebook Login
 		Session.openActiveSession(this, true, new Session.StatusCallback() {
-
 			// callback when session changes state
 			@Override
 			public void call(Session session, SessionState state, Exception exception) {
@@ -34,6 +36,24 @@ public class FacebookLogin extends Activity {
 						public void onCompleted(GraphUser user, Response response) {
 							if (user != null) {
 								Log.d("LogByEmir", "request completed");
+								Log.d("LikeLog", user.getName());
+								System.out.println("YOOOOO");
+								// 5 is how many pairs we want
+								final FacebookData fb = new FacebookData(5);
+								// You delay pulling the data 5 seconds to wait all the requests finish up
+								new Timer().schedule( 
+								        new TimerTask() {
+								            @Override
+								            public void run() {
+								                // fb.getResult() here returns a JSONArray.
+								            	// you should set up the layout with this, here.
+								            	Log.d("LikeLog", "RESULT: " + fb.getResult().toString());
+								            }
+								        }, 
+								        8000
+								);
+
+								
 								// User is logged in, forward to next activity
 								Intent GameLevel = new Intent(context,Game_Level.class);
 								startActivity(GameLevel);
@@ -46,8 +66,8 @@ public class FacebookLogin extends Activity {
 
 			}
 		});
-	}	
-	
+	}
+		
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
