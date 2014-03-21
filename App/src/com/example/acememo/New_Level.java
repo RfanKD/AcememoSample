@@ -65,6 +65,7 @@ public class New_Level extends Activity {
 	
 	private ArrayList<ImageView> likeImage;
 	private ArrayList<ImageView> profileImage;
+	private ArrayList<Boolean> dropCorrect;
 	
 //	private ProfilePictureView likePic;
 //	private ProfilePictureView profilePic;
@@ -106,13 +107,13 @@ public class New_Level extends Activity {
 		level = Game_Level.levelNumber;
 		levelName.setText("Level " + level);
 		
-		//if(!MainActivity.withFacebook){
+   //     if(!MainActivity.withFacebook){
 			HardcodedJSON hj = new HardcodedJSON(level);
 			levelData = hj.getGameArray();
-	//	}else{
-			// 5 is how many pairs we want
-		//	final FacebookData fb = new FacebookData(level);
-			// You delay pulling the data 5 seconds to wait all the requests finish up
+//		}else{
+//			// 5 is how many pairs we want
+//			final FacebookData fb = new FacebookData(level);
+//			// You delay pulling the data 5 seconds to wait all the requests finish up
 //			new Timer().schedule( 
 //			        new TimerTask() {
 //			            @Override
@@ -130,8 +131,8 @@ public class New_Level extends Activity {
 //			            }
 //			        }, 
 //			        5000
-			//);
-	//	}
+//			);
+//		}
 		
 		// System.out.println(level);
 		//userId = FacebookLogin.user_id;
@@ -155,6 +156,7 @@ public class New_Level extends Activity {
 		
 		likeImage = new ArrayList<ImageView>();
 		profileImage = new ArrayList<ImageView>();
+		dropCorrect = new ArrayList<Boolean>();
 		
 	/*	for (int i = 1; i <= level; i ++){
 			//createImageView (level, i);
@@ -363,6 +365,8 @@ public class New_Level extends Activity {
 		      
 		      ClipData dragData = new ClipData(view.getTag().toString(),mimeTypes,item);
 		      
+		    // System.out.println(view.getTag().toString());
+		      
 		      DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
 		      view.startDrag(dragData, 
 		    		         shadowBuilder, 
@@ -379,7 +383,8 @@ public class New_Level extends Activity {
 	
 	private final class MyDragListener implements OnDragListener  {
 		 
-		  public boolean onDrag(View view,  DragEvent event){		  		
+		  public boolean onDrag(View view,  DragEvent event){	
+			     int index = 0 ;
 			  	 switch(event.getAction())                   
 		         {
 		            case DragEvent.ACTION_DRAG_ENTERED:
@@ -389,13 +394,31 @@ public class New_Level extends Activity {
 		            	System.out.println("im here2");
 		            	 return true;
 		            case DragEvent.ACTION_DRAG_STARTED:
+		            	//View dragViewA = (View) event.getLocalState();
+		            	 ImageView dragViewA = (ImageView) event.getLocalState();
+		            	
+		            	int profilePicIndex = profileImage.indexOf(dragViewA);
+		            	System.out.println ("this is my id" +profilePicIndex);
+		            	//ClipData.Item itemA = event.getClipData().getItemAt(0); 
+		            	//String incomingTextA = itemA.getText().toString();
+		            	
+		            	// for (int i=0; i < profileImage.size(); i++) {
+		            	//	 String targetText = likeImage.get(i).getTag().toString();
+		            	//	 if (targetText == incomingTextA){
+		     	            	//if (isSet == true){
+		     	            	if(dropCorrect.get(profilePicIndex) == true){	
+		     	            		System.out.println(profileImage.get(index).getTag());
+				            		levelScore --;
+				            		 Game_Level.totalScore --;
+				            		isSet = false ;
+				            		dropCorrect.set(profilePicIndex, false);
+				            		// dropCorrect.set(i, false);
+				            		System.out.println(levelScore);
+				            	}
+		            		 //}
+		            	// }
 		            	System.out.println("im here3");
-		            	if (isSet == true){
-		            		levelScore --;
-		            		 Game_Level.totalScore --;
-		            		isSet = false ;
-		            		System.out.println(levelScore);
-		            	}
+	
 	                    return true;
 		            case DragEvent.ACTION_DRAG_LOCATION:
 		            	//System.out.println("im here4");
@@ -404,6 +427,8 @@ public class New_Level extends Activity {
 		            case DragEvent.ACTION_DROP:
 		            	 View dragView = (View) event.getLocalState();
 		            	 
+		            	 
+		            	 
 		            	  dragView.bringToFront();
 			              dragView.setVisibility(View.VISIBLE);  
 		               //RelativeLayout containView = (RelativeLayout) view;
@@ -411,6 +436,8 @@ public class New_Level extends Activity {
 		            	 ClipData.Item item = event.getClipData().getItemAt(0); 
 		            	 
 		            	 String incomingText = item.getText().toString();
+		            	 
+		            	 
 		            	 
 		                 dropX = event.getX();
 			             dropY = event.getY();
@@ -432,6 +459,8 @@ public class New_Level extends Activity {
 				            	 String targetText = likeImage.get(i).getTag().toString();
 				            	 if (targetText.equals(incomingText)){
 				            		 System.out.println("we have match"); 
+				            		 dropCorrect.set(i, true);
+				            		 index = i;
 				            		 levelScore ++;
 				            		 Game_Level.totalScore ++;
 				            		 isSet = true;
@@ -515,9 +544,11 @@ public class New_Level extends Activity {
 						
 						ImageView likeTest = itemArray[arr[startNumber]];
 						ImageView profileTest = personArray[startNumber];
+						boolean isCorrect = false;
 						
 						likeImage.add(likeTest);
-						profileImage.add(profileTest);	
+						profileImage.add(profileTest);
+						dropCorrect.add(isCorrect);
 					
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
