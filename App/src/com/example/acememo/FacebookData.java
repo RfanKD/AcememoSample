@@ -77,7 +77,7 @@ public class FacebookData {
 			public void onCompleted(Response response) {
 				try {
 					JSONArray dataArray = (JSONArray) response.getGraphObject().getInnerJSONObject().get("data");
-					JSONObject data = (JSONObject) dataArray.get(getRandom(dataArray.length()));
+					JSONObject data = (JSONObject) dataArray.get(1);
 					String pid = (String) data.get("page_id");
 					String name = (String) data.get("name");
 					JSONObject j = new JSONObject();
