@@ -90,10 +90,10 @@ public class Result extends Activity{
 				//MainActivity.screenStatus = 3; 
 				totalUserScore = 0 ;
 				
-				Intent mainActivitySyncFacebook = new Intent(context,Game_Level.class);
+				//Intent mainActivitySyncFacebook = new Intent(context,Game_Level.class);
 				
 				//mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(mainActivitySyncFacebook);
+				//startActivity(mainActivitySyncFacebook);
 				finish();
 			}
 		});
@@ -119,7 +119,7 @@ public class Result extends Activity{
 				//context,New_Level.class
 				//mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				setResult(RESULT_OK,reviewAnswer);
-				 finish();
+				finish();
 			}
 		});
 	}
