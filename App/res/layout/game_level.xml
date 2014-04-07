@@ -16,8 +16,8 @@
       
  <ImageView
         android:id="@+id/person1"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/levelNum"
         android:layout_marginLeft="45dp"
@@ -25,8 +25,8 @@
     
     <ImageView
         android:id="@+id/likes1"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_toRightOf="@+id/person1"
         android:layout_below="@+id/levelNum"
         android:layout_marginLeft="5dp"
@@ -35,8 +35,8 @@
     
    <ImageView
         android:id="@+id/item1"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_below="@+id/levelNum"
         android:layout_toRightOf="@+id/likes1"
         android:layout_marginLeft="5dp"
@@ -54,8 +54,8 @@
     --------------------------------------------------------------
         <ImageView
         android:id="@+id/person2"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/statement1"
         android:layout_marginLeft="45dp"
@@ -63,8 +63,8 @@
     
     <ImageView
         android:id="@+id/likes2"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_toRightOf="@+id/person2"
         android:layout_below="@+id/statement1"
         android:layout_marginLeft="5dp"
@@ -73,8 +73,8 @@
     
    <ImageView
         android:id="@+id/item2"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_toRightOf="@+id/likes2"
         android:layout_below="@+id/statement1"
         android:layout_marginLeft="5dp"
@@ -92,8 +92,8 @@
         --------------------------------------------------------------
         <ImageView
         android:id="@+id/person3"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/statement2"
         android:layout_marginLeft="45dp"
@@ -101,8 +101,8 @@
     
     <ImageView
         android:id="@+id/likes3"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_toRightOf="@+id/person3"
         android:layout_below="@+id/statement2"
         android:layout_marginLeft="5dp"
@@ -111,8 +111,8 @@
     
    <ImageView
         android:id="@+id/item3"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_toRightOf="@+id/likes3"
         android:layout_below="@+id/statement2"
         android:layout_marginLeft="5dp"
@@ -130,8 +130,8 @@
         --------------------------------------------------------------
         <ImageView
         android:id="@+id/person4"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/statement3"
         android:layout_marginLeft="45dp"
@@ -139,8 +139,8 @@
     
     <ImageView
         android:id="@+id/likes4"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_toRightOf="@+id/person4"
         android:layout_below="@+id/statement3"
         android:layout_marginLeft="5dp"
@@ -149,8 +149,8 @@
     
    <ImageView
         android:id="@+id/item4"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_toRightOf="@+id/likes4"
         android:layout_below="@+id/statement3"
         android:layout_marginLeft="5dp"
@@ -168,8 +168,8 @@
         --------------------------------------------------------------
         <ImageView
         android:id="@+id/person5"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/statement4"
         android:layout_marginLeft="45dp"
@@ -177,8 +177,8 @@
     
     <ImageView
         android:id="@+id/likes5"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_toRightOf="@+id/person5"
         android:layout_below="@+id/statement4"
         android:layout_marginLeft="5dp"
@@ -187,8 +187,8 @@
     
    <ImageView
         android:id="@+id/item5"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_toRightOf="@+id/likes5"
         android:layout_below="@+id/statement4"
         android:layout_marginLeft="5dp"
@@ -220,26 +220,6 @@
       android:layout_alignBottom="@+id/imReady"
       android:layout_centerInParent="true"
       android:text="@string/Done" />
-
-  <Button
-      android:id="@+id/nextPage"
-      android:layout_width="45dp"
-      android:layout_height="wrap_content"
-      android:layout_alignParentRight="true"
-      android:layout_marginRight="5dp"
-      android:layout_alignTop="@+id/item3"
-      android:background="@+color/white"
-      android:drawableTop="@+drawable/rightarrow"/>
-
-  <Button
-      android:id="@+id/prevPage"
-      android:layout_width="45dp"
-      android:layout_height="wrap_content"
-      android:layout_alignParentLeft="true"
-      android:layout_marginLeft="5dp"
-      android:layout_alignTop="@+id/person3"
-      android:background="@+color/white"
-      android:drawableTop="@+drawable/leftarrow" />
 
 </RelativeLayout>
 
