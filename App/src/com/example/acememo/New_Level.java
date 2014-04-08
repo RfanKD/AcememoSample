@@ -52,11 +52,11 @@ public class New_Level extends Activity {
 	private String userId;
 	private final int INFO = 1;
 	private final int GAME = 2;
-	ImageView person1, person2, person3, person4, person5; //, person6, person7, person8, person9, person10;
+	ImageView person1, person2, person3, person4, person5, person6, person7, person8, person9, person10;
 	ImageView heart1, heart2, heart3, heart4, heart5, heart6;
-	ImageView item1, item2, item3, item4, item5;//, item6, item7, item8, item9, item10;
+	ImageView item1, item2, item3, item4, item5, item6, item7, item8, item9, item10;
 	TextView levelName, statement1, statement2, statement3, statement4, statement5, statement6;
-	Button ready, done;//, nextPage, prevPage;
+	Button ready, done, nextPage, prevPage;
 	
 	ImageView[] personArray;
 	ImageView[] heartArray = new ImageView[5];
@@ -124,9 +124,9 @@ public class New_Level extends Activity {
 		if(level<=5){
 			updateViews("onStartLessThan5", level);
 			addPictures(0, level-1, INFO);
-//		}else{
-//			updateViews("onStartMoreThan5", 0);
-//			addPictures(0,4, INFO);
+		}else{
+			updateViews("onStartMoreThan5", 0);
+			addPictures(0,4, INFO);
 		}
 		
 		root.setOnDragListener(new MyDragListener());
@@ -211,40 +211,40 @@ public class New_Level extends Activity {
 	public void addListenerOnButton(){
 		final Context context = this ;
 		
-//		prevPage.setOnClickListener (new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View arg0){
-//				updateViews("useAllSpots",5);
-//				if(page==2){
-//					prevPage.setVisibility(View.INVISIBLE);
-//				}else{
-//					prevPage.setVisibility(View.VISIBLE);
-//				}
-//				page --;
-//				addPictures((page*5) - 5, page*5 -1, INFO);
-//				
-//				nextPage.setVisibility(View.VISIBLE);
-//				
-//
-//			}
-//		});
-//		
-//		nextPage.setOnClickListener (new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View arg0){
-//				page++;
-//				if(level <= page*5){
-//					updateViews("nextLastPage", (level % 5));
-//					addPictures(5*(page-1), level-1, INFO);
-//				}else{
-//					addPictures(5*(page-1), (5*page)-1, INFO);
-//				}
-//				prevPage.setVisibility(View.VISIBLE);
-//	
-//			}
-//		});
+		prevPage.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				updateViews("useAllSpots",5);
+				if(page==2){
+					prevPage.setVisibility(View.INVISIBLE);
+				}else{
+					prevPage.setVisibility(View.VISIBLE);
+				}
+				page --;
+				addPictures((page*5) - 5, page*5 -1, INFO);
+				
+				nextPage.setVisibility(View.VISIBLE);
+				
+
+			}
+		});
+		
+		nextPage.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				page++;
+				if(level <= page*5){
+					updateViews("nextLastPage", (level % 5));
+					addPictures(5*(page-1), level-1, INFO);
+				}else{
+					addPictures(5*(page-1), (5*page)-1, INFO);
+				}
+				prevPage.setVisibility(View.VISIBLE);
+	
+			}
+		});
 		
 		ready.setOnClickListener (new OnClickListener() {
 			
@@ -274,16 +274,16 @@ public class New_Level extends Activity {
 							 personArray[i].setImageDrawable(profileImage.get(i).getDrawable());
 							 personArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
 							 
-							 itemArray[i].setImageDrawable(likeImage.get(i).getDrawable());
-							 itemArray[i].setImageMatrix(likeImage.get(i).getImageMatrix());
+							 personArray[i+5].setImageDrawable(likeImage.get(i).getDrawable());
+							 personArray[i+5].setImageMatrix(likeImage.get(i).getImageMatrix());
 							 
 												 
-//							 }else{
-//								 itemArray[i].setImageDrawable(profileImage.get(i).getDrawable());
-//								 itemArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
-//								 
-//								 itemArray[i-5].setImageDrawable(likeImage.get(i).getDrawable());
-//								 itemArray[i-5].setImageMatrix(likeImage.get(i).getImageMatrix());
+							 }else{
+								 itemArray[i].setImageDrawable(profileImage.get(i).getDrawable());
+								 itemArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
+								 
+								 itemArray[i-5].setImageDrawable(likeImage.get(i).getDrawable());
+								 itemArray[i-5].setImageMatrix(likeImage.get(i).getImageMatrix());
 								 
 							 }
 							 
@@ -291,8 +291,8 @@ public class New_Level extends Activity {
 								 personArray[i].setPadding(5, 5, 5, 5);
 								 personArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
 								 
-								 itemArray[i].setPadding(5, 5, 5, 5);
-								 itemArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
+								 personArray[i+5].setPadding(5, 5, 5, 5);
+								 personArray[i+5].setBackgroundColor(Color.rgb(255, 0, 0));
 								 
 							 }
 							 
@@ -345,40 +345,40 @@ public class New_Level extends Activity {
 	
 	private void updateViews(String callingLocation, int numBoxesNeeded){
 		if(callingLocation.equals("onStartLessThan5")){
-			//nextPage.setVisibility(View.INVISIBLE);
-			//prevPage.setVisibility(View.INVISIBLE);
+			nextPage.setVisibility(View.INVISIBLE);
+			prevPage.setVisibility(View.INVISIBLE);
 			for(int i=4; i>=numBoxesNeeded; i--){
 				personArray[i].setVisibility(View.INVISIBLE);
 				heartArray[i].setVisibility(View.INVISIBLE);
 				itemArray[i].setVisibility(View.INVISIBLE);
 				statementArray[i].setVisibility(View.INVISIBLE);
 			}
-//		}else if(callingLocation.equals("nextLastPage")){
-//			//nextPage.setVisibility(View.INVISIBLE);
-//			//prevPage.setVisibility(View.VISIBLE);
-//			for(int i=4; i>=numBoxesNeeded; i--){
-//				personArray[i].setVisibility(View.INVISIBLE);
-//				heartArray[i].setVisibility(View.INVISIBLE);
-//				itemArray[i].setVisibility(View.INVISIBLE);
-//				statementArray[i].setVisibility(View.INVISIBLE);
-//			}
+		}else if(callingLocation.equals("nextLastPage")){
+			nextPage.setVisibility(View.INVISIBLE);
+			prevPage.setVisibility(View.VISIBLE);
+			for(int i=4; i>=numBoxesNeeded; i--){
+				personArray[i].setVisibility(View.INVISIBLE);
+				heartArray[i].setVisibility(View.INVISIBLE);
+				itemArray[i].setVisibility(View.INVISIBLE);
+				statementArray[i].setVisibility(View.INVISIBLE);
+			}
 		}else if(callingLocation.equals("useAllSpots")){
-			//nextPage.setVisibility(View.INVISIBLE);
+			nextPage.setVisibility(View.INVISIBLE);
 			for(int i=0; i<5; i++){
 				personArray[i].setVisibility(View.VISIBLE);
 				heartArray[i].setVisibility(View.VISIBLE);
 				itemArray[i].setVisibility(View.VISIBLE);
 				statementArray[i].setVisibility(View.VISIBLE);
 			}
-//		}else if(callingLocation.equals("onStartMoreThan5")){
-//			//nextPage.setVisibility(View.VISIBLE);
-//			//prevPage.setVisibility(View.INVISIBLE);
-//		
-//		}else if(callingLocation.equals("forGamePlay")){
-//			for(int i=9; i>(numBoxesNeeded); i--){
-//				personArray[i].setVisibility(View.INVISIBLE);
-//				//itemArray[i].setVisibility(View.INVISIBLE);
-//			}
+		}else if(callingLocation.equals("onStartMoreThan5")){
+			nextPage.setVisibility(View.VISIBLE);
+			prevPage.setVisibility(View.INVISIBLE);
+		
+		}else if(callingLocation.equals("forGamePlay")){
+			for(int i=9; i>(numBoxesNeeded); i--){
+				personArray[i].setVisibility(View.INVISIBLE);
+				//itemArray[i].setVisibility(View.INVISIBLE);
+			}
 		}
 	}
 	
@@ -616,7 +616,7 @@ public class New_Level extends Activity {
 			}
 		}else{
 			
-			Integer[] arr = {0,1,2,3,4};
+			Integer[] arr = {0,1,2,3,4,5,6,7,8,9};
 			Collections.shuffle(Arrays.asList(arr));
 		    
 			while(startNumber<= endNumber){
@@ -692,8 +692,8 @@ public class New_Level extends Activity {
 		if(mode == INFO){
 			done = (Button)findViewById(R.id.button1);
 			ready = (Button)findViewById(R.id.imReady);
-			//nextPage = (Button) findViewById(R.id.nextPage);
-			//prevPage = (Button) findViewById(R.id.prevPage);
+			nextPage = (Button) findViewById(R.id.nextPage);
+			prevPage = (Button) findViewById(R.id.prevPage);
 			levelName = (TextView) findViewById(R.id.levelNum);
 			
 			heart1 = (ImageView) findViewById(R.id.likes1);
@@ -709,23 +709,23 @@ public class New_Level extends Activity {
 			statement5 = (TextView) findViewById(R.id.statement5);
 				
 		}else{
-//			done = (Button)findViewById(R.id.button1);
-//			person6 = (ImageView) findViewById(R.id.person6);
-//			person7 = (ImageView) findViewById(R.id.person7);
-//			person8 = (ImageView) findViewById(R.id.person8);
-//			person9 = (ImageView) findViewById(R.id.person9);
-//			person10 = (ImageView) findViewById(R.id.person10);
-//			//person6.setOnTouchListener(new  MyTouchListener());
-//			//person7.setOnTouchListener(new  MyTouchListener());
-//			//person8.setOnTouchListener(new  MyTouchListener());
-//			//person9.setOnTouchListener(new  MyTouchListener());
-//			//person10.setOnTouchListener(new  MyTouchListener());
-//			
-//			item6 = (ImageView) findViewById(R.id.item6);
-//			item7 = (ImageView) findViewById(R.id.item7);
-//			item8 = (ImageView) findViewById(R.id.item8);
-//			item9 = (ImageView) findViewById(R.id.item9);
-//			item10 = (ImageView) findViewById(R.id.item10);
+			done = (Button)findViewById(R.id.button1);
+			person6 = (ImageView) findViewById(R.id.person6);
+			person7 = (ImageView) findViewById(R.id.person7);
+			person8 = (ImageView) findViewById(R.id.person8);
+			person9 = (ImageView) findViewById(R.id.person9);
+			person10 = (ImageView) findViewById(R.id.person10);
+			//person6.setOnTouchListener(new  MyTouchListener());
+			//person7.setOnTouchListener(new  MyTouchListener());
+			//person8.setOnTouchListener(new  MyTouchListener());
+			//person9.setOnTouchListener(new  MyTouchListener());
+			//person10.setOnTouchListener(new  MyTouchListener());
+			
+			item6 = (ImageView) findViewById(R.id.item6);
+			item7 = (ImageView) findViewById(R.id.item7);
+			item8 = (ImageView) findViewById(R.id.item8);
+			item9 = (ImageView) findViewById(R.id.item9);
+			item10 = (ImageView) findViewById(R.id.item10);
 		}
 		
 }
@@ -750,20 +750,20 @@ public class New_Level extends Activity {
 			
 		}else{
 			
-//			personArray = new ImageView[10];
-//			itemArray = new ImageView[10];
-//			
-//			personArray[5] = person6;
-//			personArray[6] = person7;
-//			personArray[7] = person8;
-//			personArray[8] = person9;
-//			personArray[9] = person10;
-//			
-//			itemArray[5] = item6;
-//			itemArray[6] = item7;
-//			itemArray[7] = item8;
-//			itemArray[8] = item9;
-//			itemArray[9] = item10;
+			personArray = new ImageView[10];
+			itemArray = new ImageView[10];
+			
+			personArray[5] = person6;
+			personArray[6] = person7;
+			personArray[7] = person8;
+			personArray[8] = person9;
+			personArray[9] = person10;
+			
+			itemArray[5] = item6;
+			itemArray[6] = item7;
+			itemArray[7] = item8;
+			itemArray[8] = item9;
+			itemArray[9] = item10;
 			
 		}
 		personArray[0] = person1;
