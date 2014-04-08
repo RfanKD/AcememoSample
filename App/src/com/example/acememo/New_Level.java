@@ -262,7 +262,6 @@ public class New_Level extends Activity {
 						//continueTO.putExtra("sender", "three");
 						startActivityForResult(continueTO, 0);
 						showCorrectAnswer();
-						finish();
 					}
 
 					private void showCorrectAnswer() {
@@ -316,7 +315,6 @@ public class New_Level extends Activity {
 									Intent continueTO = new Intent(context,Result.class);
 									//continueTO.putExtra("sender", "three");
 									startActivityForResult(continueTO, 0);
-									finish();
 								}
 							});
 											
