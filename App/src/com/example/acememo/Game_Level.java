@@ -74,8 +74,8 @@ public class Game_Level extends Activity{
 			public void onClick(View arg0){
 				  levelNumber ++ ;
 				  
-				  if (levelNumber >= 5){
-						levelNumber = 5;
+				  if (levelNumber >= 10){
+						levelNumber = 10;
 					}
 				  
 				  if(levelNumber==1){
