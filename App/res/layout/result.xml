@@ -5,32 +5,19 @@
 
     <TextView
         android:id="@+id/totalText"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:gravity="center"
-        android:text="@string/totalScore"
         android:textColor="#000000"
-        android:textSize="30sp" />
-    
-        <TextView
-        android:id="@+id/totalNumber"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="30sp" />
+        android:textSize="32sp" />
 
     <TextView
         android:id="@+id/currentText"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/totalText"
@@ -38,56 +25,46 @@
         android:ems="10"
         android:gravity="center"
         android:textColor="#000000"
-        android:textSize="30sp" 
-        android:text="@string/currentScore" />
-    
-    
-    <TextView
-        android:id="@+id/currentNumber"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/currentText"
-        android:layout_alignBottom="@+id/currentText"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="30sp" />
+        android:textSize="32sp" />
     
         <TextView
         android:id="@+id/resultText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/currentText"
         android:layout_marginTop="22dp"
         android:ems="10"
         android:gravity="center"
-        android:textSize="30sp" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/restart" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button3"
-        android:layout_alignLeft="@+id/button1"
-        android:text="@string/review" />
+        android:textColor="#000000"
+        android:textSize="32sp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:text="@string/continueTo" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="38dp"
+        android:text="@string/nextLevel" />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/button3"
+        android:layout_marginBottom="18dp"
+        android:text="@string/restart" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="33dp"
+        android:text="@string/review" />
 
 </RelativeLayout>

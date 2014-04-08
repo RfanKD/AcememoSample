@@ -41,34 +41,27 @@ public class Result extends Activity{
 	levelNum = New_Level.level;
 	
 		
-	totalScore = (TextView) findViewById(R.id.totalNumber);
-	totalScore.setText(""+totalUserScore);
+	totalScore = (TextView) findViewById(R.id.totalText);
+	totalScore.setText("The total cumulative score is: " + totalUserScore);
 	
-	currentScore = (TextView) findViewById(R.id.currentNumber);
-	currentScore.setText(""+currentUserScore);
+	currentScore = (TextView) findViewById(R.id.currentText);
+	currentScore.setText("The score for current level is: " + currentUserScore);
 	
 	Result = (TextView) findViewById(R.id.resultText);
 	
 	if (levelNum == 1){
 		if(currentUserScore == 0){
-			Result.setTextColor(getResources().getColor(R.color.red));
-			Result.setText("There are too many errors!" + System.getProperty("line.separator")+ "Try Again!");
-			
+			Result.setText("there are too many error!");
 		}else{
 			nextLevel.setVisibility(View.VISIBLE);
-			Result.setTextColor(getResources().getColor(R.color.green));
-			Result.setText("Congratulations!" +System.getProperty("line.separator")+"You passed level " + levelNum);
-			
-			
+			Result.setText("Congratulation! You passed level " + levelNum);
 		}
 	}else{
 		if(currentUserScore < (levelNum/2)){
-		Result.setTextColor(getResources().getColor(R.color.red));
-		Result.setText("There are too many errors!" + System.getProperty("line.separator")+ "Try Again!");
+		Result.setText("there are too many error!");
 		}else{
 		nextLevel.setVisibility(View.VISIBLE);
-		Result.setTextColor(getResources().getColor(R.color.green));
-		Result.setText("Congratulations!" +System.getProperty("line.separator")+"You passed level " + levelNum);
+		Result.setText("Congratulation! You passed level " + levelNum);
 		}
 	}
 	
@@ -123,6 +116,8 @@ public class Result extends Activity{
 			@Override
 			public void onClick(View arg0){
 				Intent reviewAnswer = new Intent(); 
+				//context,New_Level.class
+				//mainActivitySyncFacebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				setResult(RESULT_OK,reviewAnswer);
 				finish();
 			}
