@@ -582,8 +582,6 @@ public class New_Level extends Activity {
 
 								try {
 									Bitmap person = getPersonImage.get();
-									
-									System.out.println("PERSON IMAGE:"+ person);
 									Bitmap item = getLikeImage.get();
 									
 									personArray[i].setImageBitmap(person);
