@@ -41,6 +41,7 @@ import java.util.Collections;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Logger;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -162,52 +163,7 @@ public class New_Level extends Activity {
 //		
 //	}
 //	*/
-//	public void createImageView (int totalLevel, int currentLevel){
-//		
-//		
-//		TextView tb = new TextView(this);
-//		tb.setText("test");
-//		tb.setLayoutParams(containerParams);
-//
-//		
-//		root.addView(tb);
-//		
-//		String IMAGEVIEW_TAG;
-//		
-//		
-//		switch(currentLevel){
-//		case 1: IMAGEVIEW_TAG = "Raph " + " likes " +  " photo ";
-//				break;
-//		case 2:  IMAGEVIEW_TAG = "Joe " + " likes " +  " Fishing ";
-//				break;
-//		case 3:  IMAGEVIEW_TAG = "Mike " + " likes " +  " bowling ";;
-//				break;
-//		case 4:  IMAGEVIEW_TAG = "Craig " + " likes " +  " archery ";;
-//				break;
-//		default:  IMAGEVIEW_TAG = "Alex " + " likes " +  " reading ";;
-//	   }
-//		
-//		ImageView likePic = new ImageView(this);
-//		likePic.setProfileId("457041557690681");
-//		likePic.setPresetSize(ImageView.NORMAL);
-//		likePic.setTag(IMAGEVIEW_TAG);
-//		likeImage.add(likePic);
-//		root.addView(likePic);
-//		
-//		ImageView profilePic = new ImageView(this);
-//		profilePic.setProfileId("1651320295");
-//		profilePic.setPresetSize(ImageView.NORMAL);
-//		profilePic.setOnTouchListener(new MyTouchListener());
-//		profilePic.setTag(IMAGEVIEW_TAG);
-//		profileImage.add(profilePic);
-//		root.addView(profilePic);
-//		
-//		 		
-//		setContentView(root);
-//		
-//		
-//	}
-	
+
 	public void addListenerOnButton(){
 		final Context context = this ;
 		
@@ -381,19 +337,7 @@ public class New_Level extends Activity {
 //			}
 		}
 	}
-	
-//	private void setTouchListeners(){
-//		for(int i=0; i<5; i++){
-//			personArray[i].setOnTouchListener(new  MyTouchListener());
-//		}
-//	}
-//	
-//	private void setDragListeners(){
-//		for(int i=0; i<5; i++){
-//			itemArray[i].setOnTouchListener(new  MyTouchListener());
-//		}
-//	}
-	
+
 	private final class MyTouchListener implements OnTouchListener {
 		  public boolean onTouch(View view, MotionEvent motionEvent) {
 		    if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
@@ -576,14 +520,17 @@ public class New_Level extends Activity {
 			for(int i=0; i<5 && !stop; i++){
 				if(startNumber <= endNumber){
 					try {
-						if(MainActivity.withFacebook){
-								AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(levelData.getJSONObject(startNumber).getString("personImage"));
-								AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(levelData.getJSONObject(startNumber).getString("likeImage"));
+						if(MainActivity.withFacebook){	
+							String personURL = levelData.getJSONObject(startNumber).getString("personImage");
+							String newPersonURL = "https" + personURL.substring(personURL.indexOf(":"), personURL.length());
+							AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(newPersonURL);
+							String likeURL = levelData.getJSONObject(startNumber).getString("likeImage");
+							AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(likeURL);
 
 								try {
 									Bitmap person = getPersonImage.get();
 									
-									System.out.println("PERSON IMAGE:"+ person);
+									//System.out.println("PERSON IMAGE:"+ person);
 									Bitmap item = getLikeImage.get();
 									
 									personArray[i].setImageBitmap(person);
@@ -607,6 +554,8 @@ public class New_Level extends Activity {
 											   " likes "+
 											   levelData.getJSONObject(startNumber).getString("likeName");
 						statementArray[i].setText(newStatement);
+					
+					
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -624,8 +573,12 @@ public class New_Level extends Activity {
 			while(startNumber<= endNumber){
 					try {
 						if(MainActivity.withFacebook){
-							AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(levelData.getJSONObject(startNumber).getString("personImage"));
-							AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(levelData.getJSONObject(startNumber).getString("likeImage"));
+							String personURL = levelData.getJSONObject(startNumber).getString("personImage");
+							String newPersonURL = "https" + personURL.substring(personURL.indexOf(":"), personURL.length());
+							AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(newPersonURL);
+							String likeURL = levelData.getJSONObject(startNumber).getString("likeImage");
+							AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(likeURL);
+
 							try {
 								Bitmap person = getPersonImage.get();
 								Bitmap item = getLikeImage.get();
@@ -781,6 +734,8 @@ public class New_Level extends Activity {
 		itemArray[4] = item5;
 	}
 	
+	
+	
 	class RetreiveImage extends AsyncTask<String, Void, Bitmap> {
 
 	    protected Bitmap doInBackground(String... urls) {
@@ -799,8 +754,7 @@ public class New_Level extends Activity {
 	    }
 
 	    protected void onPostExecute(Bitmap bit) {
-	        // TODO: check this.exception 
-	        // TODO: do something with the feed
+
 	    }
 	}
 }
