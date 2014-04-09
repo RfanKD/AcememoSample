@@ -514,6 +514,22 @@ public class New_Level extends Activity {
 	}
 	
 	public void addPictures(int startNumber, int endNumber, int mode){
+		String newStatement;
+		int startValue=0; 
+		if(MainActivity.withFacebook){
+			switch (level) {
+            case 1:  startValue = 0;
+                     break;
+            case 2:  startValue = 1;
+            		break;
+            case 3:  startValue = 3;
+            		break;
+            case 4:  startValue = 6;
+            		break;
+            case 5:  startValue = 10;
+            		break;
+			}
+		}
 
 		if(mode == INFO){
 			boolean stop = false;
@@ -521,10 +537,10 @@ public class New_Level extends Activity {
 				if(startNumber <= endNumber){
 					try {
 						if(MainActivity.withFacebook){	
-							String personURL = levelData.getJSONObject(startNumber).getString("personImage");
+							String personURL = levelData.getJSONObject(startValue).getString("personImage");
 							String newPersonURL = "https" + personURL.substring(personURL.indexOf(":"), personURL.length());
 							AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(newPersonURL);
-							String likeURL = levelData.getJSONObject(startNumber).getString("likeImage");
+							String likeURL = levelData.getJSONObject(startValue).getString("likeImage");
 							AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(likeURL);
 
 								try {
@@ -543,16 +559,20 @@ public class New_Level extends Activity {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
-								
+								newStatement = levelData.getJSONObject(startValue).getString("personName") +
+										   " likes "+
+										   levelData.getJSONObject(startValue).getString("likeName");
 
 							
 						}else{
 							personArray[startNumber].setImageResource(levelData.getJSONObject(startNumber).getInt("personImage"));
 							itemArray[startNumber].setImageResource(levelData.getJSONObject(startNumber).getInt("likeImage"));
+							newStatement = levelData.getJSONObject(startNumber).getString("personName") +
+									   " likes "+
+									   levelData.getJSONObject(startNumber).getString("likeName");
+						
 						}
-						String newStatement = levelData.getJSONObject(startNumber).getString("personName") +
-											   " likes "+
-											   levelData.getJSONObject(startNumber).getString("likeName");
+
 						statementArray[i].setText(newStatement);
 					
 					
@@ -564,6 +584,8 @@ public class New_Level extends Activity {
 				}else{
 					stop = true;
 				}
+				
+				startValue++;
 			}
 		}else{
 			
@@ -573,10 +595,11 @@ public class New_Level extends Activity {
 			while(startNumber<= endNumber){
 					try {
 						if(MainActivity.withFacebook){
-							String personURL = levelData.getJSONObject(startNumber).getString("personImage");
+							String personURL = levelData.getJSONObject(startValue).getString("personImage");
 							String newPersonURL = "https" + personURL.substring(personURL.indexOf(":"), personURL.length());
 							AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(newPersonURL);
-							String likeURL = levelData.getJSONObject(startNumber).getString("likeImage");
+							
+							String likeURL = levelData.getJSONObject(startValue).getString("likeImage");
 							AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(likeURL);
 
 							try {
@@ -593,16 +616,21 @@ public class New_Level extends Activity {
 								e.printStackTrace();
 							}
 
+							newStatement = levelData.getJSONObject(startValue).getString("personName") +
+									   " likes "+
+									   levelData.getJSONObject(startValue).getString("likeName");
 							
 							
 						}else{
 							personArray[startNumber].setImageResource(levelData.getJSONObject(startNumber).getInt("personImage"));
 							itemArray[arr[startNumber]].setImageResource(levelData.getJSONObject(startNumber).getInt("likeImage"));
+							newStatement = levelData.getJSONObject(startNumber).getString("personName") +
+									   " likes "+
+									   levelData.getJSONObject(startNumber).getString("likeName");
+						
 						}
 						
-						String newStatement = levelData.getJSONObject(startNumber).getString("personName") +
-								   " likes "+
-								   levelData.getJSONObject(startNumber).getString("likeName");
+						
 						
 						personArray[startNumber].setTag(newStatement);
 						personArray[startNumber].setOnTouchListener(new  MyTouchListener());
@@ -621,6 +649,7 @@ public class New_Level extends Activity {
 						e.printStackTrace();
 					}
 					startNumber++;
+					startValue++;
 			}		
 		}
 	}

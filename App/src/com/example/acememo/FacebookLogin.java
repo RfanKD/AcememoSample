@@ -19,6 +19,7 @@ public class FacebookLogin extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.loading);
 		Log.d("LogByEmir", "FacebookLogin Activity Started");
 		
 		final Context context = this;
@@ -39,7 +40,8 @@ public class FacebookLogin extends Activity {
 								Log.d("LikeLog", user.getName());
 								System.out.println("YOOOOO");
 								// 5 is how many pairs we want
-								final FacebookData fb = new FacebookData(5);
+								LevelDataFromFacebook.facebookData = new FacebookData(25);					
+								
 								// You delay pulling the data 5 seconds to wait all the requests finish up
 								new Timer().schedule( 
 								        new TimerTask() {
@@ -47,18 +49,44 @@ public class FacebookLogin extends Activity {
 								            public void run() {
 								                // fb.getResult() here returns a JSONArray.
 								            	// you should set up the layout with this, here.
-								            	Log.d("LikeLog", "RESULT: " + fb.getResult().toString());
+								            	String result = LevelDataFromFacebook.facebookData.getResult().toString();
+								            	Log.d("LikeLog", "RESULT: " + result);
+								            	
+								            	int index = result.indexOf("is");
+								            	int count = 0;
+								            	while (index != -1) {
+								            	    count++;
+								            	    result = result.substring(index + 1);
+								            	    index = result.indexOf("personId");
+								            	}
+								            	Log.d("AlisonLog", "RESULT COUNT: " + count);
+								            	
+
 								            }
 								        }, 
-								        8000
+								        60000
 								);
+								
+								
+								
 
 								
-								// User is logged in, forward to next activity
-								Intent GameLevel = new Intent(context,Game_Level.class);
-								startActivity(GameLevel);
-								finish();
-								
+								// You delay pulling the data 5 seconds to wait all the requests finish up
+								new Timer().schedule( 
+								        new TimerTask() {
+								            @Override
+								            public void run() {
+												
+												// User is logged in, forward to next activity
+												Intent goHome = new Intent(context,MainActivity.class);
+												MainActivity.screenStatus = 3;
+												startActivity(goHome);
+												finish();
+
+								            }
+								        }, 
+								        6000
+								);
 							}
 						}
 					}).executeAsync();
@@ -72,7 +100,6 @@ public class FacebookLogin extends Activity {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
-		Log.d("LogByEmir", "here in OnActivityResult");
 	}
 
 
