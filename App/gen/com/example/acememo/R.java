@@ -251,7 +251,7 @@ containing a value of this type.
         public static final int will=0x7f020035;
     }
     public static final class id {
-        public static final int action_settings=0x7f040060;
+        public static final int action_settings=0x7f040061;
         public static final int blackSeperation=0x7f040008;
         public static final int button1=0x7f04003c;
         public static final int button2=0x7f04003f;
@@ -278,7 +278,7 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f04001f;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040020;
         public static final int continueGame=0x7f040023;
-        public static final int currentText=0x7f04005e;
+        public static final int currentText=0x7f04005f;
         public static final int endGame=0x7f040055;
         public static final int facebookLoginButton=0x7f040009;
         public static final int facebookSync=0x7f04000b;
@@ -317,6 +317,7 @@ containing a value of this type.
         public static final int likes3=0x7f040030;
         public static final int likes4=0x7f040034;
         public static final int likes5=0x7f040038;
+        public static final int loadingFacebook=0x7f04005d;
         public static final int nextPage=0x7f04003d;
         public static final int normal=0x7f040001;
         public static final int pairsText=0x7f040042;
@@ -335,7 +336,7 @@ containing a value of this type.
         public static final int prevPage=0x7f04003e;
         public static final int progressBar=0x7f04005c;
         public static final int replay=0x7f040022;
-        public static final int resultText=0x7f04005f;
+        public static final int resultText=0x7f040060;
         public static final int small=0x7f040000;
         public static final int startGame=0x7f04000c;
         public static final int startWithText=0x7f040040;
@@ -344,7 +345,7 @@ containing a value of this type.
         public static final int statement3=0x7f040032;
         public static final int statement4=0x7f040036;
         public static final int statement5=0x7f04003a;
-        public static final int totalText=0x7f04005d;
+        public static final int totalText=0x7f04005e;
         public static final int turotialInstructionAction=0x7f040050;
         public static final int tutorialLevel=0x7f040043;
         public static final int whatTheyLike1=0x7f040053;
@@ -437,6 +438,7 @@ containing a value of this type.
         public static final int level3Statement5=0x7f070043;
         public static final int level3Statement6=0x7f070044;
         public static final int levelIsTut=0x7f070038;
+        public static final int loadingFacebook=0x7f070045;
         public static final int memorize=0x7f070035;
         public static final int nextLevel=0x7f07003c;
         public static final int oops=0x7f07003d;
