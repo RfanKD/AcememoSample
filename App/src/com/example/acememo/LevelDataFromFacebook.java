@@ -37,6 +37,7 @@ public class LevelDataFromFacebook extends Activity{
 	    if(!MainActivity.withFacebook){
 			HardcodedJSON hj = new HardcodedJSON(level);
 			New_Level.levelData = hj.getGameArray();
+			hj.clearData();
 			Intent intent = new Intent(context,New_Level.class);
 			
 			startActivity(intent);
