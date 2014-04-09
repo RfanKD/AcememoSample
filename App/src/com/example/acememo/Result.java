@@ -1,12 +1,16 @@
 package com.example.acememo;
 
 
+import java.io.FileNotFoundException;
+
 import com.example.acememo.R;
+import com.example.acememo.BestScoreFile;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,6 +20,7 @@ import android.widget.TextView;
 public class Result extends Activity{
 	private int currentUserScore ;
 	private int totalUserScore;
+	private int currentBestScore;
 	static int levelNum;
 	
 	private Button goHome;
@@ -23,8 +28,10 @@ public class Result extends Activity{
 	private Button nextLevel;
 	private TextView totalScore;
 	private TextView currentScore;
+	private TextView bestScore;
 	private TextView Result;
 	private String senderClass;
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -35,17 +42,37 @@ public class Result extends Activity{
 		reviewAnswer = (Button)findViewById(R.id.button2);
 		nextLevel = (Button)findViewById(R.id.button3);
 		nextLevel.setVisibility(View.INVISIBLE);
+		BestScoreFile bsf = new BestScoreFile();
 		
 	currentUserScore = New_Level.levelScore;
 	totalUserScore = Game_Level.totalScore;
 	levelNum = New_Level.level;
 	
+	currentBestScore = bsf.readFile();
 		
 	totalScore = (TextView) findViewById(R.id.totalText);
 	totalScore.setText("The total cumulative score is: " + totalUserScore);
 	
+	//bestScore = (TextView) findViewById(R.id.bestText);
+	
+	if(currentBestScore > totalUserScore){
+		//bestScore.setText("Best Score: " + currentBestScore);
+	}else{
+		//bestScore.setText("Best Score: " + totalUserScore);
+		currentBestScore = totalUserScore;
+		try {
+			bsf.writeToFile(currentBestScore);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	currentScore = (TextView) findViewById(R.id.currentText);
 	currentScore.setText("The score for current level is: " + currentUserScore);
+	
+	Log.d("Score", "BEST SCORE: " + currentBestScore);
+	Log.d("Score", "TOTAL SCORE: " + totalUserScore);
+	Log.d("Score", "CURRENT SCORE: " + currentUserScore);
 	
 	Result = (TextView) findViewById(R.id.resultText);
 	
@@ -58,10 +85,10 @@ public class Result extends Activity{
 		}
 	}else{
 		if(currentUserScore < (levelNum/2)){
-		Result.setText("there are too many error!");
+			Result.setText("there are too many error!");
 		}else{
-		nextLevel.setVisibility(View.VISIBLE);
-		Result.setText("Congratulation! You passed level " + levelNum);
+			nextLevel.setVisibility(View.VISIBLE);
+			Result.setText("Congratulation! You passed level " + levelNum);
 		}
 	}
 	
