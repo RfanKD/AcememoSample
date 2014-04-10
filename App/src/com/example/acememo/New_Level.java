@@ -38,6 +38,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutionException;
@@ -50,6 +51,7 @@ import org.json.JSONObject;
 public class New_Level extends Activity {
 	private int page, mode;
 	static int level;
+	static int count;
 	private String userId;
 	private final int INFO = 1;
 	private final int GAME = 2;
@@ -64,6 +66,7 @@ public class New_Level extends Activity {
 	ImageView[] itemArray;
 	TextView[] statementArray = new TextView[5];
 
+	int[] startValues = null;
 	static int levelScore;
 	private float dropX, dropY;
 	private boolean isSet;
@@ -490,32 +493,27 @@ public class New_Level extends Activity {
 	
 	public void addPictures(int startNumber, int endNumber, int mode){
 		String newStatement;
-		int startValue=0; 
-		if(MainActivity.withFacebook){
-			switch (level) {
-            case 1:  startValue = 0;
-                     break;
-            case 2:  startValue = 1;
-            		break;
-            case 3:  startValue = 3;
-            		break;
-            case 4:  startValue = 6;
-            		break;
-            case 5:  startValue = 10;
-            		break;
-			}
-		}
-
 		if(mode == INFO){
 			boolean stop = false;
+			
+			startValues = new int[count];
+			if(MainActivity.withFacebook){
+				for(int i=0; i<count; i++){
+					startValues[i] = i;
+				}
+				shuffleArray(startValues);
+
+				Log.d("AlisonLog", "SHUFFLED ARRAY: " + startValues.toString());
+			}
+			
 			for(int i=0; i<5 && !stop; i++){
 				if(startNumber <= endNumber){
 					try {
 						if(MainActivity.withFacebook){	
-							String personURL = levelData.getJSONObject(startValue).getString("personImage");
+							String personURL = levelData.getJSONObject(startValues[i]).getString("personImage");
 							String newPersonURL = "https" + personURL.substring(personURL.indexOf(":"), personURL.length());
 							AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(newPersonURL);
-							String likeURL = levelData.getJSONObject(startValue).getString("likeImage");
+							String likeURL = levelData.getJSONObject(startValues[i]).getString("likeImage");
 							AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(likeURL);
 
 								try {
@@ -534,9 +532,9 @@ public class New_Level extends Activity {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
-								newStatement = levelData.getJSONObject(startValue).getString("personName") +
+								newStatement = levelData.getJSONObject(startValues[i]).getString("personName") +
 										   " likes "+
-										   levelData.getJSONObject(startValue).getString("likeName");
+										   levelData.getJSONObject(startValues[i]).getString("likeName");
 
 							
 						}else{
@@ -559,22 +557,20 @@ public class New_Level extends Activity {
 				}else{
 					stop = true;
 				}
-				
-				startValue++;
 			}
 		}else{
 			
 			Integer[] arr = {0,1,2,3,4};
 			Collections.shuffle(Arrays.asList(arr));
-		    
+		    int i=0;
 			while(startNumber<= endNumber){
 					try {
 						if(MainActivity.withFacebook){
-							String personURL = levelData.getJSONObject(startValue).getString("personImage");
+							String personURL = levelData.getJSONObject(startValues[i]).getString("personImage");
 							String newPersonURL = "https" + personURL.substring(personURL.indexOf(":"), personURL.length());
 							AsyncTask<String, Void, Bitmap> getPersonImage = new RetreiveImage().execute(newPersonURL);
 							
-							String likeURL = levelData.getJSONObject(startValue).getString("likeImage");
+							String likeURL = levelData.getJSONObject(startValues[i]).getString("likeImage");
 							AsyncTask<String, Void, Bitmap> getLikeImage = new RetreiveImage().execute(likeURL);
 
 							try {
@@ -591,9 +587,9 @@ public class New_Level extends Activity {
 								e.printStackTrace();
 							}
 
-							newStatement = levelData.getJSONObject(startValue).getString("personName") +
+							newStatement = levelData.getJSONObject(startValues[i]).getString("personName") +
 									   " likes "+
-									   levelData.getJSONObject(startValue).getString("likeName");
+									   levelData.getJSONObject(startValues[i]).getString("likeName");
 							
 							
 						}else{
@@ -624,7 +620,7 @@ public class New_Level extends Activity {
 						e.printStackTrace();
 					}
 					startNumber++;
-					startValue++;
+					i++;
 			}		
 		}
 	}
@@ -744,6 +740,19 @@ public class New_Level extends Activity {
 		itemArray[4] = item5;
 	}
 	
+    
+    // Implementing Fisher–Yates shuffle
+    private void shuffleArray(int[] ar){
+      Random rnd = new Random();
+      for (int i = ar.length - 1; i > 0; i--)
+      {
+        int index = rnd.nextInt(i + 1);
+        // Simple swap
+        int a = ar[index];
+        ar[index] = ar[i];
+        ar[i] = a;
+      }
+    }
 	
 	
 	class RetreiveImage extends AsyncTask<String, Void, Bitmap> {
@@ -767,4 +776,5 @@ public class New_Level extends Activity {
 
 	    }
 	}
+
 }

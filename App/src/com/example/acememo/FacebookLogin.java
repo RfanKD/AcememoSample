@@ -59,6 +59,7 @@ public class FacebookLogin extends Activity {
 								            	    result = result.substring(index + 1);
 								            	    index = result.indexOf("personId");
 								            	}
+								            	New_Level.count = count;
 								            	Log.d("AlisonLog", "RESULT COUNT: " + count);
 								            	
 
