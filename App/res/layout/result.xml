@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
     
         <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/bestBack"
         android:layout_width="100dp"
         android:layout_height="75dp"
         android:layout_alignParentLeft="true"
@@ -18,7 +18,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/textView1"
+        android:layout_alignTop="@+id/bestBack"
         android:layout_toLeftOf="@+id/button2"
         android:ems="10"
         android:gravity="center"
@@ -31,9 +31,9 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bestText"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBottom="@+id/bestBack"
         android:layout_alignParentLeft="true"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/bestBack"
         android:ems="10"
         android:gravity="center"
         android:textColor="#FFFFFF"
@@ -68,8 +68,8 @@
         android:id="@+id/TextView01"
         android:layout_width="100dp"
         android:layout_height="75dp"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBaseline="@+id/bestBack"
+        android:layout_alignBottom="@+id/bestBack"
         android:layout_centerHorizontal="true"
         android:background="@color/darkgray" />
 
@@ -127,7 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/bestBack"
         android:layout_marginTop="82dp"
         android:ems="10"
         android:gravity="center"

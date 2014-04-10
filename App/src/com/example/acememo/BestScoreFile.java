@@ -23,6 +23,14 @@ public class BestScoreFile {
 		
 	}
 	
+	public void clearFolder(){
+	    File newFolder = new File(Environment.getExternalStorageDirectory(), "acememo");
+	    File myFile = new File("/sdcard/acememo/BestScore.txt");	    
+	    if (newFolder.exists()) {
+	    	myFile.delete();
+	        newFolder.delete();
+	    }
+	}
 	
 	public int readFile(){
 		checkOrCreateFolder();

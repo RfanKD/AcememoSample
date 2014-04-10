@@ -32,6 +32,11 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		setView();
 		addListenerOnButton();
+		
+		if(screenStatus == NEW){
+			BestScoreFile bsf = new BestScoreFile();
+			bsf.clearFolder();
+		}
 	}
 	
 	public void setView(){

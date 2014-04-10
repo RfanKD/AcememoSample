@@ -152,8 +152,9 @@ containing a value of this type.
     }
     public static final class color {
         public static final int aqua=0x7f06000e;
-        public static final int black=0x7f060012;
-        public static final int blue=0x7f060011;
+        public static final int black=0x7f060013;
+        public static final int blue=0x7f060012;
+        public static final int bluey=0x7f06000f;
         public static final int com_facebook_blue=0x7f060002;
         public static final int com_facebook_loginview_text_color=0x7f060006;
         public static final int com_facebook_picker_search_bar_background=0x7f060000;
@@ -163,11 +164,11 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_not_connected_text_color=0x7f060005;
         public static final int darkgray=0x7f06000c;
         public static final int gray=0x7f06000b;
-        public static final int green=0x7f060010;
+        public static final int green=0x7f060011;
         public static final int purple=0x7f06000d;
         public static final int red=0x7f060009;
         public static final int silver=0x7f06000a;
-        public static final int teal=0x7f06000f;
+        public static final int teal=0x7f060010;
         public static final int white=0x7f060007;
         public static final int yellow=0x7f060008;
     }
@@ -279,6 +280,7 @@ containing a value of this type.
         public static final int TextView01=0x7f040055;
         public static final int TextView02=0x7f040056;
         public static final int action_settings=0x7f04005c;
+        public static final int bestBack=0x7f040052;
         public static final int bestNumber=0x7f040054;
         public static final int bestText=0x7f040053;
         public static final int blackSeperation=0x7f040008;
@@ -363,7 +365,6 @@ containing a value of this type.
         public static final int statement3=0x7f040032;
         public static final int statement4=0x7f040036;
         public static final int statement5=0x7f04003a;
-        public static final int textView1=0x7f040052;
         public static final int totalNumber=0x7f040059;
         public static final int totalText=0x7f040058;
         public static final int turotialInstructionAction=0x7f040044;
