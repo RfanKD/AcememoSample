@@ -146,6 +146,7 @@ public class New_Level extends Activity {
 		profileImage = new ArrayList<ImageView>();
 		dropCorrect = new ArrayList<Boolean>();
 		
+		
 		addListenerOnButton();
 
 	}
@@ -365,13 +366,7 @@ public class New_Level extends Activity {
 		            	int profilePicIndex = profileImage.indexOf(dragViewA);
 		            	
 		            	System.out.println ("this is my id" +profilePicIndex);
-		            	//ClipData.Item itemA = event.getClipData().getItemAt(0); 
-		            	//String incomingTextA = itemA.getText().toString();
-		            	
-		            	// for (int i=0; i < profileImage.size(); i++) {
-		            	//	 String targetText = likeImage.get(i).getTag().toString();
-		            	//	 if (targetText == incomingTextA){
-		     	            	//if (isSet == true){
+
 		     	            	if(dropCorrect.get(profilePicIndex) == true){	
 		     	            		System.out.println(profileImage.get(index).getTag());
 				            		levelScore --;
@@ -379,20 +374,17 @@ public class New_Level extends Activity {
 				            		isSet = false ;
 				            		dropCorrect.set(profilePicIndex, false);
 				            		
-				            		
-				            		
-				            		
-				            		//dropCorrect.set(i, false);
+				            	
 				            		System.out.println(levelScore);
 				            		
 				            	}
 		     	            	
+		     	            	System.out.println(profilePicIndex);
 		     	            	int likeIndex = dropLocation.get(profilePicIndex);
-			            		//System.out.println(likeIndex);
+			            		System.out.println(likeIndex);
 			            		likeImage.get(likeIndex).setBackgroundColor(Color.rgb(255, 255, 255));
 			            		
-			            		//int[] locationB = new int[2];
-			            		//profileImage.get(profilePicIndex).getLocationOnScreen(locationB);
+			            	
 			    
 		            		 //}
 		            	// }
@@ -612,6 +604,7 @@ public class New_Level extends Activity {
 						boolean isCorrect = false;
 						
 						likeImage.add(likeTest);
+						System.out.println("this is my like " + likeImage.size());
 						profileImage.add(profileTest);
 						dropCorrect.add(isCorrect);
 					
@@ -667,7 +660,7 @@ public class New_Level extends Activity {
 			done = (Button)findViewById(R.id.button1);
 			dropLocation = new ArrayList<Integer>(10);
 			
-			for (int i=0 ; i<9; i++){
+			for (int i = 0 ; i<10; i++){
 				dropLocation.add(1);
 			}
 			

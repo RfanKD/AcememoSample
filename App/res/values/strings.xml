@@ -9,7 +9,7 @@
     <string name="howToPlay">How to Play:</string>
     <string name="instr1">Match the people you know with the things they like!</string>
 	<string name="instr2">Drag the people to the images of the things they like.</string>
-	<string name="level">1</string>
+	<string name="level">2</string>
 	<string name="startGame">Start Playing!</string>
 	<string name="allow">Continue</string>
 	<string name="disallow">Exit</string>

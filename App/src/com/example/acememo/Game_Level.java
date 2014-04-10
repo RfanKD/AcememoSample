@@ -52,8 +52,8 @@ public class Game_Level extends Activity{
 				
 				levelNumber -- ;
 				
-				if (levelNumber <= 1){
-					levelNumber = 1;
+				if (levelNumber <= 2){
+					levelNumber = 2;
 				}
 				
 				if(levelNumber==1){
