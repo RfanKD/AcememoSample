@@ -151,9 +151,9 @@ containing a value of this type.
         public static final int title_text=0x7f010003;
     }
     public static final class color {
-        public static final int aqua=0x7f06000d;
-        public static final int black=0x7f060011;
-        public static final int blue=0x7f060010;
+        public static final int aqua=0x7f06000e;
+        public static final int black=0x7f060012;
+        public static final int blue=0x7f060011;
         public static final int com_facebook_blue=0x7f060002;
         public static final int com_facebook_loginview_text_color=0x7f060006;
         public static final int com_facebook_picker_search_bar_background=0x7f060000;
@@ -161,12 +161,13 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_connected_shadow_color=0x7f060004;
         public static final int com_facebook_usersettingsfragment_connected_text_color=0x7f060003;
         public static final int com_facebook_usersettingsfragment_not_connected_text_color=0x7f060005;
+        public static final int darkgray=0x7f06000c;
         public static final int gray=0x7f06000b;
-        public static final int green=0x7f06000f;
-        public static final int purple=0x7f06000c;
+        public static final int green=0x7f060010;
+        public static final int purple=0x7f06000d;
         public static final int red=0x7f060009;
         public static final int silver=0x7f06000a;
-        public static final int teal=0x7f06000e;
+        public static final int teal=0x7f06000f;
         public static final int white=0x7f060007;
         public static final int yellow=0x7f060008;
     }
@@ -275,7 +276,11 @@ containing a value of this type.
         public static final int yoga=0x7f02004d;
     }
     public static final class id {
-        public static final int action_settings=0x7f040057;
+        public static final int TextView01=0x7f040055;
+        public static final int TextView02=0x7f040056;
+        public static final int action_settings=0x7f04005c;
+        public static final int bestNumber=0x7f040054;
+        public static final int bestText=0x7f040053;
         public static final int blackSeperation=0x7f040008;
         public static final int button1=0x7f04003c;
         public static final int button2=0x7f04003d;
@@ -302,8 +307,8 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f04001f;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040020;
         public static final int continueGame=0x7f040023;
-        public static final int currentNumber=0x7f040055;
-        public static final int currentText=0x7f040054;
+        public static final int currentNumber=0x7f04005b;
+        public static final int currentText=0x7f040057;
         public static final int endGame=0x7f040049;
         public static final int facebookLoginButton=0x7f040009;
         public static final int facebookSync=0x7f04000b;
@@ -349,7 +354,7 @@ containing a value of this type.
         public static final int playWithoutFacebook=0x7f04000a;
         public static final int progressBar=0x7f040050;
         public static final int replay=0x7f040022;
-        public static final int resultText=0x7f040056;
+        public static final int resultText=0x7f04005a;
         public static final int small=0x7f040000;
         public static final int startGame=0x7f04000c;
         public static final int startWithText=0x7f04003e;
@@ -358,8 +363,9 @@ containing a value of this type.
         public static final int statement3=0x7f040032;
         public static final int statement4=0x7f040036;
         public static final int statement5=0x7f04003a;
-        public static final int totalNumber=0x7f040053;
-        public static final int totalText=0x7f040052;
+        public static final int textView1=0x7f040052;
+        public static final int totalNumber=0x7f040059;
+        public static final int totalText=0x7f040058;
         public static final int turotialInstructionAction=0x7f040044;
         public static final int tutorialLevel=0x7f040041;
         public static final int whatTheyLike1=0x7f040047;
@@ -401,6 +407,7 @@ containing a value of this type.
         public static final int allow=0x7f070023;
         public static final int app_id=0x7f07001a;
         public static final int app_name=0x7f070019;
+        public static final int bestScore=0x7f070048;
         public static final int clickButtonDone=0x7f070037;
         public static final int clickButtonReady=0x7f070036;
         public static final int com_facebook_choose_friends=0x7f07000f;

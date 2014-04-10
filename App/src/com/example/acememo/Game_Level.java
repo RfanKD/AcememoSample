@@ -97,20 +97,8 @@ public class Game_Level extends Activity{
 					Intent intent = null ;
 				intent= new Intent(context,LevelDataFromFacebook.class);
 				intent.putExtra("sender", "fromChooser");
-				
-				/*	
-					switch(levelNumber){
-						case 1: intent= new Intent(context,New_Level.class);
-								break;
-						case 2: intent= new Intent(context,Level_Two.class);
-								break;
-						case 3: intent= new Intent(context,New_Level.class);
-								break;
-						case 4: intent= new Intent(context,New_Level.class);
-								break;
-						default: intent = new Intent(context,MainActivity.class);
-					}*/
 					startActivity(intent);
+					finish();
 				}
 		});
 	}

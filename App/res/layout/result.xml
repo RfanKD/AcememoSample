@@ -2,73 +2,48 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
+    
+        <TextView
+        android:id="@+id/textView1"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="19dp"
+        android:layout_toLeftOf="@+id/button2"
+        android:background="@color/darkgray" />
+    
     <TextView
-        android:id="@+id/totalText"
+        android:id="@+id/bestText"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_toLeftOf="@+id/button2"
         android:ems="10"
         android:gravity="center"
-        android:text="@string/totalScore"
-        android:textColor="#000000"
-        android:textSize="30sp" />
-    
-        <TextView
-        android:id="@+id/totalNumber"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:gravity="center"
-        android:textColor="#000000"
+        android:text="@string/bestScore"
+        android:textColor="#FFFFFF"
         android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/currentText"
-        android:layout_width="350dp"
+        <TextView
+        android:id="@+id/bestNumber"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/bestText"
+        android:layout_alignBottom="@+id/textView1"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/totalText"
-        android:layout_marginTop="22dp"
+        android:layout_alignLeft="@+id/textView1"
         android:ems="10"
         android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="30sp" 
-        android:text="@string/currentScore" />
-    
-    
-    <TextView
-        android:id="@+id/currentNumber"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/currentText"
-        android:layout_alignBottom="@+id/currentText"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="30sp" />
-    
-        <TextView
-        android:id="@+id/resultText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/currentText"
-        android:layout_marginTop="22dp"
-        android:ems="10"
-        android:gravity="center"
-        android:textSize="30sp" />
-
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
+        
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/restart" />
@@ -78,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button3"
-        android:layout_alignLeft="@+id/button1"
+        android:layout_centerHorizontal="true"
         android:text="@string/review" />
 
     <Button
@@ -89,5 +64,86 @@
         android:layout_centerHorizontal="true"
         android:text="@string/continueTo" />
 
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:background="@color/darkgray" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_alignBaseline="@+id/TextView01"
+        android:layout_alignBottom="@+id/TextView01"
+        android:layout_alignParentRight="true"
+        android:background="@color/darkgray" />
+
+    <TextView
+        android:id="@+id/currentText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView02"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/TextView02"
+        android:ems="10"
+        android:gravity="center"
+        android:text="@string/currentScore"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/totalText"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bestText"
+        android:layout_alignBottom="@+id/bestText"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_alignRight="@+id/TextView01"
+        android:ems="10"
+        android:gravity="center"
+        android:text="@string/totalScore"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/totalNumber"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bestNumber"
+        android:layout_alignBottom="@+id/bestNumber"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_alignRight="@+id/TextView01"
+        android:ems="10"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="82dp"
+        android:ems="10"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/currentNumber"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/resultText"
+        android:layout_alignParentRight="true"
+        android:layout_alignLeft="@+id/TextView02"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
 
 </RelativeLayout>

@@ -49,16 +49,15 @@ public class Result extends Activity{
 	levelNum = New_Level.level;
 	
 	currentBestScore = bsf.readFile();
-		
-	totalScore = (TextView) findViewById(R.id.totalText);
-	totalScore.setText("The total cumulative score is: " + totalUserScore);
+	totalScore = (TextView) findViewById(R.id.totalNumber);
+	totalScore.setText("" + totalUserScore);
 	
-	//bestScore = (TextView) findViewById(R.id.bestText);
+	bestScore = (TextView) findViewById(R.id.bestNumber);
 	
 	if(currentBestScore > totalUserScore){
-		//bestScore.setText("Best Score: " + currentBestScore);
+		bestScore.setText(""  + currentBestScore);
 	}else{
-		//bestScore.setText("Best Score: " + totalUserScore);
+		bestScore.setText("" + totalUserScore);
 		currentBestScore = totalUserScore;
 		try {
 			bsf.writeToFile(currentBestScore);
@@ -67,8 +66,8 @@ public class Result extends Activity{
 		}
 	}
 	
-	currentScore = (TextView) findViewById(R.id.currentText);
-	currentScore.setText("The score for current level is: " + currentUserScore);
+	currentScore = (TextView) findViewById(R.id.currentNumber);
+	currentScore.setText("" + currentUserScore);
 	
 	Log.d("Score", "BEST SCORE: " + currentBestScore);
 	Log.d("Score", "TOTAL SCORE: " + totalUserScore);

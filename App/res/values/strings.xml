@@ -26,7 +26,7 @@
 	<string name="ready">I\'m Ready!</string>
 	<string name="continueTo">Continue to Next Level</string>
 	<string name="gameover">Game Over</string>
-	<string name="restart">Restart</string>
+	<string name="restart">Reset Game</string>
 	<string name="playWithout">Play Without Facebook</string>
 	<string name="Done">Done</string>
 	<string name="memorize">Memorize the association below.</string>
@@ -35,7 +35,7 @@
 	<string name="levelIsTut">Level 1 is a Tutorial</string>
 	<string name="level2">Level 2</string>
 	<string name="goodJob">Good Job!!</string>
-	<string name="review">Review</string>
+	<string name="review">Review Your Answers</string>
 	<string name="nextLevel">Continue</string>
 	<string name="oops">Oops, some associations are wrong.</string>
 	<string name="replayLevel">Replay Level</string>
@@ -46,7 +46,7 @@
 	<string name="level3Statement5">Alison Likes Painting</string>
 	<string name="level3Statement6">Raph Likes Computers</string>
 	<string name="loadingFacebook">Loading Data From Facebook...</string>
-	<string name="totalScore">Total Cumulative Score:</string>
-	<string name="currentScore">Current Level Score:</string>
-	
+	<string name="totalScore">Game</string>
+	<string name="currentScore">Level</string>
+	<string name="bestScore">Best</string>
 </resources>
