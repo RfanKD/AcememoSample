@@ -465,7 +465,7 @@ public class New_Level extends Activity {
 				             
 				             if(a <= dropX && dropX <= (a + widthA) && (b - heightA) <= dropY && dropY <= b){
 				            	 String targetText = likeImage.get(i).getTag().toString();
-				            	 likeImage.get(i).setPadding(5, 5, 5, 5);
+				            	 likeImage.get(i).setPadding(15, 15, 15, 15);
 				            	 likeImage.get(i).setBackgroundColor(Color.rgb(50, 150, 200));
 				            	 if (targetText.equals(incomingText)){
 				            		 System.out.println("we have match"); 

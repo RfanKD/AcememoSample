@@ -221,25 +221,5 @@
       android:layout_centerInParent="true"
       android:text="@string/Done" />
 
-  <Button
-      android:id="@+id/nextPage"
-      android:layout_width="45dp"
-      android:layout_height="wrap_content"
-      android:layout_alignParentRight="true"
-      android:layout_marginRight="5dp"
-      android:layout_alignTop="@+id/item3"
-      android:background="@+color/white"
-      android:drawableTop="@+drawable/rightarrow"/>
-
-  <Button
-      android:id="@+id/prevPage"
-      android:layout_width="45dp"
-      android:layout_height="wrap_content"
-      android:layout_alignParentLeft="true"
-      android:layout_marginLeft="5dp"
-      android:layout_alignTop="@+id/person3"
-      android:background="@+color/white"
-      android:drawableTop="@+drawable/leftarrow" />
-
 </RelativeLayout>
 
