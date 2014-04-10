@@ -170,40 +170,6 @@ public class New_Level extends Activity {
 	public void addListenerOnButton(){
 		final Context context = this ;
 		
-//		prevPage.setOnClickListener (new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View arg0){
-//				updateViews("useAllSpots",5);
-//				if(page==2){
-//					prevPage.setVisibility(View.INVISIBLE);
-//				}else{
-//					prevPage.setVisibility(View.VISIBLE);
-//				}
-//				page --;
-//				addPictures((page*5) - 5, page*5 -1, INFO);
-//				
-//				nextPage.setVisibility(View.VISIBLE);
-//				
-//
-//			}
-//		});
-//		
-//		nextPage.setOnClickListener (new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View arg0){
-//				page++;
-//				if(level <= page*5){
-//					updateViews("nextLastPage", (level % 5));
-//					addPictures(5*(page-1), level-1, INFO);
-//				}else{
-//					addPictures(5*(page-1), (5*page)-1, INFO);
-//				}
-//				prevPage.setVisibility(View.VISIBLE);
-//	
-//			}
-//		});
 		
 		ready.setOnClickListener (new OnClickListener() {
 			
@@ -213,74 +179,7 @@ public class New_Level extends Activity {
 				assignVariables(GAME);
 				populateArrays(GAME);
 				
-				done.setOnClickListener (new OnClickListener() {
-					
-					@Override
-					public void onClick(View arg0){
-						Intent continueTO = new Intent(context,Result.class);
-						//continueTO.putExtra("sender", "three");
-						startActivityForResult(continueTO, 0);
-						showCorrectAnswer();
-					}
-
-					private void showCorrectAnswer() {
-						setContentView(R.layout.game_play);
-						assignVariables(GAME);
-						populateArrays(GAME);
-						
-						 for (int i=0; i < likeImage.size(); i++){
-							 if(i < 5){
-							 personArray[i].setImageDrawable(profileImage.get(i).getDrawable());
-							 personArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
-							 
-							 itemArray[i].setImageDrawable(likeImage.get(i).getDrawable());
-							 itemArray[i].setImageMatrix(likeImage.get(i).getImageMatrix());
-							 
-												 
-//							 }else{
-//								 itemArray[i].setImageDrawable(profileImage.get(i).getDrawable());
-//								 itemArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
-//								 
-//								 itemArray[i-5].setImageDrawable(likeImage.get(i).getDrawable());
-//								 itemArray[i-5].setImageMatrix(likeImage.get(i).getImageMatrix());
-								 
-							 }
-							 
-							 if (dropCorrect.get(i) == false){
-								 personArray[i].setPadding(5, 5, 5, 5);
-								 personArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
-								 
-								 itemArray[i].setPadding(5, 5, 5, 5);
-								 itemArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
-								 
-							 }
-							 
-						 }
-						
-//						 private ArrayList<ImageView> likeImage;
-//							private ArrayList<ImageView> profileImage;
-//							private ArrayList<Boolean> dropCorrect;
-//							
-//							ImageView[] personArray;
-//							ImageView[] heartArray = new ImageView[5];
-//							ImageView[] itemArray;
-//						
-						//test.equals(likeImage.get(0)) ;
-						//test.setIm
-							done.setOnClickListener (new OnClickListener() {
-								
-								@Override
-								public void onClick(View arg0){
-									Intent continueTO = new Intent(context,Result.class);
-									//continueTO.putExtra("sender", "three");
-									startActivityForResult(continueTO, 0);
-									finish();
-								}
-							});
-											
-						
-					}
-				});
+				addListenerOnButton1();
 				
 				updateViews("forGamePlay", level);
 				addPictures(0, level-1, GAME);
@@ -298,9 +197,85 @@ public class New_Level extends Activity {
 	
 	}
 	
-//	private boolean dropEventNotHandled(DragEvent dragEvent) {
-//        return !dragEvent.getResult();
-//	}
+	public void addListenerOnButton1(){
+		final Context context1 = this ;
+		
+		done.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				Intent continueTO = new Intent(context1,Result.class);
+				//continueTO.putExtra("sender", "three");
+				startActivityForResult(continueTO, 0);
+				showCorrectAnswer();
+			}
+
+			private void showCorrectAnswer() {
+				setContentView(R.layout.game_play);
+				assignVariables(GAME);
+				populateArrays(GAME);
+				
+				 for (int i=0; i < likeImage.size(); i++){
+					 //if(i < 5){
+					 personArray[i].setImageDrawable(profileImage.get(i).getDrawable());
+					 personArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
+					 
+					 itemArray[i].setImageDrawable(likeImage.get(i).getDrawable());
+					 itemArray[i].setImageMatrix(likeImage.get(i).getImageMatrix());
+					 
+										 
+//					 }else{
+//						 itemArray[i].setImageDrawable(profileImage.get(i).getDrawable());
+//						 itemArray[i].setImageMatrix(profileImage.get(i).getImageMatrix());
+//						 
+//						 itemArray[i-5].setImageDrawable(likeImage.get(i).getDrawable());
+//						 itemArray[i-5].setImageMatrix(likeImage.get(i).getImageMatrix());
+						 
+					// }
+					 
+					 if (dropCorrect.get(i) == false){
+						 personArray[i].setPadding(5, 5, 5, 5);
+						 personArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
+						 
+						 itemArray[i].setPadding(5, 5, 5, 5);
+						 itemArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
+						 
+					 }
+					 
+				 }
+				
+//				 private ArrayList<ImageView> likeImage;
+//					private ArrayList<ImageView> profileImage;
+//					private ArrayList<Boolean> dropCorrect;
+//					
+//					ImageView[] personArray;
+//					ImageView[] heartArray = new ImageView[5];
+//					ImageView[] itemArray;
+//				
+				//test.equals(likeImage.get(0)) ;
+				//test.setIm
+				 addListenerOnButton2();			
+					
+				
+			}
+		});
+		
+	}
+	
+	public void addListenerOnButton2(){
+		final Context context2 = this ;
+		
+		done.setOnClickListener (new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0){
+				Intent continueTO = new Intent(context2,Result.class);
+				//continueTO.putExtra("sender", "three");
+				startActivityForResult(continueTO, 0);
+				finish();
+			}
+		});
+	}
 	
 	private void updateViews(String callingLocation, int numBoxesNeeded){
 		if(callingLocation.equals("onStartLessThan5")){
@@ -689,7 +664,7 @@ public class New_Level extends Activity {
 			statement5 = (TextView) findViewById(R.id.statement5);
 				
 		}else{
-//			done = (Button)findViewById(R.id.button1);
+			done = (Button)findViewById(R.id.button1);
 //			person6 = (ImageView) findViewById(R.id.person6);
 //			person7 = (ImageView) findViewById(R.id.person7);
 //			person8 = (ImageView) findViewById(R.id.person8);

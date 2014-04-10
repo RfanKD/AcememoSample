@@ -275,7 +275,7 @@ containing a value of this type.
         public static final int yoga=0x7f02004d;
     }
     public static final class id {
-        public static final int action_settings=0x7f040055;
+        public static final int action_settings=0x7f040057;
         public static final int blackSeperation=0x7f040008;
         public static final int button1=0x7f04003c;
         public static final int button2=0x7f04003d;
@@ -302,7 +302,8 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f04001f;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f040020;
         public static final int continueGame=0x7f040023;
-        public static final int currentText=0x7f040053;
+        public static final int currentNumber=0x7f040055;
+        public static final int currentText=0x7f040054;
         public static final int endGame=0x7f040049;
         public static final int facebookLoginButton=0x7f040009;
         public static final int facebookSync=0x7f04000b;
@@ -348,7 +349,7 @@ containing a value of this type.
         public static final int playWithoutFacebook=0x7f04000a;
         public static final int progressBar=0x7f040050;
         public static final int replay=0x7f040022;
-        public static final int resultText=0x7f040054;
+        public static final int resultText=0x7f040056;
         public static final int small=0x7f040000;
         public static final int startGame=0x7f04000c;
         public static final int startWithText=0x7f04003e;
@@ -357,6 +358,7 @@ containing a value of this type.
         public static final int statement3=0x7f040032;
         public static final int statement4=0x7f040036;
         public static final int statement5=0x7f04003a;
+        public static final int totalNumber=0x7f040053;
         public static final int totalText=0x7f040052;
         public static final int turotialInstructionAction=0x7f040044;
         public static final int tutorialLevel=0x7f040041;
@@ -427,6 +429,7 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_logged_in=0x7f070009;
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f07000a;
         public static final int continueTo=0x7f070030;
+        public static final int currentScore=0x7f070047;
         public static final int disallow=0x7f070024;
         public static final int facebook=0x7f070026;
         public static final int facebookinstr=0x7f070025;
@@ -463,6 +466,7 @@ containing a value of this type.
         public static final int review=0x7f07003b;
         public static final int startGame=0x7f070022;
         public static final int startWith=0x7f070028;
+        public static final int totalScore=0x7f070046;
     }
     public static final class style {
         /** 
