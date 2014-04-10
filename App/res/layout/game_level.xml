@@ -25,12 +25,14 @@
     
     <ImageView
         android:id="@+id/likes1"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_centerInParent="true"
         android:layout_toRightOf="@+id/person1"
         android:layout_below="@+id/levelNum"
-        android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+		android:layout_marginTop="20dp"
         android:src="@drawable/heart"/>
     
    <ImageView
@@ -63,12 +65,13 @@
     
     <ImageView
         android:id="@+id/likes2"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_toRightOf="@+id/person2"
         android:layout_below="@+id/statement1"
-        android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+		android:layout_marginTop="20dp"
         android:src="@drawable/heart"/>
     
    <ImageView
@@ -101,12 +104,13 @@
     
     <ImageView
         android:id="@+id/likes3"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_toRightOf="@+id/person3"
         android:layout_below="@+id/statement2"
-        android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+		android:layout_marginTop="20dp"
         android:src="@drawable/heart"/>
     
    <ImageView
@@ -139,12 +143,13 @@
     
     <ImageView
         android:id="@+id/likes4"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_toRightOf="@+id/person4"
         android:layout_below="@+id/statement3"
-        android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+		android:layout_marginTop="20dp"
         android:src="@drawable/heart"/>
     
    <ImageView
@@ -177,12 +182,13 @@
     
     <ImageView
         android:id="@+id/likes5"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_toRightOf="@+id/person5"
         android:layout_below="@+id/statement4"
-        android:layout_marginLeft="5dp"
-		android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+		android:layout_marginTop="20dp"
         android:src="@drawable/heart"/>
     
    <ImageView
