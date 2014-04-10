@@ -86,7 +86,7 @@ public class FacebookLogin extends Activity {
 
 								            }
 								        }, 
-								        6000
+								        60000
 								);
 							}
 						}
