@@ -81,6 +81,7 @@ public class New_Level extends Activity {
 	private ArrayList<ImageView> likeImage;
 	private ArrayList<ImageView> profileImage;
 	private ArrayList<Boolean> dropCorrect;
+	private ArrayList<Integer> dropLocation;
 	
 		
 //	private ImageView likePic;
@@ -179,6 +180,10 @@ public class New_Level extends Activity {
 				assignVariables(GAME);
 				populateArrays(GAME);
 				
+				//int arraySize = profileImage.size();
+				
+							
+				
 				addListenerOnButton1();
 				
 				updateViews("forGamePlay", level);
@@ -234,10 +239,10 @@ public class New_Level extends Activity {
 					// }
 					 
 					 if (dropCorrect.get(i) == false){
-						 personArray[i].setPadding(5, 5, 5, 5);
+						 personArray[i].setPadding(15, 15, 15, 15);
 						 personArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
 						 
-						 itemArray[i].setPadding(5, 5, 5, 5);
+						 itemArray[i].setPadding(15, 15, 15, 15);
 						 itemArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
 						 
 					 }
@@ -373,34 +378,22 @@ public class New_Level extends Activity {
 				            		 Game_Level.totalScore --;
 				            		isSet = false ;
 				            		dropCorrect.set(profilePicIndex, false);
-				            		// dropCorrect.set(i, false);
+				            		
+				            		
+				            		
+				            		
+				            		//dropCorrect.set(i, false);
 				            		System.out.println(levelScore);
 				            		
 				            	}
 		     	            	
-
+		     	            	int likeIndex = dropLocation.get(profilePicIndex);
+			            		//System.out.println(likeIndex);
+			            		likeImage.get(likeIndex).setBackgroundColor(Color.rgb(255, 255, 255));
+			            		
 			            		//int[] locationB = new int[2];
 			            		//profileImage.get(profilePicIndex).getLocationOnScreen(locationB);
-			            		 dropX = dragViewA.getLeft();
-					             dropY = dragViewA.getTop();
-					        			             					           	          	 		            	 
-				            	 for (int i=0; i < likeImage.size(); i++) {
-				            		 int[] locationA = new int[2];
-				            		 likeImage.get(i).getLocationOnScreen(locationA);
-				            		 int a = locationA[0];
-						             int b = locationA[1];
-						             
-						             int widthA = likeImage.get(i).getWidth();
-						             int heightA = likeImage.get(i).getHeight();
-						             
-						             if(a <= dropX && dropX <= (a + widthA) && (b - heightA) <= dropY && dropY <= b){
-						            	 
-						            	// likeImage.get(i).setPadding(5, 5, 5, 5);
-						            	 likeImage.get(i).setBackgroundColor(Color.rgb(255, 255, 255));
-						            	 
-						             }
-				            		 //System.out.println(sFruit);
-				                  }
+			    
 		            		 //}
 		            	// }
 		            	System.out.println("im here3");
@@ -423,8 +416,9 @@ public class New_Level extends Activity {
 		            	 
 		            	 String incomingText = item.getText().toString();
 		            	 
+		            	 int profileIndex = profileImage.indexOf(dragView);
 		            	 
-		            	 
+		            	            	 
 		                 dropX = event.getX();
 			             dropY = event.getY();
 			                     		               
@@ -445,6 +439,12 @@ public class New_Level extends Activity {
 				            	 String targetText = likeImage.get(i).getTag().toString();
 				            	 likeImage.get(i).setPadding(15, 15, 15, 15);
 				            	 likeImage.get(i).setBackgroundColor(Color.rgb(50, 150, 200));
+				            	 
+				            	 dropLocation.add(profileIndex,i);
+				            	 
+				            	 System.out.println(" the size of profileIndex is " +profileIndex);
+				            	 System.out.println(" the size of itemLocation is " +i);
+				            	 
 				            	 if (targetText.equals(incomingText)){
 				            		 System.out.println("we have match"); 
 				            		 dropCorrect.set(i, true);
@@ -665,6 +665,12 @@ public class New_Level extends Activity {
 				
 		}else{
 			done = (Button)findViewById(R.id.button1);
+			dropLocation = new ArrayList<Integer>(10);
+			
+			for (int i=0 ; i<9; i++){
+				dropLocation.add(1);
+			}
+			
 //			person6 = (ImageView) findViewById(R.id.person6);
 //			person7 = (ImageView) findViewById(R.id.person7);
 //			person8 = (ImageView) findViewById(R.id.person8);
