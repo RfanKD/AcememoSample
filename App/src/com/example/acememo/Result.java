@@ -78,17 +78,21 @@ public class Result extends Activity{
 	
 	if (levelNum == 1){
 		if(currentUserScore == 0){
-			Result.setText("there are too many error!");
+			Result.setTextColor(getResources().getColor(R.color.red));
+			Result.setText("There are too many errors!" + System.getProperty("line.separator")+ "Try Again!");
 		}else{
 			nextLevel.setVisibility(View.VISIBLE);
-			Result.setText("Congratulation! You passed level " + levelNum);
+			Result.setTextColor(getResources().getColor(R.color.green));
+			Result.setText("Congratulations!" +System.getProperty("line.separator")+"You passed level " + levelNum);
 		}
 	}else{
 		if(currentUserScore < (levelNum/2)){
-			Result.setText("there are too many error!");
+			Result.setTextColor(getResources().getColor(R.color.red));
+			Result.setText("There are too many errors!" + System.getProperty("line.separator")+ "Try Again!");
 		}else{
 			nextLevel.setVisibility(View.VISIBLE);
-			Result.setText("Congratulation! You passed level " + levelNum);
+			Result.setTextColor(getResources().getColor(R.color.green));
+			Result.setText("Congratulations!" +System.getProperty("line.separator")+"You passed level " + levelNum);
 		}
 	}
 	

@@ -46,5 +46,7 @@
 	<string name="level3Statement5">Alison Likes Painting</string>
 	<string name="level3Statement6">Raph Likes Computers</string>
 	<string name="loadingFacebook">Loading Data From Facebook...</string>
+	<string name="totalScore">Total Cumulative Score:</string>
+	<string name="currentScore">Current Level Score:</string>
 	
 </resources>
