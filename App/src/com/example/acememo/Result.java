@@ -29,6 +29,7 @@ public class Result extends Activity{
 	private TextView totalScore;
 	private TextView currentScore;
 	private TextView bestScore;
+	private TextView bestBack;
 	private TextView Result;
 	private String senderClass;
 	
@@ -42,6 +43,7 @@ public class Result extends Activity{
 		reviewAnswer = (Button)findViewById(R.id.button2);
 		nextLevel = (Button)findViewById(R.id.button3);
 		nextLevel.setVisibility(View.INVISIBLE);
+		bestBack = (TextView) findViewById(R.id.bestBack);
 		BestScoreFile bsf = new BestScoreFile();
 		
 	currentUserScore = New_Level.levelScore;
@@ -54,10 +56,12 @@ public class Result extends Activity{
 	
 	bestScore = (TextView) findViewById(R.id.bestNumber);
 	
-	if(currentBestScore > totalUserScore){
+	if(currentBestScore >= totalUserScore){
 		bestScore.setText(""  + currentBestScore);
+		bestBack.setBackgroundColor(getResources().getColor(R.color.darkgray));
 	}else{
 		bestScore.setText("" + totalUserScore);
+		bestBack.setBackgroundColor(getResources().getColor(R.color.bluey));
 		currentBestScore = totalUserScore;
 		try {
 			bsf.writeToFile(currentBestScore);
