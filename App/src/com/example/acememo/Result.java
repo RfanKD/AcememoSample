@@ -72,11 +72,7 @@ public class Result extends Activity{
 	
 	currentScore = (TextView) findViewById(R.id.currentNumber);
 	currentScore.setText("" + currentUserScore);
-	
-	Log.d("Score", "BEST SCORE: " + currentBestScore);
-	Log.d("Score", "TOTAL SCORE: " + totalUserScore);
-	Log.d("Score", "CURRENT SCORE: " + currentUserScore);
-	
+
 	Result = (TextView) findViewById(R.id.resultText);
 	
 	if (levelNum == 1){
@@ -85,7 +81,7 @@ public class Result extends Activity{
 			Result.setText("There are too many errors!" + System.getProperty("line.separator")+ "Try Again!");
 		}else{
 			nextLevel.setVisibility(View.VISIBLE);
-			Result.setTextColor(getResources().getColor(R.color.green));
+			Result.setTextColor(getResources().getColor(R.color.bluey));
 			Result.setText("Congratulations!" +System.getProperty("line.separator")+"You passed level " + levelNum);
 		}
 	}else{
@@ -94,7 +90,7 @@ public class Result extends Activity{
 			Result.setText("There are too many errors!" + System.getProperty("line.separator")+ "Try Again!");
 		}else{
 			nextLevel.setVisibility(View.VISIBLE);
-			Result.setTextColor(getResources().getColor(R.color.green));
+			Result.setTextColor(getResources().getColor(R.color.bluey));
 			Result.setText("Congratulations!" +System.getProperty("line.separator")+"You passed level " + levelNum);
 		}
 	}

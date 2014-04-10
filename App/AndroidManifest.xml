@@ -43,6 +43,8 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name="LevelDataFromFacebook"
             android:screenOrientation="portrait"></activity>
+         <activity android:name="GifView"
+            android:screenOrientation="portrait"></activity>
                 <activity android:name="reviewAnswer"
             android:screenOrientation="portrait"></activity>
                 <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>

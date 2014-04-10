@@ -10,20 +10,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 public class MainActivity extends Activity {
 	final static int NEW = 1;
 	final static int LOADING = 2;
 	final static int START = 3; 
-	
+
 	public static boolean withFacebook;
 	
 	Button facebookLogin, playWithoutFacebook;
 	Button startGame;
 	ProgressBar loadingAccount;
+	WebView howtoplay;
 	static int screenStatus = NEW;
+	
 	
 	
 	@Override
@@ -44,6 +48,8 @@ public class MainActivity extends Activity {
 		startGame = (Button) findViewById(R.id.startGame);
 		loadingAccount = (ProgressBar) findViewById(R.id.facebookSync);
 		playWithoutFacebook = (Button) findViewById(R.id.playWithoutFacebook);
+		howtoplay =(WebView) findViewById(R.id.gifView1);
+		howtoplay.loadUrl("http://cs.mcgill.ca/~avande21/howtoplay.gif");
 		
 		playWithoutFacebook.setVisibility(View.INVISIBLE);
 		facebookLogin.setVisibility(View.INVISIBLE);
