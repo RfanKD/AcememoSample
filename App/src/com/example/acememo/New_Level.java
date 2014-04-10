@@ -57,6 +57,7 @@ public class New_Level extends Activity {
 	private final int GAME = 2;
 	ImageView person1, person2, person3, person4, person5; //, person6, person7, person8, person9, person10;
 	ImageView heart1, heart2, heart3, heart4, heart5, heart6;
+	ImageView arrow1, arrow2, arrow3, arrow4, arrow5, arrow6;
 	ImageView item1, item2, item3, item4, item5;//, item6, item7, item8, item9, item10;
 	TextView levelName, statement1, statement2, statement3, statement4, statement5, statement6;
 	Button ready, done;//, nextPage, prevPage;
@@ -64,6 +65,7 @@ public class New_Level extends Activity {
 	ImageView[] personArray;
 	ImageView[] heartArray = new ImageView[5];
 	ImageView[] itemArray;
+	ImageView[] arrowArray = new ImageView[5];
 	TextView[] statementArray = new TextView[5];
 
 	int[] startValues = null;
@@ -181,6 +183,11 @@ public class New_Level extends Activity {
 				assignVariables(GAME);
 				populateArrays(GAME);
 				
+				for(int i=0; i<5; i++){
+					
+					arrowArray[i].setVisibility(View.INVISIBLE);
+				}
+				
 				//int arraySize = profileImage.size();
 				
 							
@@ -221,6 +228,10 @@ public class New_Level extends Activity {
 				assignVariables(GAME);
 				populateArrays(GAME);
 				
+				 for(int i=0; i<5; i++){
+						arrowArray[i].setVisibility(View.INVISIBLE);
+				}
+				
 				 for (int i=0; i < likeImage.size(); i++){
 					 //if(i < 5){
 					 personArray[i].setImageDrawable(profileImage.get(i).getDrawable());
@@ -229,6 +240,8 @@ public class New_Level extends Activity {
 					 itemArray[i].setImageDrawable(likeImage.get(i).getDrawable());
 					 itemArray[i].setImageMatrix(likeImage.get(i).getImageMatrix());
 					 
+
+					 arrowArray[i].setVisibility(View.VISIBLE);
 										 
 //					 }else{
 //						 itemArray[i].setImageDrawable(profileImage.get(i).getDrawable());
@@ -241,11 +254,17 @@ public class New_Level extends Activity {
 					 
 					 if (dropCorrect.get(i) == false){
 						 personArray[i].setPadding(15, 15, 15, 15);
-						 personArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
+						 personArray[i].setBackgroundColor(Color.rgb(239, 91, 79));
 						 
 						 itemArray[i].setPadding(15, 15, 15, 15);
-						 itemArray[i].setBackgroundColor(Color.rgb(255, 0, 0));
+						 itemArray[i].setBackgroundColor(Color.rgb(239, 91, 79));
 						 
+					 }else {
+						 personArray[i].setPadding(15, 15, 15, 15);
+						 personArray[i].setBackgroundColor(Color.rgb(74, 181, 181));
+						 
+						 itemArray[i].setPadding(15, 15, 15, 15);
+						 itemArray[i].setBackgroundColor(Color.rgb(74, 181, 181));
 					 }
 					 
 				 }
@@ -664,6 +683,12 @@ public class New_Level extends Activity {
 				dropLocation.add(1);
 			}
 			
+			arrow1 = (ImageView) findViewById(R.id.arrow1);
+			arrow2 = (ImageView) findViewById(R.id.arrow2);
+			arrow3 = (ImageView) findViewById(R.id.arrow3);
+			arrow4 = (ImageView) findViewById(R.id.arrow4);
+			arrow5 = (ImageView) findViewById(R.id.arrow5);
+			
 //			person6 = (ImageView) findViewById(R.id.person6);
 //			person7 = (ImageView) findViewById(R.id.person7);
 //			person8 = (ImageView) findViewById(R.id.person8);
@@ -703,6 +728,11 @@ public class New_Level extends Activity {
 			statementArray[4] = statement5;
 			
 		}else{
+			arrowArray[0] = arrow1;
+			arrowArray[1] = arrow2;
+			arrowArray[2] = arrow3;
+			arrowArray[3] = arrow4;
+			arrowArray[4] = arrow5;
 			
 //			personArray = new ImageView[10];
 //			itemArray = new ImageView[10];

@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/level3Relative"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/white" >
 
     <TextView
         android:id="@+id/levelNum"
@@ -63,7 +64,7 @@
         android:id="@+id/item1"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/button1"
         android:layout_alignParentTop="true"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"/>
@@ -72,7 +73,7 @@
         android:id="@+id/item2"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/button1"
         android:layout_below="@+id/item1"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp" />
@@ -81,7 +82,7 @@
         android:id="@+id/item3"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/button1"
         android:layout_below="@+id/item2"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"/>
@@ -90,7 +91,7 @@
         android:id="@+id/item4"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/button1"
         android:layout_below="@+id/item3"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"/>
@@ -99,7 +100,7 @@
         android:id="@+id/item5"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/button1"
         android:layout_below="@+id/item4"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"/>   
@@ -114,5 +115,45 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/Done" />
+
+    <ImageView
+        android:id="@+id/arrow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button1"
+        android:layout_alignLeft="@+id/arrow4"
+        android:src="@drawable/rightarrow" />
+
+    <ImageView
+        android:id="@+id/arrow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/person2"
+        android:layout_alignLeft="@+id/arrow2"
+        android:src="@drawable/rightarrow" />
+
+    <ImageView
+        android:id="@+id/arrow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/person2"
+        android:layout_alignLeft="@+id/arrow3"
+        android:src="@drawable/rightarrow" />
+
+    <ImageView
+        android:id="@+id/arrow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/item4"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/rightarrow" />
+
+    <ImageView
+        android:id="@+id/arrow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item4"
+        android:layout_alignLeft="@+id/arrow3"
+        android:src="@drawable/rightarrow" />
 
 </RelativeLayout>
