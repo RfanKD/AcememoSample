@@ -61,19 +61,6 @@
           android:textSize="32sp" 
           android:text="@string/pairs"/>     
           
-      
-     <TextView
-        android:id="@+id/tutorialLevel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button3"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="15sp"
-        android:textColor="@color/blue"
-        android:gravity="center"
-        android:text="@string/levelIsTut" />
  
       <Button
           android:id="@+id/button3"

@@ -85,7 +85,7 @@ public class Result extends Activity{
 			Result.setText("Congratulations!" +System.getProperty("line.separator")+"You passed level " + levelNum);
 		}
 	}else{
-		if(currentUserScore < (levelNum/2)){
+		if(currentUserScore != levelNum){
 			Result.setTextColor(getResources().getColor(R.color.red));
 			Result.setText("There are too many errors!" + System.getProperty("line.separator")+ "Try Again!");
 		}else{
